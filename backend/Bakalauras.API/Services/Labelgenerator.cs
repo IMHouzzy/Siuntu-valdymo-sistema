@@ -24,7 +24,7 @@ namespace Bakalauras.API.Services
     {
         // Base URL for tracking QR code — change to your actual frontend URL
         private static string TrackingBaseUrl =>
-            $"{(Environment.GetEnvironmentVariable("FrontendBaseUrl") ?? "http://localhost:3000").TrimEnd('/')}/tracking/";
+            $"{(Environment.GetEnvironmentVariable("FrontendBaseUrl") ?? "http://46.101.161.47").TrimEnd('/')}/tracking/";
 
         /// <summary>
         /// Generates a professional shipping-label PDF with Code-128 barcode and QR code.

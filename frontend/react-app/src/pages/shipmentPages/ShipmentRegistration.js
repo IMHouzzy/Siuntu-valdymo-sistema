@@ -267,7 +267,7 @@ export default function ShipmentFormPage() {
         shipmentId={createdShipment.shipmentId}
         trackingNumber={createdShipment.trackingNumber}
         packages={createdShipment.packages}
-        onClose={() => navigate("/orders/orderlist")}
+        onClose={() => navigate("/orderlist")}
       />
     </FormPageLayout>
   );
