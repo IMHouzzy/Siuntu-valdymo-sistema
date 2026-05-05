@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2026 at 06:15 PM
+-- Generation Time: May 05, 2026 at 06:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,116 +64,113 @@ CREATE TABLE `client_company` (
 --
 
 INSERT INTO `client_company` (`fk_Clientid_Users`, `fk_Companyid_Company`, `externalClientId`, `deliveryAddress`, `city`, `country`, `vat`, `bankCode`, `createdAt`) VALUES
-(2, 1, NULL, 'Studentu g 2A', 'kaunas', 'Lietuva', '1234', 7335, '2026-03-09 12:59:27'),
-(3, 1, 1, 'Klientas Nr. 1 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488846005245', 73000, '2026-03-09 13:07:49'),
-(4, 1, 2, '', '', '', '', NULL, '2026-03-09 13:07:49'),
-(5, 1, 3, '', '', '', '', 73000, '2026-03-09 13:07:49'),
-(6, 1, 4, '', '', '', '', NULL, '2026-03-09 13:07:49'),
-(7, 1, 5, '', '', '', '', NULL, '2026-03-09 13:07:49'),
-(8, 1, 6, 'Klientas Nr. 6 adresas', 'Kauno raj.', 'Lietuvos Respublika', 'LT488846005245', NULL, '2026-03-09 13:07:49'),
-(9, 1, 7, 'Klientas Nr. 7 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT343461241', NULL, '2026-03-09 13:07:49'),
-(10, 1, 8, 'Klientas Nr. 8 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT385127646', NULL, '2026-03-09 13:07:49'),
-(11, 1, 9, 'Klientas Nr. 9 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT212956347', NULL, '2026-03-09 13:07:49'),
-(12, 1, 10, NULL, 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(13, 1, 11, 'Klientas Nr. 11 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488846670', NULL, '2026-03-09 13:07:49'),
-(14, 1, 12, 'Klientas Nr. 12 adresas', 'Marijampolė', 'Lietuvos Respublika', 'LT644285044', NULL, '2026-03-09 13:07:49'),
-(15, 1, 13, 'Klientas Nr. 13 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488888057443', NULL, '2026-03-09 13:07:49'),
-(16, 1, 14, '', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(17, 1, 15, '', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(18, 1, 16, '', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(19, 1, 17, '', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(20, 1, 18, 'Klientas Nr. 18 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488846618943', NULL, '2026-03-09 13:07:49'),
-(21, 1, 19, '', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(22, 1, 20, '', 'Šiauliai', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(23, 1, 21, '', '', '', '', NULL, '2026-03-09 13:07:49'),
-(24, 1, 22, 'Klientas Nr. 22 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488841584042', NULL, '2026-03-09 13:07:49'),
-(25, 1, 23, 'Klientas Nr. 23 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488848005140', NULL, '2026-03-09 13:07:49'),
-(26, 1, 24, 'Klientas Nr. 24 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488880428445', NULL, '2026-03-09 13:07:49'),
-(27, 1, 25, 'Klientas Nr. 25 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488844332640', NULL, '2026-03-09 13:07:49'),
-(28, 1, 26, 'Klientas Nr. 26 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488884617842', NULL, '2026-03-09 13:07:49'),
-(29, 1, 27, 'Klientas Nr. 27 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488841103845', NULL, '2026-03-09 13:07:49'),
-(30, 1, 28, 'Klientas Nr. 28 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488886452944', NULL, '2026-03-09 13:07:49'),
-(31, 1, 29, 'Klientas Nr. 29 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488886356745', NULL, '2026-03-09 13:07:49'),
-(32, 1, 30, 'Klientas Nr. 30 adresas', 'Biržai', 'Lietuvos Respublika', 'LT488886025843', NULL, '2026-03-09 13:07:49'),
-(33, 1, 31, 'Klientas Nr. 31 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488844447545', NULL, '2026-03-09 13:07:49'),
-(34, 1, 32, 'Klientas Nr. 32 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(35, 1, 33, 'Klientas Nr. 33 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488884078445', NULL, '2026-03-09 13:07:49'),
-(36, 1, 34, 'Klientas Nr. 34 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(37, 1, 35, 'Klientas Nr. 35 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT314483147', NULL, '2026-03-09 13:07:49'),
-(38, 1, 36, 'Klientas Nr. 36 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488844937247', NULL, '2026-03-09 13:07:49'),
-(39, 1, 37, 'Klientas Nr. 37 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488887031848', NULL, '2026-03-09 13:07:49'),
-(40, 1, 38, 'Klientas Nr. 38 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488887457741', NULL, '2026-03-09 13:07:49'),
-(41, 1, 39, 'Klientas Nr. 39 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488844352541', NULL, '2026-03-09 13:07:49'),
-(42, 1, 40, 'Klientas Nr. 40 adresas', 'Kaišiadorys', 'Lietuvos Respublika', 'LT600217442', NULL, '2026-03-09 13:07:49'),
-(43, 1, 41, 'Klientas Nr. 41 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT229576241', NULL, '2026-03-09 13:07:49'),
-(44, 1, 42, '', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(45, 1, 43, '', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(46, 1, 44, 'Klientas Nr. 44 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488843642049', NULL, '2026-03-09 13:07:49'),
-(47, 1, 45, 'Klientas Nr. 45 adresas', 'Raseiniai', 'Lietuvos Respublika', 'LT488846850', NULL, '2026-03-09 13:07:49'),
-(48, 1, 46, 'Klientas Nr. 46 adresas', '', 'Maltos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(49, 1, 47, 'Klientas Nr. 47 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488846708242', NULL, '2026-03-09 13:07:49'),
-(50, 1, 48, 'Klientas Nr. 48 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488848003842', NULL, '2026-03-09 13:07:49'),
-(51, 1, 49, '', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(52, 1, 50, 'Klientas Nr. 50 adresas', '', 'Maltos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(53, 1, 51, 'Klientas Nr. 51 adresas', '', 'Vokietijos Federacinė Respublika', '', NULL, '2026-03-09 13:07:49'),
-(54, 1, 52, 'Klientas Nr. 52 adresas', '', 'Prancūzijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(55, 1, 53, 'Klientas Nr. 53 adresas', '', 'Australija', '', NULL, '2026-03-09 13:07:49'),
-(56, 1, 54, 'Klientas Nr. 54 adresas', '', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '', NULL, '2026-03-09 13:07:49'),
-(57, 1, 55, 'Klientas Nr. 55 adresas', '', 'Vengrijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(58, 1, 56, 'Klientas Nr. 56 adresas', '', 'Airija', '', NULL, '2026-03-09 13:07:49'),
-(59, 1, 57, 'Klientas Nr. 57 adresas', '', 'Prancūzijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(60, 1, 58, 'Klientas Nr. 58 adresas', '', 'Airija', '', NULL, '2026-03-09 13:07:49'),
-(61, 1, 59, 'Klientas Nr. 59 adresas', '', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '', NULL, '2026-03-09 13:07:49'),
-(62, 1, 60, 'Klientas Nr. 60 adresas', '', 'Portugalijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(63, 1, 61, 'Klientas Nr. 61 adresas', '', 'Suomijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(64, 1, 62, 'Klientas Nr. 62 adresas', '', 'Ispanijos Karalystė', '', NULL, '2026-03-09 13:07:49'),
-(65, 1, 63, 'Klientas Nr. 63 adresas', '', 'Vokietijos Federacinė Respublika', '', NULL, '2026-03-09 13:07:49'),
-(66, 1, 64, 'Klientas Nr. 64 adresas', '', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '', NULL, '2026-03-09 13:07:49'),
-(67, 1, 65, 'Klientas Nr. 65 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488883788047', NULL, '2026-03-09 13:07:49'),
-(68, 1, 66, 'Klientas Nr. 66 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT353335241', NULL, '2026-03-09 13:07:49'),
-(69, 1, 67, '', '', '', '', NULL, '2026-03-09 13:07:49'),
-(70, 1, 68, 'Klientas Nr. 68 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT360429347', NULL, '2026-03-09 13:07:49'),
-(71, 1, 69, 'Klientas Nr. 69 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT213717646', NULL, '2026-03-09 13:07:49'),
-(72, 1, 70, 'Klientas Nr. 70 adresas', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(73, 1, 71, 'Klientas Nr. 71 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488848994645', NULL, '2026-03-09 13:07:49'),
-(74, 1, 72, 'Klientas Nr. 72 adresas', 'Alytus', 'Lietuvos Respublika', 'LT179303945', NULL, '2026-03-09 13:07:49'),
-(75, 1, 73, 'Klientas Nr. 73 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT347048749', NULL, '2026-03-09 13:07:49'),
-(76, 1, 74, 'Klientas Nr. 74 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(77, 1, 75, 'Klientas Nr. 75 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(78, 1, 76, 'Klientas Nr. 76 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(79, 1, 77, 'Klientas Nr. 77 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(80, 1, 78, 'Klientas Nr. 78 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(81, 1, 79, 'Klientas Nr. 79 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT445273749', NULL, '2026-03-09 13:07:49'),
-(82, 1, 80, 'Klientas Nr. 80 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(83, 1, 81, 'Klientas Nr. 81 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(84, 1, 82, 'Klientas Nr. 82 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(85, 1, 83, 'Klientas Nr. 83 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(86, 1, 84, 'Klientas Nr. 84 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(87, 1, 85, 'Klientas Nr. 85 adresas', 'Vilnius', 'Lietuvos Respublika', 'LT488884178448', NULL, '2026-03-09 13:07:49'),
-(88, 1, 86, 'Klientas Nr. 86 adresas', '', 'Lietuvos Respublika', 'LT488844611543', NULL, '2026-03-09 13:07:49'),
-(89, 1, 87, 'Klientas Nr. 87 adresas', 'Kaunas', 'Lietuvos Respublika', 'LT488882711045', NULL, '2026-03-09 13:07:49'),
-(90, 1, 88, 'Klientas Nr. 88 adresas', '', 'Latvijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(91, 1, 89, 'Klientas Nr. 89 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(92, 1, 90, 'Klientas Nr. 90 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(93, 1, 91, 'Klientas Nr. 91 adresas', '', '', 'LT488846443548', NULL, '2026-03-09 13:07:49'),
-(94, 1, 92, 'Klientas Nr. 92 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(95, 1, 93, 'Klientas Nr. 93 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(96, 1, 94, 'Klientas Nr. 94 adresas', '', '', '', NULL, '2026-03-09 13:07:49'),
-(97, 1, 95, 'Klientas Nr. 95 adresas', '', '', 'LT488842709249', NULL, '2026-03-09 13:07:49'),
-(98, 1, 96, 'Klientas Nr. 96 adresas', '', 'Italijos Respublika', 'IT80005088752', NULL, '2026-03-09 13:07:49'),
-(99, 1, 97, 'Klientas Nr. 97 adresas', '', 'Lietuvos Respublika', 'LT488843784743', NULL, '2026-03-09 13:07:49'),
-(100, 1, 98, 'Klientas Nr. 98 adresas', '', 'Lietuvos Respublika', 'LT985229646', NULL, '2026-03-09 13:07:49'),
-(101, 1, 99, 'Klientas Nr. 99 adresas', '', 'Prancūzijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(102, 1, 100, 'Klientas Nr. 100 adresas', '', 'Rumunija', '', NULL, '2026-03-09 13:07:49'),
-(103, 1, 101, 'Klientas Nr. 101 adresas', '', 'Lietuvos Respublika', 'LT488883596841', NULL, '2026-03-09 13:07:49'),
-(104, 1, 102, 'Klientas Nr. 102 adresas', '', 'Lietuvos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(105, 1, 103, 'Klientas Nr. 103 adresas', '', 'Latvijos Respublika', 'LV18482940224', NULL, '2026-03-09 13:07:49'),
-(106, 1, 104, 'Klientas Nr. 104 adresas', '', 'Lenkijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(107, 1, 105, 'Klientas Nr. 105 adresas', '', 'Lietuvos Respublika', 'LT488882203346', NULL, '2026-03-09 13:07:49'),
-(108, 1, 106, 'Klientas Nr. 106 adresas', NULL, 'Prancūzijos Respublika', '', NULL, '2026-03-09 13:07:49'),
-(109, 1, 107, 'Klientas Nr. 107 adresas', NULL, NULL, 'Germany', NULL, '2026-03-09 13:07:49'),
-(110, 2, NULL, '123', '123', '123', '123', 123, '2026-03-16 11:51:53'),
-(114, 1, NULL, 'Vilniaus g. 2', 'Kaunas', 'Lietuva', 'LT7351101', 7300, '2026-04-28 13:49:20');
+(22, 1, 1, 'Laisvės al. 15', 'Kaunas', 'Lietuvos Respublika', 'LT488846005245', 73000, '2026-05-05 12:18:22'),
+(23, 1, 2, 'Gedimino g. 8', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:23'),
+(24, 1, 3, 'Savanorių pr. 22', 'Kaunas', 'Lietuvos Respublika', '', 73000, '2026-05-05 12:18:23'),
+(25, 1, 4, 'K.Donelaičio g. 7', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:23'),
+(26, 1, 5, 'Pilies g. 5', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:23'),
+(27, 1, 7, 'Antakalnio g. 19', 'Vilnius', 'Lietuvos Respublika', 'LT343461241', NULL, '2026-05-05 12:18:23'),
+(28, 1, 8, 'Žirmūnų g. 43', 'Vilnius', 'Lietuvos Respublika', 'LT385127646', NULL, '2026-05-05 12:18:23'),
+(29, 1, 9, 'Nemuno g. 4', 'Kaunas', 'Lietuvos Respublika', 'LT212956347', NULL, '2026-05-05 12:18:23'),
+(30, 1, 10, 'Tvirtovės al. 39', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:23'),
+(31, 1, 11, 'Vytauto pr. 25', 'Kaunas', 'Lietuvos Respublika', 'LT488846670', NULL, '2026-05-05 12:18:24'),
+(32, 1, 12, 'Gedimino g. 5', 'Marijampolė', 'Lietuvos Respublika', 'LT644285044', NULL, '2026-05-05 12:18:24'),
+(33, 1, 13, 'Jonavos g. 5', 'Kaunas', 'Lietuvos Respublika', 'LT488888057443', NULL, '2026-05-05 12:18:24'),
+(34, 1, 14, 'Perkūno al. 17', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:24'),
+(35, 1, 15, 'Žalgirio g. 44', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:24'),
+(36, 1, 16, 'Kalvarijų g. 8', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:24'),
+(37, 1, 17, 'Ukmergės g. 55', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:24'),
+(38, 1, 18, 'Vilijampolės g. 18', 'Kaunas', 'Lietuvos Respublika', 'LT488846618943', NULL, '2026-05-05 12:18:25'),
+(39, 1, 19, 'Demokratų g. 28', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:25'),
+(40, 1, 20, 'Tilžės g. 144', 'Šiauliai', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:25'),
+(41, 1, 21, 'Aušros al. 53', 'Šiauliai', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:25'),
+(42, 1, 22, 'Kęstučio g. 22', 'Kaunas', 'Lietuvos Respublika', 'LT488841584042', NULL, '2026-05-05 12:18:25'),
+(43, 1, 23, 'Panerių g. 51', 'Kaunas', 'Lietuvos Respublika', 'LT488848005140', NULL, '2026-05-05 12:18:25'),
+(44, 1, 24, 'Šilutės g. 12', 'Kaunas', 'Lietuvos Respublika', 'LT488880428445', NULL, '2026-05-05 12:18:25'),
+(45, 1, 25, 'Maironio g. 4', 'Raseiniai', 'Lietuvos Respublika', 'LT488844332640', NULL, '2026-05-05 12:18:25'),
+(46, 1, 26, 'Triq San Ġorġ 5', 'Valletta', 'Maltos Respublika', 'LT488884617842', NULL, '2026-05-05 12:18:26'),
+(47, 1, 27, 'Mickevičiaus g. 11', 'Kaunas', 'Lietuvos Respublika', 'LT488841103845', NULL, '2026-05-05 12:18:26'),
+(48, 1, 28, 'Konstitucijos pr. 16', 'Vilnius', 'Lietuvos Respublika', 'LT488886452944', NULL, '2026-05-05 12:18:26'),
+(49, 1, 29, 'Vasaros g. 9', 'Kaunas', 'Lietuvos Respublika', 'LT488886356745', NULL, '2026-05-05 12:18:26'),
+(50, 1, 30, 'Respublikos g. 12', 'Biržai', 'Lietuvos Respublika', 'LT488886025843', NULL, '2026-05-05 12:18:26'),
+(51, 1, 31, 'Ąžuolų g. 7', 'Kaunas', 'Lietuvos Respublika', 'LT488844447545', NULL, '2026-05-05 12:18:26'),
+(52, 1, 32, 'Žvėryno g. 6', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:26'),
+(53, 1, 33, 'Naugarduko g. 48', 'Vilnius', 'Lietuvos Respublika', 'LT488884078445', NULL, '2026-05-05 12:18:26'),
+(54, 1, 34, 'Ozo g. 25', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:26'),
+(55, 1, 35, 'Savanorių pr. 3', 'Vilnius', 'Lietuvos Respublika', 'LT314483147', NULL, '2026-05-05 12:18:27'),
+(56, 1, 36, 'Lazdynų g. 13', 'Kaunas', 'Lietuvos Respublika', 'LT488844937247', NULL, '2026-05-05 12:18:27'),
+(57, 1, 37, 'Saltoniškių g. 8', 'Vilnius', 'Lietuvos Respublika', 'LT488887031848', NULL, '2026-05-05 12:18:27'),
+(58, 1, 38, 'Rudninkų g. 4', 'Vilnius', 'Lietuvos Respublika', 'LT488887457741', NULL, '2026-05-05 12:18:27'),
+(59, 1, 39, 'Mokyklos g. 17', 'Kaunas', 'Lietuvos Respublika', 'LT488844352541', NULL, '2026-05-05 12:18:27'),
+(60, 1, 40, 'Bažnyčios g. 2', 'Kaišiadorys', 'Lietuvos Respublika', 'LT600217442', NULL, '2026-05-05 12:18:27'),
+(61, 1, 41, 'Pergalės g. 9', 'Kaunas', 'Lietuvos Respublika', 'LT229576241', NULL, '2026-05-05 12:18:27'),
+(62, 1, 42, 'Liepkalnio g. 72', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:28'),
+(63, 1, 43, 'Pramonės pr. 6', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:28'),
+(64, 1, 44, 'Viršuliškių g. 40', 'Kaunas', 'Lietuvos Respublika', 'LT488843642049', NULL, '2026-05-05 12:18:28'),
+(65, 1, 45, 'Kęstučio g. 3', 'Raseiniai', 'Lietuvos Respublika', 'LT488846850', NULL, '2026-05-05 12:18:28'),
+(66, 1, 46, 'Triq il-Vittorja 8', 'Valletta', 'Maltos Respublika', '', NULL, '2026-05-05 12:18:28'),
+(67, 1, 47, 'Šiaurės g. 22', 'Kaunas', 'Lietuvos Respublika', 'LT488846708242', NULL, '2026-05-05 12:18:28'),
+(68, 1, 48, 'Didžioji g. 11', 'Vilnius', 'Lietuvos Respublika', 'LT488848003842', NULL, '2026-05-05 12:18:28'),
+(69, 1, 49, 'Trakų g. 15', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:28'),
+(70, 1, 50, 'Triq il-Merkanti 3', 'Valletta', 'Maltos Respublika', '', NULL, '2026-05-05 12:18:28'),
+(71, 1, 51, 'Hauptstraße 42', 'Berlin', 'Vokietijos Federacinė Respublika', '', NULL, '2026-05-05 12:18:29'),
+(72, 1, 52, 'Rue de la Liberté 15', 'Paris', 'Prancūzijos Respublika', '', NULL, '2026-05-05 12:18:29'),
+(73, 1, 53, 'Collins Street 8', 'Melbourne', 'Australija', '', NULL, '2026-05-05 12:18:29'),
+(74, 1, 54, 'High Street 21', 'London', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '', NULL, '2026-05-05 12:18:29'),
+(75, 1, 55, 'Bajcsy-Zsilinszky út 10', 'Budapest', 'Vengrijos Respublika', '', NULL, '2026-05-05 12:18:29'),
+(76, 1, 56, 'O\'Connell Street 3', 'Dublin', 'Airija', '', NULL, '2026-05-05 12:18:29'),
+(77, 1, 57, 'Avenue des Champs 7', 'Lyon', 'Prancūzijos Respublika', '', NULL, '2026-05-05 12:18:29'),
+(78, 1, 58, 'Grafton Street 12', 'Dublin', 'Airija', '', NULL, '2026-05-05 12:18:29'),
+(79, 1, 59, 'Oxford Street 45', 'London', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '', NULL, '2026-05-05 12:18:30'),
+(80, 1, 60, 'Avenida da Liberdade 50', 'Lisbon', 'Portugalijos Respublika', '', NULL, '2026-05-05 12:18:30'),
+(81, 1, 61, 'Mannerheimintie 10', 'Helsinki', 'Suomijos Respublika', '', NULL, '2026-05-05 12:18:30'),
+(82, 1, 62, 'Gran Vía 20', 'Madrid', 'Ispanijos Karalystė', '', NULL, '2026-05-05 12:18:30'),
+(83, 1, 63, 'Friedrichstraße 30', 'Berlin', 'Vokietijos Federacinė Respublika', '', NULL, '2026-05-05 12:18:30'),
+(84, 1, 64, 'Baker Street 10', 'London', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '', NULL, '2026-05-05 12:18:30'),
+(85, 1, 65, 'Vasario 16-osios g. 6', 'Kaunas', 'Lietuvos Respublika', 'LT488883788047', NULL, '2026-05-05 12:18:30'),
+(86, 1, 66, 'Šventaragio g. 4', 'Vilnius', 'Lietuvos Respublika', 'LT353335241', NULL, '2026-05-05 12:18:30'),
+(87, 1, 67, 'Kauno g. 3', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:31'),
+(88, 1, 68, 'Dvaro g. 12', 'Kaunas', 'Lietuvos Respublika', 'LT360429347', NULL, '2026-05-05 12:18:31'),
+(89, 1, 69, 'Partizanų g. 66', 'Kaunas', 'Lietuvos Respublika', 'LT213717646', NULL, '2026-05-05 12:18:31'),
+(90, 1, 70, 'Architektų g. 33', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:31'),
+(91, 1, 71, 'Gėlių g. 5', 'Vilnius', 'Lietuvos Respublika', 'LT488848994645', NULL, '2026-05-05 12:18:31'),
+(92, 1, 72, 'Naujoji g. 77', 'Alytus', 'Lietuvos Respublika', 'LT179303945', NULL, '2026-05-05 12:18:31'),
+(93, 1, 73, 'Ateities pl. 28', 'Kaunas', 'Lietuvos Respublika', 'LT347048749', NULL, '2026-05-05 12:18:31'),
+(94, 1, 74, 'Šilo g. 9', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:31'),
+(95, 1, 75, 'Sporto g. 4', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(96, 1, 76, 'Taikos pr. 55', 'Šiauliai', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(97, 1, 77, 'Žaliosios g. 18', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(98, 1, 78, 'Dariaus ir Girėno g. 7', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(99, 1, 79, 'Verkių g. 29', 'Vilnius', 'Lietuvos Respublika', 'LT445273749', NULL, '2026-05-05 12:18:32'),
+(100, 1, 80, 'Ramybės g. 11', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(101, 1, 81, 'Uosių g. 3', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(102, 1, 82, 'Kaštonų g. 14', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(103, 1, 83, 'Eglių g. 8', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:32'),
+(104, 1, 84, 'Vyturių g. 22', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:33'),
+(105, 1, 85, 'Fabijoniškių g. 17', 'Vilnius', 'Lietuvos Respublika', 'LT488884178448', NULL, '2026-05-05 12:18:33'),
+(106, 1, 86, 'Santaros g. 5', 'Vilnius', 'Lietuvos Respublika', 'LT488844611543', NULL, '2026-05-05 12:18:33'),
+(107, 1, 87, 'Tauro g. 2', 'Kaunas', 'Lietuvos Respublika', 'LT488882711045', NULL, '2026-05-05 12:18:33'),
+(108, 1, 88, 'Brīvības bulv. 22', 'Rīga', 'Latvijos Respublika', '', NULL, '2026-05-05 12:18:33'),
+(109, 1, 89, 'Karaliaus Mindaugo pr. 6', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:33'),
+(110, 1, 90, 'Saulėtekio al. 15', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:33'),
+(111, 1, 91, 'Pušų g. 7', 'Kaunas', 'Lietuvos Respublika', 'LT488846443548', NULL, '2026-05-05 12:18:33'),
+(112, 1, 92, 'Paupio g. 25', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:34'),
+(113, 1, 93, 'Ąžuolų al. 4', 'Kaunas', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:34'),
+(114, 1, 94, 'Mindaugo g. 10', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:34'),
+(115, 1, 95, 'Birželio 23-iosios g. 3', 'Vilnius', 'Lietuvos Respublika', 'LT488842709249', NULL, '2026-05-05 12:18:34'),
+(116, 1, 96, 'Via Roma 8', 'Roma', 'Italijos Respublika', 'IT80005088752', NULL, '2026-05-05 12:18:34'),
+(117, 1, 97, 'Sapiegos g. 14', 'Kaunas', 'Lietuvos Respublika', 'LT488843784743', NULL, '2026-05-05 12:18:34'),
+(118, 1, 98, 'Rinktinės g. 20', 'Vilnius', 'Lietuvos Respublika', 'LT985229646', NULL, '2026-05-05 12:18:34'),
+(119, 1, 99, 'Boulevard Haussmann 30', 'Paris', 'Prancūzijos Respublika', '', NULL, '2026-05-05 12:18:34'),
+(120, 1, 100, 'Calea Victoriei 15', 'Bucharest', 'Rumunija', '', NULL, '2026-05-05 12:18:35'),
+(121, 1, 101, 'Kairėnų g. 9', 'Kaunas', 'Lietuvos Respublika', 'LT488883596841', NULL, '2026-05-05 12:18:35'),
+(122, 1, 102, 'Žemaitijos g. 6', 'Vilnius', 'Lietuvos Respublika', '', NULL, '2026-05-05 12:18:35'),
+(123, 1, 103, 'Elizabetes iela 10', 'Rīga', 'Latvijos Respublika', 'LV18482940224', NULL, '2026-05-05 12:18:35'),
+(124, 1, 104, 'Marszałkowska 10', 'Warszawa', 'Lenkijos Respublika', '', NULL, '2026-05-05 12:18:35'),
+(125, 1, 105, 'Pelesos g. 5', 'Kaunas', 'Lietuvos Respublika', 'LT488882203346', NULL, '2026-05-05 12:18:35'),
+(126, 1, 106, 'Rue de Rivoli 22', 'Paris', 'Prancūzijos Respublika', '', NULL, '2026-05-05 12:18:35'),
+(127, 1, 107, 'Unter den Linden 5', 'Berlin', 'Vokietija', 'Germany', NULL, '2026-05-05 12:18:35'),
+(128, 1, NULL, 'Vilniaus g. 2', 'Kaunas', 'Lietuva', 'LT354215421', 7300, '2026-05-05 18:53:03');
 
 -- --------------------------------------------------------
 
@@ -209,10 +206,7 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`id_Company`, `name`, `companyCode`, `active`, `creationDate`, `shippingAddress`, `shippingStreet`, `shippingCity`, `shippingPostalCode`, `shippingCountry`, `returnAddress`, `returnStreet`, `returnCity`, `returnPostalCode`, `returnCountry`, `documentCode`, `phoneNumber`, `address`, `email`, `image`) VALUES
-(1, 'Demo Company', '4658944', 1, '2026-03-09 10:37:22', NULL, 'Kauno g. 50', 'Kaunas', '51368', 'LT', NULL, NULL, NULL, NULL, 'LT', 'DOC', '+37060000000', 'N/A', 'admin@demo.lt', '/uploads/companies/1/logo.png'),
-(2, 'Nauja Įmonė 1', '85496812', 1, '2026-03-09 11:33:29', NULL, NULL, NULL, NULL, 'LT', NULL, NULL, NULL, NULL, 'LT', 'NO', '+37060000000', 'nauja gatve', 'nauja@info.lt', ''),
-(3, 'Test Įmonė 2', '123456789', 1, '2026-03-16 18:25:26', NULL, 'Islandijos pr. 5', 'Kaunas', '50312', 'LT', NULL, '123', '123', '123', 'LT', '123', '+3706000000', '', 'imone@info.lt', ''),
-(4, 'UAB Varlė', '8556422', 1, '2026-04-28 15:51:41', NULL, 'Partizanų g. 5', 'Kaunas', '52361', 'LT', NULL, NULL, NULL, NULL, 'LT', 'VA', '+3760000000', '', 'varle@info.lt', '/uploads/companies/4/logo.png');
+(1, 'Baltic Goods', '4658944', 1, '2026-05-05 12:06:11', NULL, 'Kauno g. 50', 'Kaunas', '51368', 'LT', NULL, NULL, NULL, NULL, 'LT', 'BG', '+37060000000', 'N/A', 'admin@balticgoods.lt', '/uploads/companies/1/logo.png');
 
 -- --------------------------------------------------------
 
@@ -238,8 +232,8 @@ CREATE TABLE `company_integration` (
 --
 
 INSERT INTO `company_integration` (`id_CompanyIntegration`, `fk_Companyid_Company`, `type`, `baseUrl`, `encryptedSecrets`, `enabled`, `updatedAt`, `dpdToken`, `dpdTokenExpires`, `dpdTokenSecretId`) VALUES
-(3, 1, 'BUTENT', 'http://94.176.235.151:3069/api/v1', 'ehp0K/rq0L4eUTQ1D4T3hUMJWDPMYV6p18OECMqCInYdjB+w727GZ4aKFiZcW7fkvjsLLC2kWw8q3mhUrgyP+5OwjdVRzh9vMsv8HizrCyW16nW8R8hHv/09rtiScN/Xka+slKHDRHKfDkAYYl1QMttx', 1, '2026-03-16 10:36:01', NULL, NULL, NULL),
-(4, 1, 'DPD', 'https://sandbox-esiunta.dpd.lt/api/v1', '4I9si4MdBZOX5FrEfM4B6g1EXTwa6VdmpKa+VE5jqcZwmYEfy/V+KPo+YAwC0pX7LKME0BuQlxdvR4G8LS70OH4KO8q+n3SRoyH5tWJCIV0/y69/J7l1bThQXNBnBhtVmLviaCCDlwsz0gNknsO8AW4jUMV9jwpeeRkyycQOLByqeRpdg4uSUmdNzkY=', 1, '2026-04-28 16:22:20', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXN0b21lcl9pZCI6NzA3LCJhZG1pbl9pZCI6bnVsbCwic2lnbmF0dXJlX2lkIjoiY2E0NzM5MTktY2Y1OS00YjY3LTliODAtNzdjZjU1NjMzODQ3Iiwic2lnbmF0dXJlX25hbWUiOiJiYWthbGF1cmFzLWludGVncmF0aW9uIiwiaXNzIjoiYW1iZXItbHQiLCJleHAiOjE3Nzc0Njg5NDl9.72P-cfyFVfaqUA_aWFLxpQnwsIrnPdP3FEC9IjwpmNY', '2026-04-29 12:22:20', 'ca473919-cf59-4b67-9b80-77cf55633847');
+(5, 1, 'DPD', 'https://sandbox-esiunta.dpd.lt/api/v1/', 'fVLkQlBVzYJ5N9Nq7HMzOJtCrnXcCs10miB9ht2kk+d6Su5r7Ps8jI5dJhLee7P34j2EY52gSm8YlPKKhjO6wifRHuVZhZqsgSRqDJGpKQKWVn8tihVm+R+3yg5ZsfQfFyO6lhY48QA9lOmyi6N/OtXc1JHUQXvikEjzJvXlXL6ylJy+SijTVQ51aD7s', 1, '2026-05-05 12:09:47', NULL, NULL, NULL),
+(6, 1, 'BUTENT', 'http://94.176.235.151:3069/api/v1', '3zYQt+o6zEZgEr/WepOK90Hs5yPjil+rWgIpX8v3Ezmh03vY2btFvTohdowfCZiAMo6dppFixKOFGu2AWDszVZSf1N9vV/tiGOoXHB81sIgS6orEyN6PBNdvUTSyCD6lD1fq0ItFw3huPOhgrihOvadI', 1, '2026-05-05 12:10:30', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -262,121 +256,114 @@ CREATE TABLE `company_users` (
 --
 
 INSERT INTO `company_users` (`fk_Companyid_Company`, `fk_Usersid_Users`, `role`, `position`, `startDate`, `active`, `createdAt`) VALUES
-(1, 1, 'OWNER', 'ADMIN', '2026-03-09 10:37:22', 1, '2026-03-09 10:37:22'),
-(1, 2, 'COURIER', 'COURIER', '2026-03-10 00:00:00', 1, '2026-03-09 12:59:27'),
-(1, 3, 'CLIENT', NULL, NULL, 0, '2026-03-09 13:07:49'),
-(1, 4, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 5, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 6, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 7, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 8, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 9, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 10, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 11, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 12, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 13, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 14, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 15, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 16, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 17, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 18, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 19, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 20, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 21, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 22, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 23, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 24, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 25, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 26, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 27, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 28, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 29, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 30, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 31, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 32, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 33, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 34, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 35, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 36, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 37, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 38, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 39, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 40, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 41, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 42, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 43, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 44, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 45, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 46, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 47, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 48, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 49, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 50, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 51, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 52, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 53, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 54, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 55, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 56, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 57, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 58, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 59, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 60, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 61, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 62, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 63, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 64, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 65, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 66, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 67, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 68, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 69, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 70, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 71, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 72, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 73, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 74, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 75, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 76, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 77, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 78, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 79, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 80, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 81, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 82, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 83, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 84, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 85, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 86, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 87, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 88, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 89, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 90, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 91, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 92, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 93, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 94, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 95, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 96, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 97, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 98, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 99, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 100, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 101, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 102, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 103, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 104, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 105, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 106, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 107, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 108, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 109, 'CLIENT', NULL, NULL, 1, '2026-03-09 13:07:49'),
-(1, 114, 'CLIENT', NULL, NULL, 1, '2026-04-28 13:47:07'),
-(2, 1, 'OWNER', 'ADMIN', '2026-03-09 11:33:29', 1, '2026-03-09 13:33:29'),
-(2, 110, 'CLIENT', NULL, NULL, 1, '2026-03-16 11:51:53'),
-(3, 1, 'OWNER', 'ADMIN', '2026-03-16 18:25:26', 1, '2026-03-16 20:25:26'),
-(4, 1, 'OWNER', 'ADMIN', '2026-04-28 15:51:41', 1, '2026-04-28 18:51:41'),
-(4, 115, 'COURIER', NULL, NULL, 1, '2026-04-28 18:57:46');
+(1, 1, 'OWNER', 'ADMIN', '2026-05-05 12:06:11', 1, '2026-05-05 12:06:11'),
+(1, 22, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:22'),
+(1, 23, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 24, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 25, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 26, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 27, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 28, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 29, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 30, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:23'),
+(1, 31, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 32, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 33, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 34, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 35, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 36, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 37, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:24'),
+(1, 38, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 39, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 40, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 41, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 42, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 43, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 44, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 45, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:25'),
+(1, 46, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 47, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 48, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 49, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 50, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 51, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 52, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 53, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 54, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:26'),
+(1, 55, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 56, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 57, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 58, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 59, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 60, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 61, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:27'),
+(1, 62, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 63, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 64, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 65, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 66, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 67, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 68, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 69, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 70, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:28'),
+(1, 71, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 72, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 73, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 74, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 75, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 76, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 77, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 78, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:29'),
+(1, 79, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 80, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 81, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 82, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 83, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 84, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 85, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 86, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:30'),
+(1, 87, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 88, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 89, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 90, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 91, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 92, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 93, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 94, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:31'),
+(1, 95, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 96, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 97, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 98, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 99, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 100, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 101, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 102, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 103, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:32'),
+(1, 104, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 105, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 106, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 107, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 108, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 109, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 110, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 111, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:33'),
+(1, 112, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 113, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 114, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 115, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 116, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 117, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 118, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 119, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:34'),
+(1, 120, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 121, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 122, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 123, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 124, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 125, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 126, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 127, 'CLIENT', NULL, NULL, 1, '2026-05-05 12:18:35'),
+(1, 128, 'COURIER', NULL, NULL, 1, '2026-05-05 18:56:07');
 
 -- --------------------------------------------------------
 
@@ -399,10 +386,9 @@ CREATE TABLE `courier` (
 --
 
 INSERT INTO `courier` (`id_Courier`, `name`, `contactPhone`, `deliveryTermDays`, `deliveryPrice`, `type`, `fk_Companyid_Company`) VALUES
-(1, 'Demo Kurjeris', '123456789', 3, 5, 'CUSTOM', NULL),
-(2, 'DPD Paštomatas', NULL, 2, 3.5, 'DPD_PARCEL', NULL),
-(3, 'DPD Kurjeris', NULL, 1, 5, 'DPD_HOME', NULL),
-(6, 'Varlė Kurjeris', '+37060000000', 3, 4.99, 'CUSTOM', 4);
+(1, 'DPD Paštomatas', NULL, 2, 3.5, 'DPD_PARCEL', NULL),
+(2, 'DPD Kurjeris', NULL, 1, 5, 'DPD_HOME', NULL),
+(3, 'Įmonės Kurjeris', '+37060000000', 3, 5, 'CUSTOM', 1);
 
 -- --------------------------------------------------------
 
@@ -426,33 +412,6 @@ CREATE TABLE `invoice` (
   `fk_Ordersid_Orders` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `invoice`
---
-
-INSERT INTO `invoice` (`id_Invoice`, `invoiceNumber`, `date`, `dueDate`, `total`, `vatTotal`, `isPaid`, `paidAt`, `notes`, `fileUrl`, `emailSent`, `emailSentAt`, `fk_Ordersid_Orders`) VALUES
-(1, 'INV-1-69-20260411', '2026-04-11 11:18:52', '2026-05-11 11:18:52', 418.37, 10.964273039999998, 0, NULL, NULL, '/invoices/69/invoice_69.pdf', 0, NULL, 69),
-(10, 'INV-1-70-20260411', '2026-04-11 13:08:22', '2026-05-11 13:08:22', 1048.65, 48.93349335, 0, NULL, NULL, '/invoices/70/invoice_70.pdf', 0, NULL, 70),
-(12, 'INV-1-72-20260411', '2026-04-11 15:48:23', '2026-05-11 15:48:23', 714.78, 8.8158, 0, NULL, NULL, '/invoices/72/invoice_72.pdf', 0, NULL, 72),
-(14, 'INV-1-73-20260411', '2026-04-11 16:11:35', '2026-05-11 16:11:35', 47.15, 8.1837, 0, NULL, NULL, '/invoices/73/invoice_73.pdf', 0, NULL, 73),
-(15, 'INV-1-75-20260416', '2026-04-16 06:06:23', '2026-05-16 06:06:23', 15.72, 2.7279, 0, NULL, NULL, '/invoices/75/invoice_75.pdf', 0, NULL, 75),
-(16, 'INV-1-77-20260428', '2026-04-28 11:29:54', '2026-05-28 11:29:54', 587.82, 102.01799999999999, 0, NULL, NULL, '/invoices/77/invoice_77.pdf', 0, NULL, 77),
-(17, 'INV-1-78-20260428', '2026-04-28 15:27:08', '2026-05-28 15:27:08', 461.93, 80.1696, 0, NULL, NULL, '/invoices/78/invoice_78.pdf', 0, NULL, 78),
-(18, 'INV-1-53-20260429', '2026-04-29 09:53:16', '2026-05-29 09:53:16', 123.99, 21.518700000000003, 0, NULL, NULL, '/invoices/53/invoice_53.pdf', 0, NULL, 53),
-(19, 'INV-1-50-20260429', '2026-04-29 09:53:34', '2026-05-29 09:53:34', 507.17, 88.02149999999999, 0, NULL, NULL, '/invoices/50/invoice_50.pdf', 0, NULL, 50),
-(20, 'INV-1-51-20260429', '2026-04-29 09:53:59', '2026-05-29 09:53:59', 23.99, 4.1643, 0, NULL, NULL, '/invoices/51/invoice_51.pdf', 0, NULL, 51),
-(21, 'INV-1-81-20260429', '2026-04-29 10:38:57', '2026-05-29 10:38:57', 109.32, 18.9735, 0, NULL, NULL, '/invoices/81/invoice_81.pdf', 0, NULL, 81),
-(22, 'INV-1-80-20260429', '2026-04-29 10:40:01', '2026-05-29 10:40:01', 110.99, 19.2633, 0, NULL, NULL, '/invoices/80/invoice_80.pdf', 0, NULL, 80),
-(23, 'INV-1-79-20260429', '2026-04-29 12:00:32', '2026-05-29 12:00:32', 507.17, 88.02149999999999, 0, NULL, NULL, '/invoices/79/invoice_79.pdf', 0, NULL, 79),
-(24, 'INV-1-63-20260429', '2026-04-29 12:02:08', '2026-05-29 12:02:08', 88.98, 15.443399999999999, 0, NULL, NULL, '/invoices/63/invoice_63.pdf', 0, NULL, 63),
-(25, 'INV-1-1-20260429', '2026-04-29 12:02:46', '2026-05-29 12:02:46', 48.99, 8.5029, 0, NULL, NULL, '/invoices/1/invoice_1.pdf', 0, NULL, 1),
-(26, 'INV-1-62-20260429', '2026-04-29 12:08:43', '2026-05-29 12:08:43', 51.93, 9.0132, 0, NULL, NULL, '/invoices/62/invoice_62.pdf', 0, NULL, 62),
-(27, 'INV-1-83-20260429', '2026-04-29 12:26:20', '2026-05-29 12:26:20', 109.4, 18.9861, 0, NULL, NULL, '/invoices/83/invoice_83.pdf', 0, NULL, 83),
-(28, 'INV-1-82-20260429', '2026-04-29 12:29:29', '2026-05-29 12:29:29', 24.03, 4.170599999999999, 0, NULL, NULL, '/invoices/82/invoice_82.pdf', 0, NULL, 82),
-(29, 'INV-1-88-20260429', '2026-04-29 12:30:15', '2026-05-29 12:30:15', 109.32, 18.9735, 0, NULL, NULL, '/invoices/88/invoice_88.pdf', 0, NULL, 88),
-(30, 'INV-1-85-20260429', '2026-04-29 12:31:20', '2026-05-29 12:31:20', 536.04, 93.03209999999999, 0, NULL, NULL, '/invoices/85/invoice_85.pdf', 0, NULL, 85),
-(31, 'INV-1-89-20260429', '2026-04-29 14:42:26', '2026-05-29 14:42:26', 137.86, 23.925299999999996, 0, NULL, NULL, '/invoices/89/invoice_89.pdf', 0, NULL, 89);
-
 -- --------------------------------------------------------
 
 --
@@ -474,100 +433,6 @@ CREATE TABLE `notification` (
   `visibleToClient` tinyint(1) NOT NULL DEFAULT 1,
   `visibleToCompany` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `notification`
---
-
-INSERT INTO `notification` (`id_Notification`, `theme`, `content`, `date`, `isRead`, `type`, `referenceId`, `referenceType`, `emailSent`, `fk_Companyid_Company`, `fk_Usersid_Users`, `visibleToClient`, `visibleToCompany`) VALUES
-(1, 'Užsakymas vykdomas 🛠️', 'Jūsų užsakymas #69 yra pradėtas vykdyti. Kai tik bus paruoštas, informuosime apie išsiuntimą.', '2026-04-11 11:18:52', 1, 'ORDER', 69, 'ORDER', 1, NULL, 2, 1, 0),
-(2, 'Siunta sukurta 📋', 'Jūsų siunta #83 buvo sėkmingai sukurta. Sekimo numeris(-iai): 99991000097572, 99991000097573, 99991000097574.', '2026-04-11 11:21:36', 1, 'SHIPMENT', 83, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(3, 'Siunta keliauja pas jus 🚚', 'Jūsų užsakymas keliauja į jūsų namus. Sekimo numeris(-iai): 99991000097572, 99991000097573, 99991000097574.', '2026-04-11 11:24:31', 1, 'SHIPMENT', 83, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(4, 'Siunta vežama', 'Jūsų užsakymas keliauja į jūsų namus. Sekimo nr.: 99991000097572, 99991000097573, 99991000097574.', '2026-04-11 11:35:22', 1, 'SHIPMENT', 83, 'SHIPMENT', 1, 1, 2, 1, 0),
-(5, 'Siunta vėluoja', 'Siunta #83 vėluoja. Susisiekite su kurjeriu dėl detalių.', '2026-04-11 12:26:36', 1, 'SHIPMENT', 83, 'SHIPMENT', 1, 1, 2, 1, 0),
-(6, 'Siunta pristatyta', 'Siunta #83 sėkmingai pristatyta. Ačiū!', '2026-04-11 12:27:37', 1, 'SHIPMENT', 83, 'SHIPMENT', 1, 1, 2, 1, 0),
-(7, 'Grąžinimas vertinamas', 'Grąžinimo užklausa #9 šiuo metu peržiūrima.', '2026-04-11 12:30:17', 1, 'RETURN', 9, 'RETURN', 1, 1, 2, 1, 0),
-(8, 'Grąžinimo etiketė paruošta', 'Grąžinimo etiketė (#9) paruošta. Prisijunkite ir atsisiųskite.', '2026-04-11 12:30:40', 1, 'RETURN', 9, 'RETURN', 1, 1, 2, 1, 0),
-(9, 'Grąžinimas vežamas', 'Grąžinimo siunta #84 pakeliui atgal.', '2026-04-11 12:32:51', 1, 'SHIPMENT', 84, 'SHIPMENT', 0, 1, 2, 1, 0),
-(10, 'Grąžinimas pristatytas', 'Grąžinimo siunta #84 sėkmingai pristatyta.', '2026-04-11 12:33:24', 1, 'SHIPMENT', 84, 'SHIPMENT', 0, 1, 2, 1, 0),
-(11, 'Užsakymas vykdomas', 'Jūsų užsakymas #70 pradėtas vykdyti.', '2026-04-11 13:08:22', 1, 'ORDER', 70, 'ORDER', 1, NULL, 2, 1, 0),
-(12, 'Siunta sukurta', 'Siunta #85 sukurta.', '2026-04-11 13:10:00', 1, 'SHIPMENT', 85, 'SHIPMENT', 1, 1, 2, 1, 1),
-(13, 'Siunta vežama', 'Siunta pakeliui.', '2026-04-11 13:12:46', 1, 'SHIPMENT', 85, 'SHIPMENT', 1, 1, 2, 1, 1),
-(14, 'Siunta vėluoja', 'Siunta vėluoja.', '2026-04-11 13:13:00', 1, 'SHIPMENT', 85, 'SHIPMENT', 1, 1, 2, 1, 1),
-(15, 'Siunta pristatyta', 'Siunta pristatyta.', '2026-04-11 13:13:15', 1, 'SHIPMENT', 85, 'SHIPMENT', 1, 1, 2, 1, 1),
-(16, 'Grąžinimas vertinamas', 'Grąžinimas vertinamas.', '2026-04-11 13:15:48', 1, 'RETURN', 10, 'RETURN', 1, NULL, 2, 1, 0),
-(17, 'Etiketė paruošta', 'Atsisiųskite etiketę.', '2026-04-11 13:16:13', 1, 'RETURN', 10, 'RETURN', 1, NULL, 2, 1, 0),
-(18, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #86 atnaujinta.', '2026-04-11 13:17:42', 1, 'SHIPMENT', 86, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(19, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #86 atnaujinta.', '2026-04-11 13:18:25', 1, 'SHIPMENT', 86, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(20, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #86 atnaujinta.', '2026-04-11 13:51:28', 1, 'SHIPMENT', 86, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(21, 'Užsakymas vykdomas', 'Jūsų užsakymas #71 pradėtas vykdyti.', '2026-04-11 13:52:57', 1, 'ORDER', 71, 'ORDER', 1, NULL, 2, 1, 0),
-(22, 'Siunta sukurta', 'Siunta #87 sukurta. Jos būseną galite sekti <a href=\'http://localhost:3000/client\'>čia</a> Sekimo numeris: PKG-1-71-1775915844-6184.', '2026-04-11 13:57:25', 1, 'SHIPMENT', 87, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(23, 'Siunta vežama', 'Siunta pakeliui. Jos būseną galite sekti <a href=\'http://localhost:3000/client\'>čia</a>. Sekimo numeris: PKG-1-71-1775915844-6184.', '2026-04-11 13:58:54', 1, 'SHIPMENT', 87, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(24, 'Siunta vėluoja', 'Siunta vėluoja. Atsiprašome už nepatogumus, dirbame, kad ji pasiektų jus kuo greičiau.', '2026-04-11 13:59:58', 1, 'SHIPMENT', 87, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(25, 'Siunta pristatyta', 'Siunta pristatyta. Ačiū, kad naudojatės mūsų paslaugomis!', '2026-04-11 14:00:21', 1, 'SHIPMENT', 87, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(26, 'Grąžinimas vertinamas', 'Grąžinimas #11 vertinamas. Laukiame įvertinimo rezultatų.', '2026-04-11 14:01:29', 1, 'RETURN', 11, 'RETURN', 1, NULL, 2, 1, 0),
-(27, 'Etiketė paruošta', 'Atsisiųskite etiketę ir grąžinkite prekę naudodami šią etiketę. Etiketė prisegta prie šio pranešimo.', '2026-04-11 14:02:08', 1, 'RETURN', 11, 'RETURN', 1, NULL, 2, 1, 0),
-(28, 'Užsakymas vykdomas', 'Jūsų užsakymas #72 pradėtas vykdyti.', '2026-04-11 15:48:23', 1, 'ORDER', 72, 'ORDER', 1, NULL, 2, 1, 0),
-(29, 'Siunta sukurta', 'Siunta #89 sukurta. Jos būseną galite sekti <a href=\'http://localhost:3000/client\'>čia</a> Sekimo numeris: PKG-1-72-1775922540-9910.', '2026-04-11 15:49:00', 1, 'SHIPMENT', 89, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(30, 'Siunta vežama', 'Siunta pakeliui. Jos būseną galite sekti <a href=\'http://localhost:3000/client\'>čia</a>. Sekimo numeris: PKG-1-72-1775922540-9910.', '2026-04-11 15:50:11', 1, 'SHIPMENT', 89, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(31, 'Siunta pristatyta', 'Siunta pristatyta. Ačiū, kad naudojatės mūsų paslaugomis!', '2026-04-11 15:50:55', 1, 'SHIPMENT', 89, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(32, 'Grąžinimas vertinamas', 'Grąžinimas #12 vertinamas. Laukiame įvertinimo rezultatų.', '2026-04-11 15:52:27', 1, 'RETURN', 12, 'RETURN', 1, NULL, 2, 1, 0),
-(33, 'Etiketė paruošta', 'Atsisiųskite etiketę ir grąžinkite prekę naudodami šią etiketę. Etiketė prisegta prie šio pranešimo.', '2026-04-11 15:54:20', 1, 'RETURN', 12, 'RETURN', 1, NULL, 2, 1, 0),
-(34, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #90 atnaujinta.', '2026-04-11 15:55:50', 1, 'SHIPMENT', 90, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(35, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #90 atnaujinta.', '2026-04-11 15:56:10', 1, 'SHIPMENT', 90, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(36, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-11 16:05:33', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(37, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-11 16:08:23', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(38, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-11 16:09:03', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(39, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-11 16:10:00', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(40, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-11 16:11:35', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(41, 'Užsakymas įvykdytas', 'Užsakymas #73 pristatytas.', '2026-04-11 16:23:06', 1, 'ORDER', 73, 'ORDER', 0, NULL, 2, 1, 0),
-(42, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-11 16:24:04', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(43, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-14 12:13:34', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(44, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-14 12:14:49', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(45, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-14 12:22:16', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(46, 'Siunta sukurta', 'Siunta #91 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-73-1776266080-7165<br/>• PKG-1-73-1776266081-9659.', '2026-04-15 15:14:41', 1, 'SHIPMENT', 91, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(47, 'Siunta sukurta', 'Siunta #92 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-73-1776266298-4494<br/>• PKG-1-73-1776266298-5110.', '2026-04-15 15:18:18', 1, 'SHIPMENT', 92, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(48, 'Siunta sukurta', 'Siunta #93 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-73-1776267114-8804<br/>• PKG-1-73-1776267114-5005.', '2026-04-15 15:31:55', 1, 'SHIPMENT', 93, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(49, 'Siunta sukurta', 'Siunta #94 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-73-1776267622-3284.', '2026-04-15 15:40:22', 1, 'SHIPMENT', 94, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(50, 'Siunta sukurta', 'Siunta #95 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-75-1776278982-8047.', '2026-04-15 18:49:43', 0, 'SHIPMENT', 95, 'SHIPMENT', 0, NULL, 3, 1, 0),
-(51, 'Užsakymas vykdomas', 'Jūsų užsakymas #73 pradėtas vykdyti.', '2026-04-16 05:59:45', 1, 'ORDER', 73, 'ORDER', 1, NULL, 2, 1, 0),
-(52, 'Siunta sukurta', 'Siunta #96 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-73-1776319313-6783.', '2026-04-16 06:01:53', 0, 'SHIPMENT', 96, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(53, 'Siunta vežama', 'Siunta pakeliui. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-73-1776319313-6783.', '2026-04-16 06:02:30', 1, 'SHIPMENT', 96, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(54, 'Grąžinimas vertinamas', 'Grąžinimas #13 vertinamas. Laukiame įvertinimo rezultatų.', '2026-04-16 06:04:08', 0, 'RETURN', 13, 'RETURN', 1, NULL, 2, 1, 0),
-(55, 'Etiketė paruošta', 'Atsisiųskite etiketę ir grąžinkite prekę naudodami šią etiketę. Etiketė prisegta prie šio pranešimo.', '2026-04-16 06:04:23', 0, 'RETURN', 13, 'RETURN', 1, NULL, 2, 1, 0),
-(56, 'Siunta sukurta', 'Siunta #98 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: 99991000097576.', '2026-04-16 06:05:58', 1, 'SHIPMENT', 98, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(57, 'Užsakymas vykdomas', 'Jūsų užsakymas #75 pradėtas vykdyti.', '2026-04-16 06:06:23', 1, 'ORDER', 75, 'ORDER', 1, NULL, 2, 1, 0),
-(58, 'Siunta sukurta', 'Siunta #99 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-75-1776319636-7758.', '2026-04-16 06:07:16', 0, 'SHIPMENT', 99, 'SHIPMENT', 0, NULL, 2, 1, 0),
-(59, 'Siunta vežama', 'Siunta pakeliui. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-75-1776319636-7758.', '2026-04-16 06:07:24', 0, 'SHIPMENT', 99, 'SHIPMENT', 1, NULL, 2, 1, 0),
-(60, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #81 atnaujinta.', '2026-04-16 06:09:09', 1, 'SHIPMENT', 81, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(61, 'Grąžinimo siuntos būsena', 'Grąžinimo siunta #81 atnaujinta.', '2026-04-16 06:09:14', 1, 'SHIPMENT', 81, 'SHIPMENT', 0, 1, NULL, 0, 1),
-(62, 'Siunta sukurta', 'Siunta #100 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-77-1777375753-4550<br/>• PKG-1-77-1777375754-4380.', '2026-04-28 11:29:14', 1, 'SHIPMENT', 100, 'SHIPMENT', 0, NULL, 114, 1, 0),
-(63, 'Užsakymas vykdomas', 'Jūsų užsakymas #77 pradėtas vykdyti.', '2026-04-28 11:29:54', 0, 'ORDER', 77, 'ORDER', 1, NULL, 114, 1, 0),
-(64, 'Siunta vežama', 'Siunta pakeliui. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-77-1777375753-4550<br/>• PKG-1-77-1777375754-4380.', '2026-04-28 13:12:01', 0, 'SHIPMENT', 100, 'SHIPMENT', 1, NULL, 114, 1, 0),
-(65, 'Siunta pristatyta', 'Siunta pristatyta. Ačiū, kad naudojatės mūsų paslaugomis!', '2026-04-28 13:13:14', 0, 'SHIPMENT', 100, 'SHIPMENT', 1, NULL, 114, 1, 0),
-(66, 'Užsakymas vykdomas', 'Jūsų užsakymas #78 pradėtas vykdyti.', '2026-04-28 15:27:08', 0, 'ORDER', 78, 'ORDER', 1, NULL, 114, 1, 0),
-(67, 'Siunta sukurta', 'Siunta #101 sukurta. Jos būseną galite sekti mūsų svetainėje. Sekimo numeris: PKG-1-78-1777390632-6816<br/>• PKG-1-78-1777390632-1468.', '2026-04-28 15:37:12', 0, 'SHIPMENT', 101, 'SHIPMENT', 0, NULL, 114, 1, 0),
-(68, 'Grąžinimas vertinamas', 'Grąžinimas #14 vertinamas. Laukiame įvertinimo rezultatų.', '2026-04-28 15:39:12', 0, 'RETURN', 14, 'RETURN', 1, NULL, 114, 1, 0),
-(69, 'Etiketė paruošta', 'Atsisiųskite etiketę ir grąžinkite prekę naudodami šią etiketę. Etiketė prisegta prie šio pranešimo.', '2026-04-28 15:42:39', 0, 'RETURN', 14, 'RETURN', 1, NULL, 114, 1, 0),
-(70, 'Užsakymas vykdomas', 'Jūsų užsakymas #53 pradėtas vykdyti.', '2026-04-29 09:53:16', 0, 'ORDER', 53, 'ORDER', 1, NULL, 106, 1, 0),
-(71, 'Užsakymas vykdomas', 'Jūsų užsakymas #50 pradėtas vykdyti.', '2026-04-29 09:53:34', 0, 'ORDER', 50, 'ORDER', 1, NULL, 103, 1, 0),
-(72, 'Užsakymas vykdomas', 'Jūsų užsakymas #51 pradėtas vykdyti.', '2026-04-29 09:53:59', 0, 'ORDER', 51, 'ORDER', 1, NULL, 104, 1, 0),
-(73, 'Užsakymas vykdomas', 'Jūsų užsakymas #81 pradėtas vykdyti.', '2026-04-29 10:38:57', 0, 'ORDER', 81, 'ORDER', 1, NULL, 106, 1, 0),
-(74, 'Užsakymas vykdomas', 'Jūsų užsakymas #81 pradėtas vykdyti.', '2026-04-29 10:39:37', 0, 'ORDER', 81, 'ORDER', 1, NULL, 106, 1, 0),
-(75, 'Užsakymas vykdomas', 'Jūsų užsakymas #80 pradėtas vykdyti.', '2026-04-29 10:40:01', 0, 'ORDER', 80, 'ORDER', 1, NULL, 104, 1, 0),
-(76, 'Užsakymas vykdomas', 'Jūsų užsakymas #79 pradėtas vykdyti.', '2026-04-29 12:00:32', 0, 'ORDER', 79, 'ORDER', 1, NULL, 103, 1, 0),
-(77, 'Užsakymas vykdomas', 'Jūsų užsakymas #80 pradėtas vykdyti.', '2026-04-29 12:01:17', 0, 'ORDER', 80, 'ORDER', 1, NULL, 104, 1, 0),
-(78, 'Užsakymas vykdomas', 'Jūsų užsakymas #63 pradėtas vykdyti.', '2026-04-29 12:02:08', 0, 'ORDER', 63, 'ORDER', 1, NULL, 109, 1, 0),
-(79, 'Užsakymas vykdomas', 'Jūsų užsakymas #1 pradėtas vykdyti.', '2026-04-29 12:02:46', 0, 'ORDER', 1, 'ORDER', 1, NULL, 12, 1, 0),
-(80, 'Užsakymas vykdomas', 'Jūsų užsakymas #62 pradėtas vykdyti.', '2026-04-29 12:08:43', 0, 'ORDER', 62, 'ORDER', 1, NULL, 108, 1, 0),
-(81, 'Užsakymas vykdomas', 'Jūsų užsakymas #83 pradėtas vykdyti.', '2026-04-29 12:26:20', 0, 'ORDER', 83, 'ORDER', 1, NULL, 106, 1, 0),
-(82, 'Užsakymas vykdomas', 'Jūsų užsakymas #82 pradėtas vykdyti.', '2026-04-29 12:29:29', 0, 'ORDER', 82, 'ORDER', 1, NULL, 104, 1, 0),
-(83, 'Užsakymas vykdomas', 'Jūsų užsakymas #88 pradėtas vykdyti.', '2026-04-29 12:30:15', 0, 'ORDER', 88, 'ORDER', 1, NULL, 106, 1, 0),
-(84, 'Užsakymas vykdomas', 'Jūsų užsakymas #85 pradėtas vykdyti.', '2026-04-29 12:31:20', 0, 'ORDER', 85, 'ORDER', 1, NULL, 103, 1, 0),
-(85, 'Patvirtinkite pristatymo duomenis', 'Jūsų užsakymas #89 gautas! Prašome patvirtinti pristatymo adresą ir pasirinkti pristatymo būdą paspaudę mygtuką žemiau.', '2026-04-29 13:36:10', 1, 'ORDER', 89, 'ORDER', 1, NULL, 2, 1, 0),
-(86, 'Patvirtinkite pristatymo duomenis', 'Jūsų užsakymas #89 gautas! Prašome patvirtinti pristatymo adresą ir pasirinkti pristatymo būdą paspaudę mygtuką žemiau.', '2026-04-29 13:40:01', 0, 'ORDER', 89, 'ORDER', 1, NULL, 2, 1, 0),
-(87, 'Patvirtinkite pristatymo duomenis', 'Jūsų užsakymas #89 gautas! Prašome patvirtinti pristatymo adresą ir pasirinkti pristatymo būdą paspaudę mygtuką žemiau.', '2026-04-29 14:42:07', 0, 'ORDER', 89, 'ORDER', 1, NULL, 2, 1, 0),
-(88, 'Užsakymas vykdomas', 'Jūsų užsakymas #89 pradėtas vykdyti.', '2026-04-29 14:42:26', 0, 'ORDER', 89, 'ORDER', 1, NULL, 2, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -603,91 +468,63 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id_Orders`, `OrdersDate`, `totalAmount`, `paymentMethod`, `deliveryPrice`, `status`, `fk_Clientid_Users`, `externalDocumentId`, `fk_Companyid_Company`, `snapshotDeliveryAddress`, `snapshotCity`, `snapshotCountry`, `snapshotPhone`, `snapshotCourierId`, `snapshotDeliveryMethod`, `snapshotLockerId`, `snapshotLockerName`, `snapshotLockerAddress`, `snapshotLat`, `snapshotLng`) VALUES
-(1, '2023-05-03 00:00:00', 48.99, 'butent', 0, 4, 12, NULL, 1, '', 'Kaunas', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(2, '2023-05-11 00:00:00', 10, 'butent', 0, 4, 13, 6, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, '2023-05-12 00:00:00', 700, 'butent', 0, 4, 14, 7, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, '2023-05-12 00:00:00', 5710.06, 'butent', 0, 4, 15, 8, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, '2023-05-15 00:00:00', 1368.5, 'butent', 0, 4, 16, 9, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, '2023-05-17 00:00:00', 2212.92, 'butent', 0, 4, 15, 10, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, '2023-05-17 00:00:00', 30, 'butent', 0, 4, 17, 11, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, '2023-05-19 00:00:00', 19, 'butent', 0, 4, 18, 12, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, '2023-05-19 00:00:00', 189.97, 'butent', 0, 4, 19, 13, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, '2023-05-30 00:00:00', 40, 'butent', 0, 4, 20, 14, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, '2023-05-30 00:00:00', 20, 'butent', 0, 4, 21, 15, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, '2023-05-30 00:00:00', 53, 'butent', 0, 4, 22, 16, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, '2023-06-01 00:00:00', 60, 'butent', 0, 4, 24, 17, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, '2023-06-02 00:00:00', 20, 'butent', 0, 4, 34, 29, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, '2023-06-07 00:00:00', 45, 'butent', 0, 4, 35, 30, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, '2023-06-09 00:00:00', 70, 'butent', 0, 4, 36, 31, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, '2023-06-16 00:00:00', 65, 'butent', 0, 4, 44, 45, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, '2023-06-13 00:00:00', 10, 'butent', 0, 4, 45, 46, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, '2023-06-02 00:00:00', 701.8, 'butent', 0, 4, 46, 47, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, '2023-06-30 00:00:00', 70, 'butent', 0, 4, 47, 48, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, '2023-06-22 00:00:00', 17, 'butent', 0, 4, 48, 49, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, '2023-07-10 00:00:00', 20, 'butent', 0, 4, 49, 50, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, '2023-07-14 00:00:00', 1300, 'butent', 0, 4, 51, 52, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, '2023-06-22 00:00:00', 19.99, 'butent', 0, 4, 52, 53, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, '2023-06-23 00:00:00', 30, 'butent', 0, 4, 53, 54, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, '2023-06-23 00:00:00', 50, 'butent', 0, 4, 54, 55, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, '2023-06-24 00:00:00', 16.5, 'butent', 0, 4, 55, 56, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(28, '2023-06-26 00:00:00', 84.3, 'butent', 0, 4, 56, 57, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(29, '2023-06-26 00:00:00', 59, 'butent', 0, 4, 57, 58, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(30, '2023-06-26 00:00:00', 21, 'butent', 0, 4, 58, 59, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(31, '2023-06-26 00:00:00', 13, 'butent', 0, 4, 59, 60, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(32, '2023-06-27 00:00:00', 14, 'butent', 0, 4, 60, 61, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(33, '2023-06-27 00:00:00', 20.5, 'butent', 0, 4, 61, 62, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(34, '2023-06-28 00:00:00', 15, 'butent', 0, 4, 62, 63, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(35, '2023-06-28 00:00:00', 49, 'butent', 0, 4, 63, 64, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(36, '2023-06-29 00:00:00', 22, 'butent', 0, 4, 64, 65, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(37, '2023-06-28 00:00:00', 20, 'butent', 0, 4, 65, 66, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, '2023-06-30 00:00:00', 12.89, 'butent', 0, 4, 66, 67, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(39, '2023-07-21 00:00:00', 65, 'butent', 0, 4, 76, 98, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(40, '2023-07-20 00:00:00', 50, 'butent', 0, 4, 77, 101, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(41, '2023-07-21 00:00:00', 400, 'butent', 0, 4, 78, 103, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(42, '2023-07-21 00:00:00', 170, 'butent', 0, 4, 79, 104, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(43, '2023-07-21 00:00:00', 20, 'butent', 0, 4, 80, 105, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(44, '2023-07-27 00:00:00', 13, 'butent', 0, 4, 82, 111, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(45, '2023-07-27 00:00:00', 650, 'butent', 0, 4, 83, 112, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(46, '2023-07-31 00:00:00', 17, 'butent', 0, 4, 84, 113, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(47, '2023-07-31 00:00:00', 17, 'butent', 0, 4, 91, 133, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(48, '2023-08-21 00:00:00', 58, 'butent', 0, 4, 95, 137, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(49, '2025-11-03 00:00:00', 123.99, 'butent', 0, 4, 102, 146, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(50, '2025-11-03 00:00:00', 507.17, 'butent', 0, 4, 103, NULL, 1, 'Klientas Nr. 101 adresas gal', 'Kaunas', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(51, '2025-11-03 00:00:00', 23.99, 'butent', 0, 4, 104, NULL, 1, 'Klientas Nr. 102 adresas', 'taip', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(52, '2025-11-03 00:00:00', 105.36, 'butent', 0, 4, 105, 149, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(53, '2025-11-03 00:00:00', 123.99, 'butent', 0, 4, 106, NULL, 1, 'Klientas Nr. 104 adresasadfadf', 'adg', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(54, '2025-11-03 00:00:00', 23.18, 'butent', 0, 4, 107, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(55, '2025-11-03 00:00:00', 51.93, 'butent', 0, 4, 108, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(56, '2025-11-03 00:00:00', 38.99, 'butent', 0, 3, 109, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(58, '2026-03-09 00:00:00', 36.28, '2123', 5, 3, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(59, '2026-03-12 00:00:00', 121, 'butent', 0, 3, 102, 154, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(60, '2026-03-16 00:00:00', 14.52, '123', 0, 4, 110, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(61, '2025-11-03 00:00:00', 23.18, 'butent', 0, 4, 107, 151, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(62, '2025-11-03 00:00:00', 51.93, 'butent', 0, 4, 108, NULL, 1, 'Klientas Nr. 106 adresas', '', 'Prancūzijos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(63, '2025-11-03 00:00:00', 88.98, 'butent', 0, 4, 109, NULL, 1, 'Klientas Nr. 107 adresas', '', '', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(64, '2026-04-01 00:00:00', 14.51, '', 0, 3, 12, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(65, '2026-04-01 00:00:00', 186.23, '', 0, 3, 12, NULL, 1, 'Klientas 10 adresas', 'kaunas', 'lietuva', '123', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(66, '2026-04-02 00:00:00', 181.42, '', 0, 3, 12, NULL, 1, '123', 'Kaunas', 'Lietuvos Respublika', '+37063850850', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(67, '2026-04-03 00:00:00', 580.44, '', 0, 3, 12, NULL, 1, '123', 'Kaunas', 'Lietuvos Respublika', '+37063850850', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(68, '2026-04-07 00:00:00', 157.19, '', 0, 3, 12, NULL, 1, '123', 'Kaunas', 'Lietuvos Respublika', '+37063850850', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(69, '2026-04-11 00:00:00', 418.37, '', 0, 3, 2, NULL, 1, 'Studentu g 2A', 'kaunas', 'Lietuva', '+37063850850', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(70, '2026-04-11 00:00:00', 1048.65, '', 0, 3, 2, NULL, 1, 'Studentu g 2A', 'kaunas', 'Lietuva', '+37063850850', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(72, '2026-04-11 00:00:00', 714.78, '', 0, 3, 2, NULL, 1, 'Studentu g 2A', 'kaunas', 'Lietuva', '+37063850850', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(73, '2026-04-11 00:00:00', 47.15, '', 0, 5, 2, NULL, 1, 'Studentu g 2A', 'kaunas', 'Lietuva', '+37063850850', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(75, '2026-04-15 00:00:00', 15.72, '', 0, 5, 2, NULL, 1, 'Studentu g 2A', 'kaunas', 'Lietuva', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(77, '2026-04-28 00:00:00', 587.82, '', 0, 3, 114, NULL, 1, 'Vilniaus g. 2', 'Kaunas', 'Lietuva', '+37060000000', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(78, '2026-04-28 00:00:00', 461.93, '', 0, 4, 114, NULL, 1, 'Vilniaus g. 2', 'Kaunas', 'Lietuva', '+37060000000', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(79, '2025-11-03 00:00:00', 507.17, 'butent', 0, 4, 103, NULL, 1, 'Klientas Nr. 101 adresas', '', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(80, '2025-11-03 00:00:00', 100.88, 'butent', 0, 4, 104, NULL, 1, 'Klientas Nr. 102 adresas', '', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(81, '2025-11-03 00:00:00', 109.32, 'butent', 0, 4, 106, NULL, 1, 'Klientas Nr. 104 adresas', '', 'Lenkijos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(82, '2025-11-03 00:00:00', 23.99, 'butent', 0, 4, 104, 148, 1, 'Klientas Nr. 102 adresas', '', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(83, '2025-11-03 00:00:00', 109.4, 'butent', 0, 4, 106, NULL, 1, 'Klientas Nr. 104 adresas', '', 'Lenkijos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(84, '2023-05-03 00:00:00', 49, 'butent', 0, 4, 12, 5, 1, NULL, 'Kaunas', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(85, '2025-11-03 00:00:00', 507.18, 'butent', 0, 4, 103, 147, 1, 'Klientas Nr. 101 adresas', '', 'Lietuvos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(86, '2025-11-03 00:00:00', 38.35, 'butent', 0, 4, 109, 153, 1, 'Klientas Nr. 107 adresas', '', '', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(87, '2025-11-03 00:00:00', 51.51, 'butent', 0, 4, 108, 152, 1, 'Klientas Nr. 106 adresas', NULL, 'Prancūzijos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(88, '2025-11-03 00:00:00', 108.1, 'butent', 0, 4, 106, 150, 1, 'Klientas Nr. 104 adresas', '', 'Lenkijos Respublika', NULL, NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
-(89, '2026-04-29 00:00:00', 137.86, '', 0, 4, 2, NULL, 1, 'Studentu g 2A', 'kaunas', 'Lietuva', '+3706000000', 1, 'HOME', NULL, NULL, NULL, NULL, NULL);
+(1, '2026-04-05 15:13:00', 49, 'butent', 0, 1, 30, 5, 1, 'Tvirtovės al. 39', 'Kaunas', 'Lietuvos Respublika', '+37061000010', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(2, '2026-04-05 13:26:00', 10, 'butent', 0, 1, 31, 6, 1, 'Vytauto pr. 25', 'Kaunas', 'Lietuvos Respublika', '+37062000011', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(3, '2026-04-06 11:39:00', 700, 'butent', 0, 1, 32, 7, 1, 'Gedimino g. 5', 'Marijampolė', 'Lietuvos Respublika', '+37061000012', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(4, '2026-04-07 09:52:00', 5710.06, 'butent', 0, 1, 33, 8, 1, 'Jonavos g. 5', 'Kaunas', 'Lietuvos Respublika', '+37062000013', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(5, '2026-04-07 16:05:00', 1368.5, 'butent', 0, 1, 34, 9, 1, 'Perkūno al. 17', 'Kaunas', 'Lietuvos Respublika', '+37061000014', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(6, '2026-04-07 14:18:00', 2212.92, 'butent', 0, 1, 33, 10, 1, 'Jonavos g. 5', 'Kaunas', 'Lietuvos Respublika', '+37062000013', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(7, '2026-04-09 12:31:00', 30, 'butent', 0, 1, 35, 11, 1, 'Žalgirio g. 44', 'Kaunas', 'Lietuvos Respublika', '+37062000015', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(8, '2026-04-09 10:44:00', 19, 'butent', 0, 1, 36, 12, 1, 'Kalvarijų g. 8', 'Vilnius', 'Lietuvos Respublika', '+37061000016', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(9, '2026-04-10 08:57:00', 189.97, 'butent', 0, 1, 37, 13, 1, 'Ukmergės g. 55', 'Vilnius', 'Lietuvos Respublika', '+37062000017', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(10, '2026-04-11 15:10:00', 40, 'butent', 0, 1, 38, 14, 1, 'Vilijampolės g. 18', 'Kaunas', 'Lietuvos Respublika', '+37061000018', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(11, '2026-04-11 13:23:00', 20, 'butent', 0, 1, 39, 15, 1, 'Demokratų g. 28', 'Kaunas', 'Lietuvos Respublika', '+37062000019', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(12, '2026-04-11 11:36:00', 53, 'butent', 0, 1, 40, 16, 1, 'Tilžės g. 144', 'Šiauliai', 'Lietuvos Respublika', '+37061000020', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(13, '2026-04-13 09:49:00', 60, 'butent', 0, 1, 42, 17, 1, 'Kęstučio g. 22', 'Kaunas', 'Lietuvos Respublika', '+37061000022', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(14, '2026-04-13 16:02:00', 20, 'butent', 0, 1, 52, 29, 1, 'Žvėryno g. 6', 'Kaunas', 'Lietuvos Respublika', '+37061000032', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(15, '2026-04-14 14:15:00', 45, 'butent', 0, 1, 53, 30, 1, 'Naugarduko g. 48', 'Vilnius', 'Lietuvos Respublika', '+37062000033', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(16, '2026-04-15 12:28:00', 70, 'butent', 0, 1, 54, 31, 1, 'Ozo g. 25', 'Vilnius', 'Lietuvos Respublika', '+37061000034', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(17, '2026-04-15 10:41:00', 65, 'butent', 0, 1, 62, 45, 1, 'Liepkalnio g. 72', 'Vilnius', 'Lietuvos Respublika', '+37061000042', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(18, '2026-04-15 08:54:00', 10, 'butent', 0, 1, 63, 46, 1, 'Pramonės pr. 6', 'Kaunas', 'Lietuvos Respublika', '+37062000043', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(19, '2026-04-17 15:07:00', 701.8, 'butent', 0, 1, 64, 47, 1, 'Viršuliškių g. 40', 'Kaunas', 'Lietuvos Respublika', '+37061000044', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(20, '2026-04-17 13:20:00', 70, 'butent', 0, 1, 65, 48, 1, 'Kęstučio g. 3', 'Raseiniai', 'Lietuvos Respublika', '+37062000045', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(21, '2026-04-18 11:33:00', 17, 'butent', 0, 1, 66, 49, 1, 'Triq il-Vittorja 8', 'Valletta', 'Maltos Respublika', '+37061000046', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(22, '2026-04-19 09:46:00', 20, 'butent', 0, 1, 67, 50, 1, 'Šiaurės g. 22', 'Kaunas', 'Lietuvos Respublika', '+37062000047', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(23, '2026-04-19 16:59:00', 1300, 'butent', 0, 1, 69, 52, 1, 'Trakų g. 15', 'Kaunas', 'Lietuvos Respublika', '+37062000049', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(24, '2026-04-19 14:12:00', 19.99, 'butent', 0, 1, 70, 53, 1, 'Triq il-Merkanti 3', 'Valletta', 'Maltos Respublika', '+37061000050', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(25, '2026-04-21 12:25:00', 30, 'butent', 0, 1, 71, 54, 1, 'Hauptstraße 42', 'Berlin', 'Vokietijos Federacinė Respublika', '+37062000051', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(26, '2026-04-21 10:38:00', 50, 'butent', 0, 1, 72, 55, 1, 'Rue de la Liberté 15', 'Paris', 'Prancūzijos Respublika', '+37061000052', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(27, '2026-04-22 08:51:00', 16.5, 'butent', 0, 1, 73, 56, 1, 'Collins Street 8', 'Melbourne', 'Australija', '+37062000053', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(28, '2026-04-23 15:04:00', 84.3, 'butent', 0, 1, 74, 57, 1, 'High Street 21', 'London', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '+37061000054', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(29, '2026-04-23 13:17:00', 59, 'butent', 0, 1, 75, 58, 1, 'Bajcsy-Zsilinszky út 10', 'Budapest', 'Vengrijos Respublika', '+37062000055', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(30, '2026-04-23 11:30:00', 21, 'butent', 0, 1, 76, 59, 1, 'O\'Connell Street 3', 'Dublin', 'Airija', '+37061000056', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(31, '2026-04-25 09:43:00', 13, 'butent', 0, 1, 77, 60, 1, 'Avenue des Champs 7', 'Lyon', 'Prancūzijos Respublika', '+37062000057', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(32, '2026-04-25 16:56:00', 14, 'butent', 0, 1, 78, 61, 1, 'Grafton Street 12', 'Dublin', 'Airija', '+37061000058', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(33, '2026-04-26 14:09:00', 20.5, 'butent', 0, 1, 79, 62, 1, 'Oxford Street 45', 'London', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '+37062000059', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(34, '2026-04-27 12:22:00', 15, 'butent', 0, 1, 80, 63, 1, 'Avenida da Liberdade 50', 'Lisbon', 'Portugalijos Respublika', '+37061000060', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(35, '2026-04-27 10:35:00', 49, 'butent', 0, 1, 81, 64, 1, 'Mannerheimintie 10', 'Helsinki', 'Suomijos Respublika', '+37062000061', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(36, '2026-04-27 08:48:00', 22, 'butent', 0, 1, 82, 65, 1, 'Gran Vía 20', 'Madrid', 'Ispanijos Karalystė', '+37061000062', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(37, '2026-04-29 15:01:00', 20, 'butent', 0, 1, 83, 66, 1, 'Friedrichstraße 30', 'Berlin', 'Vokietijos Federacinė Respublika', '+37062000063', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(38, '2026-04-29 13:14:00', 12.89, 'butent', 0, 1, 84, 67, 1, 'Baker Street 10', 'London', 'Jungt.Didž.Brit. ir Š.Airijos Karalystė', '+37061000064', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(39, '2026-04-30 11:27:00', 65, 'butent', 0, 1, 94, 98, 1, 'Šilo g. 9', 'Vilnius', 'Lietuvos Respublika', '+37061000074', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(40, '2026-04-30 09:40:00', 50, 'butent', 0, 1, 95, 101, 1, 'Sporto g. 4', 'Kaunas', 'Lietuvos Respublika', '+37062000075', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(41, '2026-05-01 16:53:00', 400, 'butent', 0, 1, 96, 103, 1, 'Taikos pr. 55', 'Šiauliai', 'Lietuvos Respublika', '+37061000076', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(42, '2026-05-01 14:06:00', 170, 'butent', 0, 1, 97, 104, 1, 'Žaliosios g. 18', 'Vilnius', 'Lietuvos Respublika', '+37062000077', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(43, '2026-05-01 12:19:00', 20, 'butent', 0, 1, 98, 105, 1, 'Dariaus ir Girėno g. 7', 'Kaunas', 'Lietuvos Respublika', '+37061000078', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(44, '2026-05-02 10:32:00', 13, 'butent', 0, 1, 100, 111, 1, 'Ramybės g. 11', 'Vilnius', 'Lietuvos Respublika', '+37061000080', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(45, '2026-05-03 08:45:00', 650, 'butent', 0, 1, 101, 112, 1, 'Uosių g. 3', 'Kaunas', 'Lietuvos Respublika', '+37062000081', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(46, '2026-05-03 15:58:00', 17, 'butent', 0, 1, 102, 113, 1, 'Kaštonų g. 14', 'Kaunas', 'Lietuvos Respublika', '+37061000082', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(47, '2026-05-03 13:11:00', 17, 'butent', 0, 1, 109, 133, 1, 'Karaliaus Mindaugo pr. 6', 'Kaunas', 'Lietuvos Respublika', '+37062000089', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(48, '2026-05-04 11:24:00', 58, 'butent', 0, 1, 113, 137, 1, 'Ąžuolų al. 4', 'Kaunas', 'Lietuvos Respublika', '+37062000093', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(49, '2026-05-04 09:37:00', 123.99, 'butent', 0, 1, 120, 146, 1, 'Calea Victoriei 15', 'Bucharest', 'Rumunija', '+37061000100', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(50, '2026-05-04 16:50:00', 507.18, 'butent', 0, 1, 121, 147, 1, 'Kairėnų g. 9', 'Kaunas', 'Lietuvos Respublika', '+37062000101', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(51, '2026-05-05 14:03:00', 23.99, 'butent', 0, 1, 122, 148, 1, 'Žemaitijos g. 6', 'Vilnius', 'Lietuvos Respublika', '+37061000102', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(52, '2026-05-05 12:16:00', 105.36, 'butent', 0, 1, 123, 149, 1, 'Elizabetes iela 10', 'Rīga', 'Latvijos Respublika', '+37062000103', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(53, '2026-05-05 10:29:00', 108.1, 'butent', 0, 1, 124, 150, 1, 'Marszałkowska 10', 'Warszawa', 'Lenkijos Respublika', '+37061000104', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(54, '2026-05-05 08:42:00', 23.18, 'butent', 0, 1, 125, 151, 1, 'Pelesos g. 5', 'Kaunas', 'Lietuvos Respublika', '+37062000105', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(55, '2026-05-05 15:55:00', 51.51, 'butent', 0, 1, 126, 152, 1, 'Rue de Rivoli 22', 'Paris', 'Prancūzijos Respublika', '+37061000106', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(56, '2026-05-05 13:08:00', 38.35, 'butent', 0, 1, 127, 153, 1, 'Unter den Linden 5', 'Berlin', 'Vokietija', '+37062000107', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL),
+(57, '2026-05-05 11:21:00', 121, 'butent', 0, 1, 120, 154, 1, 'Calea Victoriei 15', 'Bucharest', 'Rumunija', '+37061000100', NULL, 'HOME', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -709,6 +546,7 @@ CREATE TABLE `ordersproduct` (
 --
 
 INSERT INTO `ordersproduct` (`id_OrdersProduct`, `quantity`, `unitPrice`, `vatValue`, `fk_Ordersid_Orders`, `fk_Productid_Product`) VALUES
+(1, 1, 40.49, 8.5, 1, 18),
 (2, 1, 8.264, 1.74, 2, 18),
 (3, 1, 578.51, 121.49, 3, 18),
 (4, 1.08, 180, 37.8, 4, 19),
@@ -765,85 +603,22 @@ INSERT INTO `ordersproduct` (`id_OrdersProduct`, `quantity`, `unitPrice`, `vatVa
 (55, 1, 47.93, 10.07, 48, 40),
 (56, 1, 81.82, 17.18, 49, 41),
 (57, 1, 20.65, 4.34, 49, 42),
+(58, 1, 413.21, 86.77, 50, 41),
+(59, 1, 5.94, 1.25, 50, 42),
+(60, 1, 16.12, 3.39, 51, 41),
+(61, 1, 3.71, 0.78, 51, 42),
 (62, 1, 82.64, 17.35, 52, 41),
 (63, 1, 22.72, 4.77, 52, 42),
-(85, 5, 20, 4.2, 59, 26),
-(86, 1, 12, 2.52, 60, 46),
-(95, 1, 16.52, 3.47, 61, 41),
-(96, 1, 2.64, 0.55, 61, 42),
-(103, 1, 20.66, 4.3386, 56, 41),
-(104, 1, 11.56, 2.4276, 56, 42),
-(105, 1, 28.88, 6.0648, 55, 41),
-(106, 1, 14.04, 2.9484, 55, 42),
-(107, 1, 16.52, 3.4692, 54, 41),
-(108, 1, 2.64, 0.5544, 54, 42),
-(109, 1, 14.99, 3.1479, 58, 44),
-(110, 1, 14.99, 3.1479, 58, 44),
-(116, 1, 11.99, 2.5179, 64, 2),
-(118, 1, 19.99, 4.1979, 65, 9),
-(119, 6, 16.99, 3.5678999999999994, 65, 6),
-(120, 2, 15.99, 3.3579, 65, 5),
-(121, 2, 14.99, 3.1479, 66, 4),
-(122, 5, 23.99, 5.0379, 66, 13),
-(123, 10, 11.99, 2.5179, 67, 1),
-(124, 10, 12.99, 2.7279, 67, 2),
-(125, 10, 22.99, 4.8279, 67, 12),
-(126, 1, 14.99, 3.1479, 68, 4),
-(127, 5, 13.99, 2.9379, 68, 3),
-(128, 3, 14.99, 3.1479, 68, 6),
-(132, 15, 11.99, 2.5179, 69, 1),
-(133, 2, 19.99, 4.1979, 69, 9),
-(134, 7, 17.99, 3.7778999999999994, 69, 7),
-(150, 10, 14.99, 3.1479, 70, 4),
-(151, 13, 32.99, 6.9279, 70, 22),
-(152, 12, 23.99, 5.0379, 70, 13),
-(155, 12, 12.99, 2.7279, 72, 2),
-(156, 15, 28.99, 6.087899999999999, 72, 18),
-(177, 3, 12.99, 2.7279, 73, 4),
-(179, 1, 12.99, 2.7279, 75, 2),
-(183, 5, 11.99, 2.5179, 77, 1),
-(184, 13, 27.99, 5.8778999999999995, 77, 17),
-(185, 2, 30.99, 6.507899999999999, 77, 20),
-(186, 14, 12.99, 2.7279, 78, 2),
-(187, 8, 15.99, 3.3579, 78, 5),
-(188, 2, 35.99, 7.5579, 78, 25),
-(189, 3, 12.12, 2.5452, 53, 42),
-(190, 1, 49.59, 10.4139, 53, 41),
-(191, 1, 16.52, 3.4692, 53, 42),
-(192, 1, 413.21, 86.77409999999999, 50, 41),
-(193, 1, 5.94, 1.2474, 50, 42),
-(194, 1, 16.12, 3.3852, 51, 3),
-(195, 1, 3.71, 0.7791, 51, 42),
-(209, 2, 12.12, 2.5452, 81, 42),
-(210, 1, 49.59, 10.4139, 81, 41),
-(211, 1, 16.52, 3.4692, 81, 42),
-(234, 1, 413.21, 86.77409999999999, 79, 2),
-(235, 1, 5.94, 1.2474, 79, 42),
-(236, 2, 36.12, 7.5851999999999995, 80, 1),
-(237, 3, 3.71, 0.7791, 80, 42),
-(238, 3, 20.66, 4.3386, 63, 2),
-(239, 1, 11.56, 2.4276, 63, 42),
-(240, 1, 40.49, 8.5029, 1, 1),
-(241, 1, 40.49, 8.5, 84, 18),
-(244, 1, 20.66, 4.34, 86, 41),
-(245, 1, 11.56, 2.43, 86, 42),
-(246, 1, 28.88, 6.0648, 62, 1),
-(247, 1, 14.04, 2.9484, 62, 42),
-(248, 1, 28.88, 6.06, 87, 41),
-(249, 1, 14.04, 2.95, 87, 42),
-(250, 2, 12.15, 2.5515, 83, 42),
-(251, 1, 49.59, 10.4139, 83, 41),
-(252, 1, 16.52, 3.4692, 83, 42),
-(258, 1, 16.12, 3.39, 82, 41),
-(259, 1, 3.71, 0.78, 82, 42),
-(263, 2, 12.12, 2.55, 88, 42),
-(264, 1, 49.59, 10.41, 88, 41),
-(265, 1, 16.52, 3.47, 88, 42),
-(268, 1, 413.21, 86.77, 85, 41),
-(269, 1, 5.94, 1.25, 85, 42),
-(279, 1, 13.99, 2.9379, 89, 3),
-(280, 4, 15.99, 3.3579, 89, 5),
-(281, 2, 17.99, 3.7778999999999994, 89, 7);
+(64, 2, 12.12, 2.55, 53, 42),
+(65, 1, 49.59, 10.41, 53, 41),
+(66, 1, 16.52, 3.47, 53, 42),
+(67, 1, 16.52, 3.47, 54, 41),
+(68, 1, 2.64, 0.55, 54, 42),
+(69, 1, 28.88, 6.06, 55, 41),
+(70, 1, 14.04, 2.95, 55, 42),
+(71, 1, 20.66, 4.34, 56, 41),
+(72, 1, 11.56, 2.43, 56, 42),
+(73, 5, 20, 4.2, 57, 26);
 
 -- --------------------------------------------------------
 
@@ -882,50 +657,6 @@ CREATE TABLE `package` (
   `trackingNumber` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `package`
---
-
-INSERT INTO `package` (`id_Package`, `creationDate`, `labelFile`, `weight`, `fk_Shipmentid_Shipment`, `trackingNumber`) VALUES
-(59, '2026-03-27 10:52:20', '/labels/70/label_1.pdf', 12, 70, '99991000000040'),
-(60, '2026-03-27 10:52:20', '/labels/70/label_2.pdf', 12, 70, '99991000000041'),
-(61, '2026-03-27 10:53:04', '/labels/71/label_1.pdf', 12, 71, 'PKG-1-59-1774608784-1811'),
-(62, '2026-03-27 10:53:04', '/labels/71/label_2.pdf', 12, 71, 'PKG-1-59-1774608784-3942'),
-(63, '2026-04-01 12:34:29', '/labels/72/label_1.pdf', 12, 72, 'PKG-1-64-1775046868-4176'),
-(64, '2026-04-01 13:20:08', '/labels/75/label_1.pdf', 12, 75, '99991000000042'),
-(65, '2026-04-01 13:20:08', '/labels/75/label_2.pdf', 13, 75, '99991000000043'),
-(66, '2026-04-02 05:56:24', '/labels/76/label_1.pdf', 15, 76, '99991000000044'),
-(67, '2026-04-02 05:56:24', '/labels/76/label_2.pdf', 12, 76, '99991000000045'),
-(68, '2026-04-03 08:09:05', '/labels/77/label_1.pdf', 12, 77, '99991000000046'),
-(69, '2026-04-03 08:09:05', '/labels/77/label_2.pdf', 18, 77, '99991000000047'),
-(70, '2026-04-03 08:09:05', '/labels/77/label_3.pdf', 20, 77, '99991000000048'),
-(71, '2026-04-07 08:07:26', '/labels/78/label_1.pdf', 15, 78, '99991000000049'),
-(72, '2026-04-07 08:07:26', '/labels/78/label_2.pdf', 12, 78, '99991000097508'),
-(76, '2026-04-08 15:31:10', '/labels/81/label_1.pdf', 1, 81, 'RET-1-7-1775662270-3473'),
-(77, '2026-04-09 08:37:27', '/labels/82/label_1.pdf', 1, 82, '99991000097571'),
-(78, '2026-04-11 11:21:36', '/labels/83/label_1.pdf', 15, 83, '99991000097572'),
-(79, '2026-04-11 11:21:36', '/labels/83/label_2.pdf', 13, 83, '99991000097573'),
-(80, '2026-04-11 11:21:36', '/labels/83/label_3.pdf', 16, 83, '99991000097574'),
-(81, '2026-04-11 12:30:40', '/labels/84/label_1.pdf', 1, 84, 'RET-1-9-1775910640-5384'),
-(82, '2026-04-11 12:30:40', '/labels/84/label_2.pdf', 1, 84, 'RET-1-9-1775910640-4530'),
-(83, '2026-04-11 13:10:00', '/labels/85/label_1.pdf', 20, 85, 'PKG-1-70-1775913000-9634'),
-(84, '2026-04-11 13:10:00', '/labels/85/label_2.pdf', 14, 85, 'PKG-1-70-1775913000-2208'),
-(85, '2026-04-11 13:10:00', '/labels/85/label_3.pdf', 22, 85, 'PKG-1-70-1775913000-8018'),
-(86, '2026-04-11 13:16:13', '/labels/86/label_1.pdf', 1, 86, 'RET-1-10-1775913373-5530'),
-(92, '2026-04-11 15:49:00', '/labels/89/label_1.pdf', 12, 89, 'PKG-1-72-1775922540-9910'),
-(93, '2026-04-11 15:49:00', '/labels/89/label_2.pdf', 13, 89, 'PKG-1-72-1775922540-8871'),
-(94, '2026-04-11 15:54:20', '/labels/90/label_1.pdf', 1, 90, 'RET-1-12-1775922860-1400'),
-(95, '2026-04-11 15:54:20', '/labels/90/label_2.pdf', 1, 90, 'RET-1-12-1775922860-8343'),
-(104, '2026-04-16 06:01:53', '/labels/96/label_1.pdf', 12, 96, 'PKG-1-73-1776319313-6783'),
-(105, '2026-04-16 06:04:23', '/labels/97/label_1.pdf', 1, 97, '99991000097575'),
-(107, '2026-04-16 06:07:16', '/labels/99/label_1.pdf', 12, 99, 'PKG-1-75-1776319636-7758'),
-(108, '2026-04-28 11:29:14', '/labels/100/label_1.pdf', 12, 100, 'PKG-1-77-1777375753-4550'),
-(109, '2026-04-28 11:29:14', '/labels/100/label_2.pdf', 15, 100, 'PKG-1-77-1777375754-4380'),
-(110, '2026-04-28 15:37:12', '/labels/101/label_1.pdf', 12, 101, 'PKG-1-78-1777390632-6816'),
-(111, '2026-04-28 15:37:12', '/labels/101/label_2.pdf', 15, 101, 'PKG-1-78-1777390632-1468'),
-(112, '2026-04-28 15:42:39', '/labels/102/label_1.pdf', 1, 102, '99991000097577'),
-(113, '2026-04-28 15:42:39', '/labels/102/label_2.pdf', 1, 102, '99991000097578');
-
 -- --------------------------------------------------------
 
 --
@@ -953,51 +684,49 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_Product`, `name`, `description`, `price`, `currency`, `canTheProductBeProductReturned`, `countableItem`, `unit`, `shipping_mode`, `vat`, `creationDate`, `externalCode`, `fk_Companyid_Company`) VALUES
-(1, 'Prekė Nr. 1', 'asdasdas', 11.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2019-10-22 16:07:00', 1, 1),
-(2, 'Prekė Nr. 2', NULL, 12.99, 'EUR', 1, 1, 'vnt', NULL, 1, '2019-10-22 16:10:00', 2, 1),
-(3, 'Prekė Nr. 3', NULL, 13.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:08:00', 3, 1),
-(4, 'Prekė Nr. 4', NULL, 14.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:09:00', 4, 1),
-(5, 'Prekė Nr. 5', NULL, 15.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:10:00', 5, 1),
-(6, 'Prekė Nr. 6', NULL, 16.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:10:00', 6, 1),
-(7, 'Prekė Nr. 7', NULL, 17.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:10:00', 7, 1),
-(8, 'Prekė Nr. 8', NULL, 18.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:14:00', 8, 1),
-(9, 'Prekė Nr. 9', NULL, 19.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:15:00', 9, 1),
-(10, 'Prekė Nr. 10', NULL, 20.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:15:00', 10, 1),
-(11, 'Prekė Nr. 11', NULL, 21.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:15:00', 11, 1),
-(12, 'Prekė Nr. 12', 'adadfd', 22.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:16:00', 12, 1),
-(13, 'Prekė Nr. 13', NULL, 23.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-10 20:23:00', 13, 1),
-(14, 'Prekė Nr. 14', NULL, 24.99, 'EUR', 1, 1, 'vnt', NULL, 1, '2023-06-10 20:32:00', 14, 1),
-(15, 'Prekė Nr. 15', 'asdasd', 25.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:23:00', 15, 1),
-(16, 'Prekė Nr. 16', '123', 26.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:24:00', 16, 1),
-(17, 'Prekė Nr. 17', NULL, 27.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:24:00', 17, 1),
-(18, 'Prekė Nr. 18', NULL, 28.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:33:00', 18, 1),
-(19, 'Prekė Nr. 19', NULL, 29.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:41:00', 19, 1),
-(20, 'Prekė Nr. 20', NULL, 30.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:45:00', 20, 1),
-(21, 'Prekė Nr. 21', NULL, 31.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:46:00', 21, 1),
-(22, 'Prekė Nr. 22', NULL, 32.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:54:00', 22, 1),
-(23, 'Prekė Nr. 23', NULL, 33.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:55:00', 23, 1),
-(24, 'Prekė Nr. 24', NULL, 34.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:55:00', 24, 1),
-(25, 'Prekė Nr. 25', NULL, 35.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 07:29:00', 25, 1),
-(26, 'Prekė Nr. 26', NULL, 36.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 07:45:00', 26, 1),
-(27, 'Prekė Nr. 27', NULL, 37.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 19:32:00', 27, 1),
-(28, 'Prekė Nr. 28', NULL, 38.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 19:42:00', 28, 1),
-(29, 'Prekė Nr. 29', NULL, 39.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-21 19:53:00', 29, 1),
-(30, 'Prekė Nr. 30', NULL, 40.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 19:58:00', 30, 1),
-(31, 'Prekė Nr. 31', NULL, 41.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-02 21:24:00', 31, 1),
-(32, 'Prekė Nr. 32', NULL, 42.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-10 21:23:00', 32, 1),
-(33, 'Prekė Nr. 33', NULL, 43.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-10 21:28:00', 33, 1),
-(34, 'Prekė Nr. 34', NULL, 44.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-10 21:46:00', 34, 1),
-(35, 'Prekė Nr. 35', NULL, 45.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-13 22:33:00', 35, 1),
-(36, 'Prekė Nr. 36', NULL, 46.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-17 20:02:00', 36, 1),
-(37, 'Prekė Nr. 37', NULL, 47.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-19 21:27:00', 37, 1),
-(38, 'Prekė Nr. 38', NULL, 48.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-19 21:37:00', 38, 1),
-(39, 'Prekė Nr. 39', NULL, 49.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-19 21:38:00', 39, 1),
-(40, 'Prekė Nr. 40', NULL, 50.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-21 18:03:00', 40, 1),
-(41, 'Prekė Nr. 41', NULL, 51.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-08-17 12:07:00', 41, 1),
-(42, 'Prekė Nr. 42', NULL, 52.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-08-17 12:07:00', 42, 1),
-(44, '123', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 123, NULL, 1, 1, 'vnt', NULL, 1, '2026-03-09 13:25:24', NULL, 1),
-(45, 'Automobilis VW', NULL, 63.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2026-03-13 12:43:41', 43, 1),
-(46, '123', '123', 12, NULL, 1, 1, 'vnt', NULL, 1, '2026-03-16 09:51:05', NULL, 2);
+(1, 'Transporto paslauga', 'Krovinių pervežimo ir pristatymo paslauga', 11.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2019-10-22 16:07:00', 1, 1),
+(2, 'Biuro reikmenų rinkinys', 'Rašikliai, sąsiuviniai, lipdukai ir kiti biuro reikmenys', 12.99, 'EUR', 1, 1, 'vnt', NULL, 1, '2019-10-22 16:10:00', 2, 1),
+(3, 'Popierius A4 (500 lapų)', 'Universalus spausdinimo popierius, 80 g/m², 500 lapų', 13.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:08:00', 3, 1),
+(4, 'Spausdinimo kasetė', 'Universali rašalinė kasetė, suderinama su daugeliu modelių', 14.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:09:00', 4, 1),
+(5, 'Universali valymo priemonė', 'Koncentruota valymo priemonė paviršiams, 1 L', 15.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:10:00', 5, 1),
+(6, 'Dezinfekcinė priemonė', 'Greito poveikio dezinfekcinė priemonė, 500 ml', 16.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:10:00', 6, 1),
+(7, 'Darbo pirštinės', 'Apsauginės darbo pirštinės, nitrilinės, 100 vnt.', 17.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:10:00', 7, 1),
+(8, 'Apsauginė kaukė FFP2', 'Filtrais apsauganti pusiau veido kaukė, CE sertifikuota', 18.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:14:00', 8, 1),
+(9, 'Darbo batai S3', 'Apsauginiai darbo batai su plienine nosele, S3 klasė', 19.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:15:00', 9, 1),
+(10, 'Apsauginis kombinezonas', 'Vienkarinis apsauginis kombinezonas, baltas, L dydis', 20.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:15:00', 10, 1),
+(11, 'Apsauginis šalmas', 'Statybinis apsauginis šalmas, ABS plastiko, EN 397', 21.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:15:00', 11, 1),
+(12, 'Atšvaitinė liemenė', 'Didelio matomumo atšvaitinė liemenė, EN ISO 20471', 22.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 19:16:00', 12, 1),
+(13, 'Konsultavimo paslauga', 'Verslo procesų konsultavimo paslauga', 23.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-10 20:23:00', 13, 1),
+(14, 'Dyzelinas (1 L)', 'Europinės kokybės dyzelinis kuras, EN 590', 24.99, 'EUR', 1, 1, 'vnt', NULL, 1, '2023-06-10 20:32:00', 14, 1),
+(15, 'Elektrinis grąžtas 18V', 'Belaidis elektrinis grąžtas su akumuliatoriumi 18V, 2Ah', 25.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:23:00', 15, 1),
+(16, 'Rankinis pjūklas', 'Universalus rankinis medžio pjūklas, 500 mm ašmenys', 26.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:24:00', 16, 1),
+(17, 'Santechninių įrankių rinkinys', 'Santechnikui skirtų įrankių rinkinys 25 dalių', 27.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:24:00', 17, 1),
+(18, 'Pakavimo juosta', 'Rudos spalvos pakavimo scotch juosta, 48mm x 66m', 28.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:33:00', 18, 1),
+(19, 'Kartoninė dėžė (vid.)', 'Tvirta kartoninė pakavimo dėžė 40x30x25 cm', 29.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:41:00', 19, 1),
+(20, 'Burbulinė plėvelė (5 m)', 'Apsauginė oro burbulų plėvelė, plotis 50 cm, ilgis 5 m', 30.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:45:00', 20, 1),
+(21, 'Pakavimo popierius', 'Natūralus pakavimo popierius ritinyje, 70g/m², 5 kg', 31.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:46:00', 21, 1),
+(22, 'Metalinis lankstelis', 'Cinku dengtas metalinis kampinis lankstelis 50x50x2 mm', 32.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:54:00', 22, 1),
+(23, 'Plastikinis konteineris', 'Sandarus maisto produktų laikymo konteineris su dangteliu', 33.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:55:00', 23, 1),
+(24, 'Stiklinis butelis (1 L)', 'Neutralus stiklinis butelis su kamšteliu, 1000 ml', 34.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-10 21:55:00', 24, 1),
+(25, 'Logistikos paslauga', 'Sandėliavimo ir paskirstymo logistikos paslauga', 35.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 07:29:00', 25, 1),
+(26, 'Saugojimo paslauga', 'Trumpalaikio ir ilgalaikio saugojimo paslauga', 36.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 07:45:00', 26, 1),
+(27, 'IT priežiūros paslauga', 'Informacinių sistemų priežiūros paslauga', 37.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 19:32:00', 27, 1),
+(28, 'Buhalterinė paslauga', 'Apskaitos ir finansų tvarkymo paslauga', 38.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 19:42:00', 28, 1),
+(29, 'Suvirinimo aparatas MIG', 'Pusiau automatinis suvirinimo aparatas MIG/MAG, 200A', 39.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-06-21 19:53:00', 29, 1),
+(30, 'Reklamos paslauga', 'Skaitmeninės rinkodaros ir reklamos paslauga', 40.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-06-21 19:58:00', 30, 1),
+(31, 'Valymo paslauga', 'Patalpų ir teritorijos valymo paslauga', 41.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-02 21:24:00', 31, 1),
+(32, 'Apsaugos paslauga', 'Objekto ir turto apsaugos paslauga', 42.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-10 21:23:00', 32, 1),
+(33, 'Skaitmeninis matuoklis', 'Tikslus skaitmeninis matavimo rouletas 8 m, ±1 mm', 43.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-10 21:28:00', 33, 1),
+(34, 'Juridinė paslauga', 'Teisinio konsultavimo ir dokumentų rengimo paslauga', 44.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-10 21:46:00', 34, 1),
+(35, 'Valymo šepetys', 'Ilgakotis pramoninis valymo šepetys, natūraliai šeriai', 45.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-13 22:33:00', 35, 1),
+(36, 'Oro kompresorius 50 L', 'Stacionarus oro kompresorius 50 L talpos, 2 kW, 8 bar', 46.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-17 20:02:00', 36, 1),
+(37, 'Hidraulinis keltuvas 3T', 'Hidraulinis grindinis keltuvas 3 t keliamoji galia', 47.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-19 21:27:00', 37, 1),
+(38, 'Rinkodaros paslauga', 'Prekės ženklo kūrimo ir plėtros paslauga', 48.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-19 21:37:00', 38, 1),
+(39, 'Mokymo paslauga', 'Darbuotojų mokymo ir kvalifikacijos kėlimo paslauga', 49.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-07-19 21:38:00', 39, 1),
+(40, 'Laboratorinė kolba (500 ml)', 'Borosilikatinio stiklo kolba su kakleliu, 500 ml', 50.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2023-07-21 18:03:00', 40, 1),
+(41, 'Projektavimo paslauga', 'Techninio projektavimo ir dizaino paslauga', 51.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-08-17 12:07:00', 41, 1),
+(42, 'Draudimo paslauga', 'Turto ir atsakomybės draudimo paslauga', 52.99, 'EUR', 0, 0, 'vnt', NULL, 1, '2023-08-17 12:07:00', 42, 1),
+(43, 'Automobilis VW', 'Naudotas lengvasis automobilis, automatinė pavarų dėžė, dyzelis', 53.99, 'EUR', 1, 0, 'vnt', NULL, 1, '2026-03-13 12:43:41', 43, 1);
 
 -- --------------------------------------------------------
 
@@ -1029,8 +758,6 @@ INSERT INTO `productcategory` (`fk_Productid_Product`, `fk_Categoryid_Category`)
 (39, 1),
 (41, 1),
 (42, 1),
-(44, 1),
-(46, 1),
 (2, 2),
 (3, 2),
 (4, 2),
@@ -1059,7 +786,7 @@ INSERT INTO `productcategory` (`fk_Productid_Product`, `fk_Categoryid_Category`)
 (36, 2),
 (37, 2),
 (40, 2),
-(45, 3);
+(43, 3);
 
 -- --------------------------------------------------------
 
@@ -1104,21 +831,34 @@ CREATE TABLE `product_images` (
 --
 
 INSERT INTO `product_images` (`id_ProductImage`, `fk_Productid_Product`, `url`, `isPrimary`, `createdAt`, `sortOrder`) VALUES
-(3, 44, '/uploads/products/44/b580a7c27d0146cdbb4cec25539781a6.jpg', 1, '2026-03-09 15:25:24', 0),
-(4, 44, '/uploads/products/44/29ec13b4432c45e094d9eba8677c3f10.jpg', 0, '2026-03-09 15:25:24', 1),
-(5, 44, '/uploads/products/44/0ee48a4b7c66494cbded200434dfb0ad.jpg', 0, '2026-03-10 16:13:35', 2),
-(6, 44, '/uploads/products/44/d442eeae51054e1cbdfefceb2ae7d56a.jpg', 0, '2026-03-10 16:13:35', 3),
-(7, 44, '/uploads/products/44/ab478f4d18f7458aa4bc41e75ff83673.jpg', 0, '2026-03-10 16:13:35', 4),
-(8, 44, '/uploads/products/44/9f622efb0c8245eca71027fae2f43e0f.jpg', 0, '2026-03-10 16:13:35', 5),
-(9, 44, '/uploads/products/44/4f138cdcfbb543e8b8975e3f69a5737b.jpg', 0, '2026-03-10 16:20:36', 6),
-(10, 44, '/uploads/products/44/443ef893d1644b29b80ec1616fc76aa5.jpg', 0, '2026-03-10 16:20:36', 7),
-(11, 44, '/uploads/products/44/19df31fa35b145509e5b61c77f7e0fe0.jpg', 0, '2026-03-10 16:20:36', 8),
-(12, 44, '/uploads/products/44/ba94edb1be5b4a059fb9f36d9bf35996.jpg', 0, '2026-03-10 16:20:36', 9),
-(15, 1, '/uploads/products/1/089004e913384fbebdb1631434e8b0c8.jpg', 1, '2026-04-29 12:51:56', 0),
-(16, 15, '/uploads/products/15/4f3d1c511bce418fb27db49c23d29b3c.jpg', 1, '2026-04-29 12:52:17', 0),
-(17, 12, '/uploads/products/12/dda0f6a20d73434e93bdadd9a10ea611.jpg', 1, '2026-04-29 12:52:42', 0),
-(18, 16, '/uploads/products/16/456dfc29194d4b889dfe5a48c27ecc9c.jpg', 1, '2026-04-29 13:40:49', 0),
-(19, 45, '/uploads/products/45/90b52b762315434da9e48bdf4bb60df9.jpg', 1, '2026-04-29 15:14:07', 0);
+(1, 10, '/uploads/products/10/7cdfa03673cc45bfaa5c31acd1ebb895.jpg', 1, '2026-05-05 18:33:59', 0),
+(2, 11, '/uploads/products/11/166d5b37d73a43b7bd1174d436b1b2cd.jpg', 1, '2026-05-05 18:34:08', 0),
+(3, 8, '/uploads/products/8/1d64216453474c91ae7ede9d9bc03369.png', 1, '2026-05-05 18:34:23', 0),
+(4, 12, '/uploads/products/12/de1fdb9384d94970b5ed6645853e49d6.webp', 1, '2026-05-05 18:34:34', 0),
+(5, 43, '/uploads/products/43/108ef428598c453c9c57f2d4132d6fea.jpg', 1, '2026-05-05 18:34:44', 0),
+(7, 2, '/uploads/products/2/680a40298ca74d87be0d7412cd44494e.webp', 1, '2026-05-05 18:36:08', 0),
+(8, 20, '/uploads/products/20/bba5d2a0c3ea4de7a8c67344cfb67294.jpg', 1, '2026-05-05 18:36:18', 0),
+(9, 9, '/uploads/products/9/c6b41b4c024342c5be20e82a092d9574.jpg', 1, '2026-05-05 18:36:26', 0),
+(10, 7, '/uploads/products/7/08770973046043ad8218b1e95951b56d.webp', 1, '2026-05-05 18:36:36', 0),
+(11, 6, '/uploads/products/6/6988ab2320b44e028c5ba8823a57c18b.jpg', 1, '2026-05-05 18:36:47', 0),
+(12, 15, '/uploads/products/15/08408690344845e692f683485b78580e.jpg', 1, '2026-05-05 18:37:00', 0),
+(13, 37, '/uploads/products/37/5da439a89f344fe1b69191449056e7b7.jpg', 1, '2026-05-05 18:37:14', 0),
+(14, 19, '/uploads/products/19/6086eca31fc145b4b58d6b2409cccd15.webp', 1, '2026-05-05 18:37:30', 0),
+(15, 40, '/uploads/products/40/93a5ea2f527542a79fad6fb9e5dc502a.jpg', 1, '2026-05-05 18:37:40', 0),
+(16, 22, '/uploads/products/22/fe000989975f423fac774ea0566a548e.jpg', 1, '2026-05-05 18:37:51', 0),
+(17, 36, '/uploads/products/36/f29aa875783643d9bf03a9c09347b891.jpg', 1, '2026-05-05 18:38:06', 0),
+(18, 18, '/uploads/products/18/216147ed3df84d7495ea2e3625f6c714.jpg', 1, '2026-05-05 18:38:17', 0),
+(19, 21, '/uploads/products/21/aa93e87fb211476581fda8bfe4260c6c.png', 1, '2026-05-05 18:38:29', 0),
+(20, 23, '/uploads/products/23/fbca1613f3e34f36b4b655c30c287d06.jpg', 1, '2026-05-05 18:38:41', 0),
+(21, 3, '/uploads/products/3/971a81eed45c49c79136e8930ded88c7.jpg', 1, '2026-05-05 18:38:53', 0),
+(22, 16, '/uploads/products/16/9ebd5cd36577454cba489a6267fc4172.jpg', 1, '2026-05-05 18:39:06', 0),
+(23, 17, '/uploads/products/17/d06a4128ce43455f909d24d88ec312da.jpg', 1, '2026-05-05 18:39:22', 0),
+(24, 33, '/uploads/products/33/bba78370ec5f4044b54633c73833a2ee.jpg', 1, '2026-05-05 18:39:34', 0),
+(25, 4, '/uploads/products/4/1b1df970d3614a75aa0e21c73986e7be.jpg', 1, '2026-05-05 18:39:44', 0),
+(26, 24, '/uploads/products/24/473b26fa65164d9e9a59901c82411cdf.webp', 1, '2026-05-05 18:39:59', 0),
+(27, 29, '/uploads/products/29/13ac4af214a648af8cbebbfa2f4d8496.jpg', 1, '2026-05-05 18:40:12', 0),
+(28, 5, '/uploads/products/5/369bf75186924544ae747c84e49109bb.webp', 1, '2026-05-05 18:40:28', 0),
+(29, 35, '/uploads/products/35/11593b51336a4d5d9872f1684d5211f2.webp', 1, '2026-05-05 18:40:42', 0);
 
 -- --------------------------------------------------------
 
@@ -1178,9 +918,7 @@ INSERT INTO `product_productgroup` (`fk_Productid_Product`, `fk_ProductGroupId_P
 (40, 3),
 (41, 1),
 (42, 1),
-(44, 1),
-(45, 6),
-(46, 2);
+(43, 6);
 
 -- --------------------------------------------------------
 
@@ -1212,19 +950,6 @@ CREATE TABLE `product_returns` (
   `returnLng` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `product_returns`
---
-
-INSERT INTO `product_returns` (`id_Returns`, `date`, `fk_ReturnStatusTypeid_ReturnStatusType`, `fk_Clientid_Users`, `fk_Adminid_Users`, `fk_Companyid_Company`, `fk_ordersid_orders`, `returnMethod`, `returnCourierId`, `employeeNote`, `clientNote`, `returnStreet`, `returnCity`, `returnPostalCode`, `returnCountry`, `fk_Courierid_Courier`, `returnLockerId`, `returnLockerName`, `returnLockerAddress`, `returnLat`, `returnLng`) VALUES
-(7, '2026-04-08 15:30:25', 7, 12, 1, 1, 68, 'CUSTOM', NULL, 'Yes to some', 'Negerai', '123', 'Kaunas', 'LT-50121', 'LIETUVOS RESPUBLIKA', NULL, NULL, NULL, NULL, NULL, NULL),
-(8, '2026-04-09 08:34:10', 7, 12, 1, 1, 67, 'DPD', NULL, 'Pateikta', 'Nepatiko', NULL, 'VILNIUS', '09131', 'LIETUVOS RESPUBLIKA', 2, 'LT90003', 'Žirmūnų RIMI DPD paštomatas 003', 'ŽIRMŪNŲ G. 64, VILNIUS', 54.71196, 25.30082),
-(9, '2026-04-11 12:29:04', 7, 2, 1, 1, 69, 'CUSTOM', NULL, 'Viskas gerai', 'Nepatiko preke', 'Studentu g 2A', 'Kaunas', 'LT-50121', 'LIETUVA', NULL, NULL, NULL, NULL, NULL, NULL),
-(10, '2026-04-11 13:14:42', 7, 2, 1, 1, 70, 'CUSTOM', NULL, 'Matosi kad vienas gerai kitas negerai', 'Labai viskas gerai tik netiko dyžiai del to ir grąžinu vinis tai va tiek žinių', 'Studentu g 2A', 'Kaunas', 'LT-50121', 'LIETUVA', NULL, NULL, NULL, NULL, NULL, NULL),
-(12, '2026-04-11 15:52:04', 7, 2, 1, 1, 72, 'CUSTOM', NULL, 'yes yes yes', 'Man patiko', 'Studentu g 2A', 'kaunas', 'LT-50121', 'LIETUVA', NULL, NULL, NULL, NULL, NULL, NULL),
-(13, '2026-04-16 06:03:54', 7, 2, 1, 1, 73, 'DPD', NULL, 'viskas gerai', 'asdasd', NULL, 'VILNIUS', '09131', 'LIETUVA', 2, 'LT90003', 'Žirmūnų RIMI DPD paštomatas 003', 'ŽIRMŪNŲ G. 64, VILNIUS', 54.71196, 25.30082),
-(14, '2026-04-28 13:23:27', 7, 114, 1, 1, 77, 'DPD', NULL, 'Prekės atitiko grąžinimo reikalavimus', NULL, NULL, 'VILNIUS', '12110', 'LIETUVA', 2, 'LT90002', 'PC DomusPro DPD paštomatas 002', 'UKMERGĖS G. 308, VILNIUS', 54.73997, 25.22529);
-
 -- --------------------------------------------------------
 
 --
@@ -1244,25 +969,6 @@ CREATE TABLE `return_item` (
   `fk_Returnsid_Returns` int(11) NOT NULL,
   `fk_OrdersProductid_OrdersProduct` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `return_item`
---
-
-INSERT INTO `return_item` (`id_ReturnItem`, `quantity`, `reason`, `reasonId`, `evaluationComment`, `evaluation`, `evaluationDate`, `returnSubTotal`, `imageUrls`, `fk_Returnsid_Returns`, `fk_OrdersProductid_OrdersProduct`) VALUES
-(11, 3, '', 1, 'No', 0, '2026-04-08', 44.97, '[\"/uploads/returns/7/759ef8f968b4455baee99a66e77420b0.png\"]', 7, 128),
-(12, 1, '', 6, 'Yes', 1, '2026-04-08', 14.99, '[\"/uploads/returns/7/4bd0824aa22944be8d8869e11be5d70e.jpg\"]', 7, 126),
-(13, 2, '', 2, 'Ne', 0, '2026-04-09', 25.98, '[\"/uploads/returns/8/ce87e789ea224e34a26eb57badb155d4.jpg\"]', 8, 124),
-(14, 2, '', 3, 'Taip', 1, '2026-04-09', 45.98, '[\"/uploads/returns/8/019400b25d9c42ccb6dcee0e6a005f71.jpg\"]', 8, 125),
-(15, 2, '', 6, 'Viskas good', 1, '2026-04-11', 39.98, '[\"/uploads/returns/9/677b5dbb2b7248778482c6c9531a5166.jpg\"]', 9, 133),
-(16, 3, '', 3, 'viskas good', 1, '2026-04-11', 53.97, '[\"/uploads/returns/9/135b981f23e54db7bc2247bae9c5ba61.jpg\"]', 9, 134),
-(17, 4, '', 2, 'Gerai', 1, '2026-04-11', 59.96, '[\"/uploads/returns/10/36b93e3c9b4a49d8bf2a3b6dd5ce8f76.jpg\"]', 10, 150),
-(18, 4, '', 3, 'Negerai', 0, '2026-04-11', 131.96, '[\"/uploads/returns/10/4e3f9f4a2a4a4e748253e313d781d3b8.jpg\"]', 10, 151),
-(21, 3, '', 2, 'yes yes', 1, '2026-04-11', 38.97, '[\"/uploads/returns/12/97eb0bb150b342b489498317f42d32cf.jpg\"]', 12, 155),
-(22, 4, '', 2, 'yes', 1, '2026-04-11', 115.96, '[\"/uploads/returns/12/8066e2cbe42d4cabbe6e33e2e829c781.jpg\"]', 12, 156),
-(23, 1, NULL, 2, 'primtas', 1, '2026-04-16', 12.99, '[\"/uploads/returns/13/1bc3e2d24808421ab38ec2124b84b1ab.jpg\"]', 13, 177),
-(24, 7, NULL, 1, 'Priimtas, nes daiktas buvo pažeistas', 1, '2026-04-28', 195.92999999999998, '[\"/uploads/returns/14/5b007765b38a486ca731459beb458237.png\"]', 14, 184),
-(25, 1, NULL, 3, 'Priimtas, nes klientui netiko dydis', 1, '2026-04-28', 30.99, '[\"/uploads/returns/14/e9c1aca7ef53494181e2add815c62c3c.jpg\"]', 14, 185);
 
 -- --------------------------------------------------------
 
@@ -1333,33 +1039,6 @@ CREATE TABLE `shipment` (
   `fk_Returnsid_Returns` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `shipment`
---
-
-INSERT INTO `shipment` (`id_Shipment`, `trackingNumber`, `shippingDate`, `estimatedDeliveryDate`, `DeliveryLat`, `DeliveryLng`, `fk_Courierid_Courier`, `fk_Ordersid_Orders`, `fk_Companyid_Company`, `providerShipmentId`, `providerLockerId`, `providerParcelNumber`, `fk_Returnsid_Returns`) VALUES
-(70, '10ebe2cc-3cec-4c27-8dff-efdc407cc49d', '2026-03-27 00:00:00', '2026-03-28 00:00:00', NULL, NULL, 3, 58, 1, '10ebe2cc-3cec-4c27-8dff-efdc407cc49d', NULL, '99991000000040,99991000000041', NULL),
-(71, 'PKG-1-59-1774608784-1811', '2026-03-27 00:00:00', '2026-03-29 00:00:00', NULL, NULL, NULL, 59, 1, NULL, NULL, NULL, NULL),
-(72, 'PKG-1-64-1775046868-4176', '2026-04-01 00:00:00', '2026-04-04 00:00:00', NULL, NULL, NULL, 64, 1, NULL, NULL, NULL, NULL),
-(75, '1613b19c-a5e4-4e93-bcca-ac2c1b1e3437', '2026-04-01 00:00:00', '2026-04-03 00:00:00', 54.73997, 25.22529, 2, 65, 1, '1613b19c-a5e4-4e93-bcca-ac2c1b1e3437', 'LT90002', '99991000000042,99991000000043', NULL),
-(76, '7b68f415-78d0-4202-a7a8-343d6fe2b7b2', '2026-04-02 00:00:00', '2026-04-04 00:00:00', 54.70976, 25.18713, 2, 66, 1, '7b68f415-78d0-4202-a7a8-343d6fe2b7b2', 'LT90001', '99991000000044,99991000000045', NULL),
-(77, '75f80962-d229-4adf-9061-d7cfcf215614', '2026-04-03 00:00:00', '2026-04-05 00:00:00', 54.73997, 25.22529, 2, 67, 1, '75f80962-d229-4adf-9061-d7cfcf215614', 'LT90002', '99991000000046,99991000000047,99991000000048', NULL),
-(78, '2d2859b1-9e64-4843-b873-e4a5e2cb1c8e', '2026-04-07 00:00:00', '2026-04-09 00:00:00', 54.71196, 25.30082, 2, 68, 1, '2d2859b1-9e64-4843-b873-e4a5e2cb1c8e', 'LT90003', '99991000000049,99991000097508', NULL),
-(81, 'RET-1-7-1775662270-3473', '2026-04-08 15:31:10', '2026-04-11 15:31:10', NULL, NULL, NULL, 68, 1, NULL, NULL, NULL, 7),
-(82, '7114baae-810f-485d-99ab-ccc1a09cd981', '2026-04-09 08:37:26', '2026-04-11 08:37:26', 54.71196, 25.30082, 2, 67, 1, '7114baae-810f-485d-99ab-ccc1a09cd981', 'LT90003', '99991000097571', 8),
-(83, '058f3363-9b87-4a1f-af8b-bcbd1bd621a9', '2026-04-11 00:00:00', '2026-04-13 00:00:00', 54.911634, 23.947007, 2, 69, 1, '058f3363-9b87-4a1f-af8b-bcbd1bd621a9', 'LT90141', '99991000097572,99991000097573,99991000097574', NULL),
-(84, 'RET-1-9-1775910640-5384', '2026-04-11 12:30:40', '2026-04-14 12:30:40', NULL, NULL, NULL, 69, 1, NULL, NULL, NULL, 9),
-(85, 'PKG-1-70-1775913000-9634', '2026-04-11 00:00:00', '2026-04-14 00:00:00', NULL, NULL, NULL, 70, 1, NULL, NULL, NULL, NULL),
-(86, 'RET-1-10-1775913373-5530', '2026-04-11 13:16:13', '2026-04-14 13:16:13', NULL, NULL, NULL, 70, 1, NULL, NULL, NULL, 10),
-(89, 'PKG-1-72-1775922540-9910', '2026-04-11 00:00:00', '2026-04-14 00:00:00', NULL, NULL, NULL, 72, 1, NULL, NULL, NULL, NULL),
-(90, 'RET-1-12-1775922860-1400', '2026-04-11 15:54:20', '2026-04-14 15:54:20', NULL, NULL, NULL, 72, 1, NULL, NULL, NULL, 12),
-(96, 'PKG-1-73-1776319313-6783', '2026-04-16 00:00:00', '2026-04-19 00:00:00', NULL, NULL, NULL, 73, 1, NULL, NULL, NULL, NULL),
-(97, 'c348d4e9-f889-4153-9207-8dd0a3ad049b', '2026-04-16 06:04:22', '2026-04-18 06:04:22', 54.71196, 25.30082, 2, 73, 1, 'c348d4e9-f889-4153-9207-8dd0a3ad049b', 'LT90003', '99991000097575', 13),
-(99, 'PKG-1-75-1776319636-7758', '2026-04-16 00:00:00', '2026-04-19 00:00:00', NULL, NULL, NULL, 75, 1, NULL, NULL, NULL, NULL),
-(100, 'PKG-1-77-1777375753-4550', '2026-04-28 00:00:00', '2026-05-01 00:00:00', NULL, NULL, 1, 77, 1, NULL, NULL, NULL, NULL),
-(101, 'PKG-1-78-1777390632-6816', '2026-04-28 00:00:00', '2026-05-01 00:00:00', NULL, NULL, 1, 78, 1, NULL, NULL, NULL, NULL),
-(102, '8019ae65-8d16-4967-9af1-a60a1d296d80', '2026-04-28 15:42:38', '2026-04-30 15:42:38', 54.73997, 25.22529, 2, 77, 1, '8019ae65-8d16-4967-9af1-a60a1d296d80', 'LT90002', '99991000097577,99991000097578', 14);
-
 -- --------------------------------------------------------
 
 --
@@ -1372,72 +1051,6 @@ CREATE TABLE `shipment_status` (
   `fk_ShipmentStatusTypeid_ShipmentStatusType` int(11) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `shipment_status`
---
-
-INSERT INTO `shipment_status` (`id_ShipmentStatus`, `fk_Shipmentid_Shipment`, `fk_ShipmentStatusTypeid_ShipmentStatusType`, `date`) VALUES
-(50, 70, 1, '2026-03-27 10:52:18'),
-(51, 71, 1, '2026-03-27 10:53:04'),
-(52, 71, 2, '2026-03-27 12:08:46'),
-(53, 71, 4, '2026-03-27 12:08:56'),
-(54, 71, 3, '2026-03-27 12:09:21'),
-(55, 70, 2, '2026-03-27 12:09:39'),
-(56, 72, 1, '2026-04-01 12:34:28'),
-(57, 72, 2, '2026-04-01 12:35:56'),
-(58, 72, 3, '2026-04-01 12:36:00'),
-(59, 75, 1, '2026-04-01 13:20:06'),
-(60, 75, 2, '2026-04-01 13:20:24'),
-(61, 75, 3, '2026-04-01 13:20:28'),
-(62, 70, 3, '2026-04-02 05:54:59'),
-(63, 76, 1, '2026-04-02 05:56:22'),
-(64, 76, 2, '2026-04-02 05:56:50'),
-(65, 76, 3, '2026-04-02 05:56:53'),
-(66, 77, 1, '2026-04-03 08:09:03'),
-(67, 77, 2, '2026-04-03 08:09:20'),
-(68, 77, 3, '2026-04-03 08:09:23'),
-(69, 78, 1, '2026-04-07 08:07:25'),
-(70, 78, 2, '2026-04-07 08:07:39'),
-(71, 78, 3, '2026-04-07 08:07:41'),
-(74, 81, 5, '2026-04-08 15:31:10'),
-(75, 82, 5, '2026-04-09 08:37:26'),
-(76, 82, 6, '2026-04-09 08:38:26'),
-(77, 82, 7, '2026-04-09 08:38:54'),
-(78, 83, 1, '2026-04-11 11:21:35'),
-(79, 83, 2, '2026-04-11 11:24:31'),
-(80, 83, 2, '2026-04-11 11:35:22'),
-(81, 83, 4, '2026-04-11 12:26:36'),
-(82, 83, 3, '2026-04-11 12:27:37'),
-(83, 84, 5, '2026-04-11 12:30:40'),
-(84, 84, 6, '2026-04-11 12:32:51'),
-(85, 84, 7, '2026-04-11 12:33:24'),
-(86, 85, 1, '2026-04-11 13:10:00'),
-(87, 85, 2, '2026-04-11 13:12:46'),
-(88, 85, 4, '2026-04-11 13:13:00'),
-(89, 85, 3, '2026-04-11 13:13:15'),
-(90, 86, 5, '2026-04-11 13:16:13'),
-(91, 86, 6, '2026-04-11 13:17:42'),
-(92, 86, 8, '2026-04-11 13:18:25'),
-(93, 86, 7, '2026-04-11 13:51:28'),
-(99, 89, 1, '2026-04-11 15:49:00'),
-(100, 89, 2, '2026-04-11 15:50:11'),
-(101, 89, 3, '2026-04-11 15:50:55'),
-(102, 90, 5, '2026-04-11 15:54:20'),
-(103, 90, 6, '2026-04-11 15:55:50'),
-(104, 90, 7, '2026-04-11 15:56:10'),
-(110, 96, 1, '2026-04-16 06:01:53'),
-(111, 96, 2, '2026-04-16 06:02:30'),
-(112, 97, 5, '2026-04-16 06:04:22'),
-(114, 99, 1, '2026-04-16 06:07:16'),
-(115, 99, 2, '2026-04-16 06:07:24'),
-(116, 81, 6, '2026-04-16 06:09:09'),
-(117, 81, 7, '2026-04-16 06:09:14'),
-(118, 100, 1, '2026-04-28 11:29:13'),
-(119, 100, 2, '2026-04-28 13:12:01'),
-(120, 100, 3, '2026-04-28 13:13:14'),
-(121, 101, 1, '2026-04-28 15:37:12'),
-(122, 102, 5, '2026-04-28 15:42:38');
 
 -- --------------------------------------------------------
 
@@ -1492,119 +1105,114 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_Users`, `name`, `surname`, `email`, `password`, `phoneNumber`, `image`, `creationDate`, `googleId`, `authProvider`, `fk_Companyid_Company`, `isMasterAdmin`, `resetToken`, `resetTokenExpiry`) VALUES
-(1, 'Master', 'Admin', 'admin@test.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', NULL, '', '2026-03-09 10:37:22', NULL, 'LOCAL', 1, 1, NULL, NULL),
-(2, 'Ignas', 'Makackas', 'ignasmakackas@gmail.com', '$2a$11$gQ4HdcxIo7EE3890aukwF.E35Ee/gec9hmVpN8cTzBBnloR4uATmi', '+3706000000', '', '2026-03-09 12:59:27', NULL, 'LOCAL', 1, 0, '6pQIgYzGF1rRXDBO32xsu-VyS6Dxp9qOTITwNJwXmE0', '2026-04-28 08:01:52'),
-(3, 'Klientas Nr. 1', 'Klientas', 'butent-c1-client1@local', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', NULL, '', '2026-03-09 13:07:36', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(4, 'Klientas Nr. 2', 'Klientas', 'butent-c1-client2@local', '$2a$11$OdXIbt55I3SM2EOoHHTP6evap/rK/glEqXUfkP99P2L8ST1wWhTUi', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(5, 'Klientas Nr. 3', 'Klientas', 'butent-c1-client3@local', '$2a$11$KtnK4Yjh43yqQBkahjj4nOp24geYCEZzGuOTr.pMQVBZCZMDFFMSK', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(6, 'Klientas Nr. 4', 'Klientas', 'butent-c1-client4@local', '$2a$11$XJEuNA4mz9uoMYTUTFvoM.ZaWPeuafoypk.XfjgMdZNBz9je7q852', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(7, 'Klientas Nr. 5', 'Klientas', 'butent-c1-client5@local', '$2a$11$SFlG2gYbNdJgjjad9I3j4O8AC6zoIUYxrxxoIKaeofbZciTNh1biK', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(8, 'Klientas Nr. 6', 'Klientas', 'butent-c1-client6@local', '$2a$11$ClMAGqlLLJre04dtuWVei.m2PWJHvxI6kf7o23ueUiv45EM7vz89q', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(9, 'Klientas Nr. 7', 'Klientas', 'butent-c1-client7@local', '$2a$11$zQvdOw5J927//kjYVzX/r.5z6COGFvKFk80xzCfGQ59f78rmcWh52', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(10, 'Klientas Nr. 8', 'Klientas', 'butent-c1-client8@local', '$2a$11$Om.uUofCiE674rt3pkWF3OXTp3LyaXf27Ro2kTPyNOoujIbfQQ4EW', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(11, 'Klientas Nr. 9', 'Klientas', 'butent-c1-client9@local', '$2a$11$n/Cf0R9WmTuYOR4SMhVguOkXE.e79fD61ElaN6Q0oRjcCVJgS7BEy', NULL, '', '2026-03-09 13:07:37', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(12, 'Klientas Nr. 10', 'Klientas', 'butent-c1-client10@local.lt', '$2a$11$PfxKD5THEWlOwwT2dVPA2Oway2.zhVfeA8SjxSUPo9Mxd9NVYsT/C', '+37063850850', '', '2026-03-09 13:07:37', NULL, 'LOCAL', 1, 0, NULL, NULL),
-(13, 'Klientas Nr. 11', 'Klientas', 'butent-c1-client11@local', '$2a$11$f6WP.Skkl16dxhRop9h8TefU8s4X/rq0EF4P8K3972AqkvRSUUaFK', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(14, 'Klientas Nr. 12', 'Klientas', 'butent-c1-client12@local', '$2a$11$qzAZTZev4/IQ0FvhNHkXZul2IOON5rCzi0RDsPUE2Gw58F3h2qrwC', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(15, 'Klientas Nr. 13', 'Klientas', 'butent-c1-client13@local', '$2a$11$SCGrOiF88eHOAFBtvaYgsuFgQwAz4hotBzktZMgOKtDFjPQWK9MMS', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(16, 'Klientas Nr. 14', 'Klientas', 'butent-c1-client14@local', '$2a$11$5ThNCtzB1TwqFCHajDAbM.mkkUqnbQCWpqOn5u3w6y6OXAwanzt06', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(17, 'Klientas Nr. 15', 'Klientas', 'butent-c1-client15@local', '$2a$11$6GT0sO6193LLmcgAO8wWUuCMcbSUF75sKzyYhS5RL39HKBqiExcj2', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(18, 'Klientas Nr. 16', 'Klientas', 'butent-c1-client16@local', '$2a$11$pMpKzrwG.6Bpm5SMM9Nc0.RPKAP0C0XjomzgezeKnbX/uJ1.ptFkG', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(19, 'Klientas Nr. 17', 'Klientas', 'butent-c1-client17@local', '$2a$11$TKiRuxZPIzq7uMtfEg5f1unDKmgknHUE5Qnw61ygWtqc9ivvIIbUe', NULL, '', '2026-03-09 13:07:38', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(20, 'Klientas Nr. 18', 'Klientas', 'butent-c1-client18@local.lt', '$2a$11$PhtiUL6GXbrLn0mRIdYVqOXAHjgyfsbYwZQGfX7JTEEAsSzY/2O9y', '+35555555', '', '2026-03-09 13:07:38', NULL, 'LOCAL', 1, 0, NULL, NULL),
-(21, 'Klientas Nr. 19', 'Klientas', 'butent-c1-client19@local', '$2a$11$CGfIAMIFCsRvPbum81HgDuPRkXmAeFI.U5T0.CN2BNHUCNaIS4NQC', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(22, 'Klientas Nr. 20', 'Klientas', 'butent-c1-client20@local', '$2a$11$5IQ6bQOvrd4RdGxOQ5VTVeV7xGK2BGQcpuySi3h3aUxIkH1fIPflS', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(23, 'Klientas Nr. 21', 'Klientas', 'butent-c1-client21@local', '$2a$11$V7pcKy/uSm9FLj5Zz4E3te/xXsOjMz.y5KcYonVfdoZvDxd/llTDS', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(24, 'Klientas Nr. 22', 'Klientas', 'butent-c1-client22@local', '$2a$11$j3bxh1OpqWJGKqy7OgI8JuK.7zCB9q5mdPJS3OO3Q4b9b5XtP3Y1S', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(25, 'Klientas Nr. 23', 'Klientas', 'butent-c1-client23@local', '$2a$11$Y3NYfnTRPi3/AmAGM6Q2RenHWEZ54UguVa0Hpe2H2HXk3esICORx2', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(26, 'Klientas Nr. 24', 'Klientas', 'butent-c1-client24@local', '$2a$11$yqFDa9ih05lrznzrgqt8m.JweqXnCq5dTMndSX5RIRP/ibg0zIdXW', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(27, 'Klientas Nr. 25', 'Klientas', 'butent-c1-client25@local', '$2a$11$VGHCuz49A2AGmCIPPdjTF.Xbrc7bPt8LTPc3FDxzPN9/nzAkcFIT.', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(28, 'Klientas Nr. 26', 'Klientas', 'butent-c1-client26@local', '$2a$11$npnZmXQKVzg5FltqJEG/aeBSVpk.5bgFB/fnvt//U5mMo9FkwQiie', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(29, 'Klientas Nr. 27', 'Klientas', 'butent-c1-client27@local', '$2a$11$a.J8sPFmtQevv7yQynYGGOeSfrUrRSkAnx92CBOUK7i1JfPimqi0q', NULL, '', '2026-03-09 13:07:39', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(30, 'Klientas Nr. 28', 'Klientas', 'butent-c1-client28@local', '$2a$11$HsqhjuewPzwaPfqyN2G/FuWAlVT.O4AVHWljPnDU2FUgBUabwNbn.', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(31, 'Klientas Nr. 29', 'Klientas', 'butent-c1-client29@local', '$2a$11$KrsurF5aOUYY5l4bILcM2uPIQX6DbweXmPXXyhQ1/HingWT6W.grK', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(32, 'Klientas Nr. 30', 'Klientas', 'butent-c1-client30@local', '$2a$11$sMiUL5KBtdqYBf1ZQnQdYeh9DnhKyZs6vfZRPgOvNtRhKD.2z5wuu', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(33, 'Klientas Nr. 31', 'Klientas', 'butent-c1-client31@local', '$2a$11$pBeMsBt4hIBBkGIvDUlBzugswUF5enf78zkZBCZOdC1Ifsc2MgMmy', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(34, 'Klientas Nr. 32', 'Klientas', 'butent-c1-client32@local', '$2a$11$95ruHTm8Y0Wri0j7ipUunuFaKZX//7r3itXE3KYb38.X.YxO6WNli', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(35, 'Klientas Nr. 33', 'Klientas', 'butent-c1-client33@local', '$2a$11$QGNI/40k8aq2lXFoiq/.m.GbEO6e8qXa5RecovkxDs2TIHa5XSmpi', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(36, 'Klientas Nr. 34', 'Klientas', 'butent-c1-client34@local', '$2a$11$zlZxeK.5jH.aSIvu9rN5xeM6U/KVjKVNDoM/i6c04kciq/HehmhLG', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(37, 'Klientas Nr. 35', 'Klientas', 'butent-c1-client35@local', '$2a$11$eY0InO5VsPXdYWkumUdX0O6SFCnXqRi7uJW3bvEdiexB1EvIbNV42', NULL, '', '2026-03-09 13:07:40', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(38, 'Klientas Nr. 36', 'Klientas', 'butent-c1-client36@local', '$2a$11$A4wwPbdvXoW8KY7b56EP4.eSnpsodbayjhsUrbysC1XBW9yw5sHva', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(39, 'Klientas Nr. 37', 'Klientas', 'butent-c1-client37@local', '$2a$11$mu7ZfEmPHh6QsTR/5idTn.ipeLZw.FmHMY4nJJwKdZnmf8NHTbeIC', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(40, 'Klientas Nr. 38', 'Klientas', 'butent-c1-client38@local', '$2a$11$J1.bciSchbZXGSkv4MDh5.6k5Tl.spcs7.XtQpDGgqu5mki4BEslq', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(41, 'Klientas Nr. 39', 'Klientas', 'butent-c1-client39@local', '$2a$11$6oHz19ShETkHbj0ipfptj.yilSV5WX6nMKikbFWJoPzcW/yrOFxm2', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(42, 'Klientas Nr. 40', 'Klientas', 'butent-c1-client40@local', '$2a$11$EF0lyfL7DmsGkSPjs6cKOeyrm8Fnh.3.CBFJUKqOmhCAgKK0Rx0rm', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(43, 'Klientas Nr. 41', 'Klientas', 'butent-c1-client41@local', '$2a$11$3owhMPhI7c8Cmt..qYcwh..EyHfLx2o2gNthOOchAY2QXdwKIuPyS', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(44, 'Klientas Nr. 42', 'Klientas', 'butent-c1-client42@local', '$2a$11$XTd7I3V4lTIXMbbZHv5NHuvXF5yJDoVMYux5bGMx0ti6iMAXn3TfS', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(45, 'Klientas Nr. 43', 'Klientas', 'butent-c1-client43@local', '$2a$11$at8M61gPjIoxq9vOvA9O7usO8h7F1EM/E9kaRUCGig4wHzWNT1E6y', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(46, 'Klientas Nr. 44', 'Klientas', 'butent-c1-client44@local', '$2a$11$hyIhZ0.1YqWoJ3Z/LP45PODF70BXwdsIjmjrBOY3Qeuk2STQeponC', NULL, '', '2026-03-09 13:07:41', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(47, 'Klientas Nr. 45', 'Klientas', 'butent-c1-client45@local', '$2a$11$ACu0tQwZaEJ/sBr4LHhoC.hPJN5JqwXqpF7LfPoYUXwqvFzQ7d7tu', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(48, 'Klientas Nr. 46', 'Klientas', 'butent-c1-client46@local', '$2a$11$.YXSrO0XsdTfHnyphwnBy.Nvj91hgFlxvQqVRUCFmeIIy84EKTaR.', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(49, 'Klientas Nr. 47', 'Klientas', 'butent-c1-client47@local', '$2a$11$r/fGXEwuIVlb4wd11V5xTupDlAi0tqatR7A8VkZfdEzM7zrgcguR.', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(50, 'Klientas Nr. 48', 'Klientas', 'butent-c1-client48@local', '$2a$11$oenkWtcHEUVDhuApw2hOvOugQtq2FZr3yt5obCZndE87.S7ZpuFN.', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(51, 'Klientas Nr. 49', 'Klientas', 'butent-c1-client49@local', '$2a$11$wM/XwqAnZGS6YJudb6HSreDRBnpZZLihFwcwc9H3qcab.8udwM92W', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(52, 'Klientas Nr. 50', 'Klientas', 'butent-c1-client50@local', '$2a$11$l9Q/FkuRpEzNxr.xVycDa.XVrXGiJVDhqN0aSRqt7MHU2yF46TYQO', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(53, 'Klientas Nr. 51', 'Klientas', 'butent-c1-client51@local', '$2a$11$DAHojiT3p2p5COzOmZWSQuexnkJZOhkh0mHLc0mlJtCcVt05hfxzu', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(54, 'Klientas Nr. 52', 'Klientas', 'butent-c1-client52@local', '$2a$11$UetaQZq5.6sYU4gWzzTmKeeGJdY490J2JUD/q2vyUAegTSOCCuw0K', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(55, 'Klientas Nr. 53', 'Klientas', 'butent-c1-client53@local', '$2a$11$4pLS.BHylsA3L0IFMAP/L.Z.kthA/hyWVOO5GTdtclDRgeyuxJ7UK', NULL, '', '2026-03-09 13:07:42', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(56, 'Klientas Nr. 54', 'Klientas', 'butent-c1-client54@local', '$2a$11$0eZgwZXzjpsuwhJNfJ63Cudy8ltPbLk2CIYWRGEtfTV3yrPgNfZvy', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(57, 'Klientas Nr. 55', 'Klientas', 'butent-c1-client55@local', '$2a$11$KZJEi.Qez28ucWu.sGRFa.OZxB9NCMg6sefEn0ENe8clqDHkX.KEK', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(58, 'Klientas Nr. 56', 'Klientas', 'butent-c1-client56@local', '$2a$11$fxdtnnckZYxF6y9p5ozSu.pWb3Fnf5I16FZly.yOHi0GSqqz4z..i', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(59, 'Klientas Nr. 57', 'Klientas', 'butent-c1-client57@local', '$2a$11$.Z4meW2XAjIkRg3YhwxE2.IHzwI6/JPWc4bldq4ntUWg6HMwy.Zo.', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(60, 'Klientas Nr. 58', 'Klientas', 'butent-c1-client58@local', '$2a$11$jGTBd7ZovZDS2g3GVoBpS.dOgsExC.Gfy/lHzZ9vDa4w8KdLye5Yy', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(61, 'Klientas Nr. 59', 'Klientas', 'butent-c1-client59@local', '$2a$11$hcCk3ElbCuziYXkjqhH/pO1UwdpQgYmlArNMMkwmatxS93NgoSwe6', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(62, 'Klientas Nr. 60', 'Klientas', 'butent-c1-client60@local', '$2a$11$ZBuq1Gpjhu6ctNxaqyLShuUf/F/dn1BMtnluXubl347ufbHgwNEN2', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(63, 'Klientas Nr. 61', 'Klientas', 'butent-c1-client61@local', '$2a$11$xB7WjUu5Z8QjfoL8Rxc3pu0D1RZByERQVNqMNtrMPkRTPsfqP9sZq', NULL, '', '2026-03-09 13:07:43', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(64, 'Klientas Nr. 62', 'Klientas', 'butent-c1-client62@local', '$2a$11$.yFpt38F79Ki46CbyhUcye7jWKiZ9OBrQSFIiC8.VwOU4pSVl/XV.', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(65, 'Klientas Nr. 63', 'Klientas', 'butent-c1-client63@local', '$2a$11$asMuwUqi7z7h3WSFIFtEPuAlAuumwXAvehWSHCskZiURV0Q4NdcXu', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(66, 'Klientas Nr. 64', 'Klientas', 'butent-c1-client64@local', '$2a$11$AimfR8CIgNYAQBBEJXKpveOUEz2UFljA6bSfZjgnb72i4zp1g6dt6', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(67, 'Klientas Nr. 65', 'Klientas', 'butent-c1-client65@local', '$2a$11$4YkEnHe9uYKsNyWy1thy4ecHxgrjRKY9UHM5IOIsIXn.QLA40AHSO', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(68, 'Klientas Nr. 66', 'Klientas', 'butent-c1-client66@local', '$2a$11$KS6ylVhKhJomPskhN4hbYesXipBvHoPWiYhnK3DYJJH8pOGvmtqwm', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(69, 'Klientas Nr. 67', 'Klientas', 'butent-c1-client67@local', '$2a$11$9.WTTRZGuajl1gOBal.ioeTaDoJ.F6Q/tjAIazWNt2GFlWdTh8U2G', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(70, 'Klientas Nr. 68', 'Klientas', 'butent-c1-client68@local', '$2a$11$oxqrcyp1..GNsI7SOWYrCestCMiVsBhahVuN0eR8zVeLg1FqUCjVC', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(71, 'Klientas Nr. 69', 'Klientas', 'butent-c1-client69@local', '$2a$11$s9efPPhy.p2oXNwc2TTa4uvlUXfdRss1GZhQ0aHOT3wxK4GaPCBq6', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(72, 'Klientas Nr. 70', 'Klientas', 'butent-c1-client70@local', '$2a$11$RcgMWgzDBPNMkQSQdRAcC..vPpolEpd0m5fojUt7yYlp6V/yKHb4W', NULL, '', '2026-03-09 13:07:44', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(73, 'Klientas Nr. 71', 'Klientas', 'butent-c1-client71@local', '$2a$11$q0.2bN68AuOw0XTElnuSG.ue6Am5rbqGz5bufuraOR13lNh4vM0j6', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(74, 'Klientas Nr. 72', 'Klientas', 'butent-c1-client72@local', '$2a$11$SCdw7FbXkyVqhP3J3DJZiu8PmNFwA5kRN6EL18R5qPyzlMzxvSdA2', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(75, 'Klientas Nr. 73', 'Klientas', 'butent-c1-client73@local', '$2a$11$pmO1o5FSTIcFBa1t2DixKOhPZblhBG4plBE6SP0r7tajvmMPBvst6', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(76, 'Klientas Nr. 74', 'Klientas', 'butent-c1-client74@local', '$2a$11$4nnWwXvnTopNtw8y.wUZIuEfgqs23rVaBEUHXy.f9nZNL3297hZt6', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(77, 'Klientas Nr. 75', 'Klientas', 'butent-c1-client75@local', '$2a$11$BFesw0LvEgy8z8x/GAwoAOKMS0fpx/whAvT3ga4AU.9pufvLs.FIu', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(78, 'Klientas Nr. 76', 'Klientas', 'butent-c1-client76@local', '$2a$11$l5EaSL9FbCcH9M.CZpbQqu/86fCxHOAFsFhlG1LwEj2EZhSBRVbAC', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(79, 'Klientas Nr. 77', 'Klientas', 'butent-c1-client77@local', '$2a$11$B9X6SeAxevfg.HQena43Ge7KbMqT7Z6v5EFztDJWS3l3HpQY9Dmj2', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(80, 'Klientas Nr. 78', 'Klientas', 'butent-c1-client78@local', '$2a$11$7jELShwjMDJY5zmR3J0e1.hjwMGB2hj1IykxK.fmp7bUcD52eIugm', NULL, '', '2026-03-09 13:07:45', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(81, 'Klientas Nr. 79', 'Klientas', 'butent-c1-client79@local', '$2a$11$gZD7N2NUzc283Ffgxb4E5.QhO1iqAUoAuEgbObGzgt5rD4Uzqk2cu', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(82, 'Klientas Nr. 80', 'Klientas', 'butent-c1-client80@local', '$2a$11$0Vj65C32KD3NRmPGrOGdmuE8kRrs6YOb2S5vXjcDjEHr7wT4jUwZG', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(83, 'Klientas Nr. 81', 'Klientas', 'butent-c1-client81@local', '$2a$11$oAWO7lRmP29pCUO4JWiQDOy0FTqzjng9DSTj.n6cAPtccPqVDA0na', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(84, 'Klientas Nr. 82', 'Klientas', 'butent-c1-client82@local', '$2a$11$2wESu6sOaD5SwnCkxYlsfOgRC64kSJbNtyGYX8TiVD8ZiT.AraJYS', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(85, 'Klientas Nr. 83', 'Klientas', 'butent-c1-client83@local', '$2a$11$zl7Gx9RHmqIBjkRPWdtSjuxMK2vvJ6qZ7uZh5UW.9yUHxwUH6DWvK', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(86, 'Klientas Nr. 84', 'Klientas', 'butent-c1-client84@local', '$2a$11$.lGJy/QdsMuaDhlxmXBvUeUBGWYDC5eDcLP7jH0/Pw7WlW0B8QiM2', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(87, 'Klientas Nr. 85', 'Klientas', 'butent-c1-client85@local', '$2a$11$8qMB22mCOAhZBGvwuMshD.L9NQLcrCOPp98TjqxWkAWc4Hf7kQnKu', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(88, 'Klientas Nr. 86', 'Klientas', 'butent-c1-client86@local', '$2a$11$FYTo6mg8oeqJXfoDwvmIxeb58B8NZi2asamc7MdBef3t1CiwpzrJK', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(89, 'Klientas Nr. 87', 'Klientas', 'butent-c1-client87@local', '$2a$11$r9IJNC1bOQWbSwC6U4LN.uMKWThTGHQ4OL4f5TXGR6Snj49DHgnW.', NULL, '', '2026-03-09 13:07:46', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(90, 'Klientas Nr. 88', 'Klientas', 'butent-c1-client88@local', '$2a$11$hiRZ8ACabiYxQ7ic5tL7i.UYRTXc6U5pLwR0BHUjK1EdpOiEKkQJu', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(91, 'Klientas Nr. 89', 'Klientas', 'butent-c1-client89@local', '$2a$11$T2gnJs8zeDG7Ev.fiql4iu9Pn0YUiiyph48MMZkVvVnn2dPqZ/fHq', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(92, 'Klientas Nr. 90', 'Klientas', 'butent-c1-client90@local', '$2a$11$90UM97DYWwDm.JEAWoWuMer0jmWEzIYaVweZi75Rz15tt6i8TKUC6', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(93, 'Klientas Nr. 91', 'Klientas', 'butent-c1-client91@local', '$2a$11$P0hUdJwniZePQVeWKszNE./kzoYMSJAL34sutDR9myf2BmODgwGSm', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(94, 'Klientas Nr. 92', 'Klientas', 'butent-c1-client92@local', '$2a$11$Fq0FSUfsjXy7nfBvRJCPUu6evTTaPA3O2bEeUP1hlQRAFqK5DoIVq', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(95, 'Klientas Nr. 93', 'Klientas', 'butent-c1-client93@local', '$2a$11$vxwMlJwyPM3gdAfDkepNBuLey9/.RhEM2p3AVNwybhrbnVhGVdNFO', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(96, 'Klientas Nr. 94', 'Klientas', 'butent-c1-client94@local', '$2a$11$Ryg2/gsE408D3caIT2qC/Oo05vBpr2/rLIOaevFbkvABgL/V3hEIe', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(97, 'Klientas Nr. 95', 'Klientas', 'butent-c1-client95@local', '$2a$11$BW1Niy7f0.9qnMQZO5rz1eiS.MBbTcUhaZ1Ep6AHIu5FToCFsfJ8q', NULL, '', '2026-03-09 13:07:47', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(98, 'Klientas Nr. 96', 'Klientas', 'butent-c1-client96@local', '$2a$11$vozMkiIuN3BFOZPQQoWIYu3QaNNhqx6neePRmDQJ0rluOf10DVPe.', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(99, 'Klientas Nr. 97', 'Klientas', 'butent-c1-client97@local', '$2a$11$ubJGFIQc8zARAzou/DjE8.CSF6dQdg5vQKPEt6L8FvJQzva5pmJPO', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(100, 'Klientas Nr. 98', 'Klientas', 'butent-c1-client98@local', '$2a$11$EKVcqOW4YMmPtYOyKU1sQOnillTTFNSyLMWt5ls5M8bpl4F.U5T0e', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(101, 'Klientas Nr. 99', 'Klientas', 'butent-c1-client99@local', '$2a$11$.2VKvlyVb3NsQogoKL9XnOPaTi6iWx/HisZ26ChVRpYc54frQArZW', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(102, 'Klientas Nr. 100', 'Klientas', 'butent-c1-client100@local', '$2a$11$Hlj6mfVBlhUV82SLr5zq8OxgHnUyW6CJejmYcn.SLOH2/8N3pVf1O', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(103, 'Klientas Nr. 101', 'Klientas', 'butent-c1-client101@local', '$2a$11$9TRmLiBOJAoD2UslYKsl0.Ff8DlF1ZlAh3BVzxR12qcYhvzzn3e7W', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(104, 'Klientas Nr. 102', 'Klientas', 'butent-c1-client102@local', '$2a$11$9DHL1KZkSKY1FkBzKytdOuT96vZ3b49CgM0GbnfLqwFjmo1mOxDhe', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(105, 'Klientas Nr. 103', 'Klientas', 'butent-c1-client103@local', '$2a$11$tbVV2N9MZnYXNuygDjz7IuRJbZKORqyldxmRCZ1eTfDAGDmN1SyOW', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(106, 'Klientas Nr. 104', 'Klientas', 'butent-c1-client104@local', '$2a$11$kBHSkFhOvQn7ld0Qkt.q1.C/HQcXhsIvjL1g3.C.5R.gMQPqwOQBa', NULL, '', '2026-03-09 13:07:48', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(107, 'Klientas Nr. 105', 'Klientas', 'butent-c1-client105@local', '$2a$11$gOB1Fc.5fZz6pfO2KOP6S.ZQEqkCnnhSB1VPXjjXZz.SXUnZi4VQe', NULL, '', '2026-03-09 13:07:49', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(108, 'Klientas Nr. 106 naujas', 'Klientas bandymas', 'butent-c1-client106@local.lt', '$2a$11$VWD5lPjRlMt9FzzwRXaxde4L.slpN9hN9p3YXYHu6rgJnpprDszbu', '+36666600000000', '', '2026-03-09 13:07:49', NULL, 'LOCAL', 1, 0, NULL, NULL),
-(109, 'Klientas Nr. 107 a', 'Klientas b', 'butent-c1-client107@local.lt', '$2a$11$3fR4A/zZ.meHjBiJjlbQzuqBaC6aSo1kdnirJaDBtpZP7hd5ntFMa', '+370600000000', '', '2026-03-09 13:07:49', NULL, 'LOCAL', 1, 0, NULL, NULL),
-(110, '123', '123', '123@123', NULL, '123', NULL, '2026-03-16 11:51:53', NULL, 'LOCAL', 2, 0, NULL, NULL),
-(111, 'Ignas', 'Unknown', 'ignasmakackas@gmail.com', '$2a$11$LUXf78nKambGEluwG2MaWe2O08uDDs9r9/KunWOlwO0vwK2u3AzOu', '', NULL, '2026-04-13 11:18:19', '116952766965985229002', 'GOOGLE', NULL, 0, NULL, NULL),
-(114, 'Naujas', 'Naudotojas', 'naujas@test.lt', '$2a$11$Pud9rPTMpXGq86YXRDh3luH6Z4rB6X6JVh8OPmIiiCv3AgyWmLJNa', '+37060000000', NULL, '2026-04-23 16:05:17', NULL, 'LOCAL', NULL, 0, NULL, NULL),
-(115, 'Netikras', 'Naudotojas', 'Netikras@test.lt', NULL, '+37060000000', NULL, '2026-04-28 18:57:46', NULL, 'LOCAL', 4, 0, NULL, NULL);
+(1, 'Master', 'Admin', 'admin@test.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', NULL, '', '2026-05-05 12:06:11', NULL, 'LOCAL', 1, 1, NULL, NULL),
+(22, 'Tomas', 'Kazlauskas', 'tomas.kazlauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000001', NULL, '2026-05-05 12:18:22', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(23, 'Laura', 'Petrauskaitė', 'laura.petrauskaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000002', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(24, 'Marius', 'Jankauskas', 'marius.jankauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000003', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(25, 'Rūta', 'Stankevičiūtė', 'ruta.stankeviciute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000004', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(26, 'Andrius', 'Butkus', 'andrius.butkus@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000005', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(27, 'Eglė', 'Vasiliauskaite', 'egle.vasiliauskaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000007', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(28, 'Jonas', 'Žukauskas', 'jonas.zukauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000008', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(29, 'Indrė', 'Mackevičiūtė', 'indre.mackeviciute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000009', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(30, 'Lukas', 'Paulauskas', 'lukas.paulauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000010', NULL, '2026-05-05 12:18:23', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(31, 'Viktorija', 'Kavaliauskaitė', 'viktorija.kavaliausk@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000011', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(32, 'Mantas', 'Keršys', 'mantas.kersys@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000012', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(33, 'Giedrė', 'Balčiūtė', 'giedre.balciute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000013', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(34, 'Darius', 'Tarvydas', 'darius.tarvydas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000014', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(35, 'Aistė', 'Grigaitė', 'aiste.grigaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000015', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(36, 'Mindaugas', 'Butkevičius', 'mindaugas.butkev@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000016', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(37, 'Monika', 'Andriulytė', 'monika.andriulyte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000017', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(38, 'Gediminas', 'Rimkus', 'gediminas.rimkus@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000018', NULL, '2026-05-05 12:18:24', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(39, 'Daiva', 'Martinaitytė', 'daiva.martinaityte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000019', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(40, 'Vilius', 'Šileika', 'vilius.sileika@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000020', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(41, 'Justė', 'Vaitkutė', 'juste.vaitkute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000021', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(42, 'Aurimas', 'Norkus', 'aurimas.norkus@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000022', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(43, 'Rasa', 'Tamošiūnaitė', 'rasa.tamosiunaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000023', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(44, 'Saulius', 'Jurevičius', 'saulius.jurecius@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000024', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(45, 'Jolanta', 'Sabonytė', 'jolanta.sabonyte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000025', NULL, '2026-05-05 12:18:25', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(46, 'Arnas', 'Grigaitis', 'arnas.grigaitis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000026', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(47, 'Vaida', 'Žemaitytė', 'vaida.zemaityte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000027', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(48, 'Kastytis', 'Daugirdas', 'kastytis.daugirdas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000028', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(49, 'Dovilė', 'Ramonaitė', 'dovile.ramonaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000029', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(50, 'Paulius', 'Šimkus', 'paulius.simkus@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000030', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(51, 'Jurgita', 'Sakalauskaitė', 'jurgita.sakalausk@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000031', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(52, 'Erikas', 'Bartkus', 'erikas.bartkus@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000032', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(53, 'Renata', 'Juodytė', 'renata.juodyte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000033', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(54, 'Nerijus', 'Urbas', 'nerijus.urbas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000034', NULL, '2026-05-05 12:18:26', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(55, 'Loreta', 'Stonkutė', 'loreta.stonkute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000035', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(56, 'Algirdas', 'Bieliauskas', 'algirdas.bieliausk@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000036', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(57, 'Inga', 'Gudaitė', 'inga.gudaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000037', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(58, 'Renatas', 'Jokubaitis', 'renatas.jokubaitis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000038', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(59, 'Zita', 'Žilinskaitė', 'zita.zilinskaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000039', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(60, 'Valdas', 'Girnius', 'valdas.girnius@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000040', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(61, 'Asta', 'Ažubalytė', 'asta.azubalyte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000041', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(62, 'Egidijus', 'Mikalauskas', 'egidijus.mikalausk@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000042', NULL, '2026-05-05 12:18:27', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(63, 'Birutė', 'Urbonaitė', 'birute.urbonaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000043', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(64, 'Gintaras', 'Repšys', 'gintaras.repsys@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000044', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(65, 'Danguolė', 'Baranauskaitė', 'danguole.baranausk@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000045', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(66, 'Vytautas', 'Juška', 'vytautas.juska@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000046', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(67, 'Aldona', 'Bakšytė', 'aldona.baksyte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000047', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(68, 'Rolandas', 'Kairys', 'rolandas.kairys@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000048', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(69, 'Valerija', 'Venslovaitė', 'valerija.venslova@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000049', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(70, 'Vaidotas', 'Pabedinksas', 'vaidotas.pabed@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000050', NULL, '2026-05-05 12:18:28', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(71, 'Roma', 'Antanavičiūtė', 'roma.antanaviciu@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000051', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(72, 'Kęstutis', 'Reklaitis', 'kestutis.reklaitis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000052', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(73, 'Vilma', 'Zubovaitė', 'vilma.zubovaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000053', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(74, 'Deividas', 'Lesauskas', 'deividas.lesauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000054', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(75, 'Sandra', 'Martinaitytė', 'sandra.martinaity@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000055', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(76, 'Adomas', 'Noreika', 'adomas.noreika@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000056', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(77, 'Sonata', 'Šimkutė', 'sonata.simkute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000057', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(78, 'Laurynas', 'Vaitkevičius', 'laurynas.vaitkev@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000058', NULL, '2026-05-05 12:18:29', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(79, 'Neringa', 'Kačinskaitė', 'neringa.kacinsk@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000059', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(80, 'Ignas', 'Ramanauskas', 'ignas.ramanauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000060', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(81, 'Ramunė', 'Bučiūtė', 'ramune.buciute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000061', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(82, 'Karolis', 'Černiauskas', 'karolis.cerniauska@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000062', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(83, 'Lina', 'Mockutė', 'lina.mockute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000063', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(84, 'Martynas', 'Lukoševičius', 'martynas.lukosev@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000064', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(85, 'Irena', 'Gintautaitė', 'irena.gintautaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000065', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(86, 'Tadas', 'Bernatavičius', 'tadas.bernatav@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000066', NULL, '2026-05-05 12:18:30', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(87, 'Brigita', 'Jonikaitė', 'brigita.jonikait@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000067', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(88, 'Dominykas', 'Gudelis', 'dominykas.gudelis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000068', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(89, 'Kristina', 'Povilaitytė', 'kristina.povilait@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000069', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(90, 'Žygimantas', 'Urbonavičius', 'zygimantas.urbon@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000070', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(91, 'Dalia', 'Grybaitė', 'dalia.grybaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000071', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(92, 'Rimantas', 'Kalvaitis', 'rimantas.kalvaitis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000072', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(93, 'Audra', 'Daukšaitė', 'audra.dauksa@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000073', NULL, '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(94, 'Vidmantas', 'Česnavičius', 'vidmantas.cesna@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000074', '', '2026-05-05 12:18:31', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(95, 'Vida', 'Šapalaitė', 'vida.sapalait@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000075', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(96, 'Alvydas', 'Stankus', 'alvydas.stankus@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000076', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(97, 'Nijolė', 'Jonavičiūtė', 'nijole.jonavic@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000077', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(98, 'Edvinas', 'Petryla', 'edvinas.petryla@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000078', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(99, 'Aušra', 'Rudokaitė', 'ausra.rudoka@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000079', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(100, 'Donatas', 'Mikelėnas', 'donatas.mikelenas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000080', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(101, 'Laima', 'Bieliūnaitė', 'laima.bieliunaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000081', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(102, 'Aidas', 'Vaičiulis', 'aidas.vaiciulis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000082', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(103, 'Rita', 'Kuzminskaitė', 'rita.kuzminskaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000083', NULL, '2026-05-05 12:18:32', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(104, 'Šarūnas', 'Skardžius', 'sarunas.skard@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000084', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(105, 'Edita', 'Žalienė', 'edita.zaliene@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000085', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(106, 'Ąžuolas', 'Pocius', 'azuolas.pocius@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000086', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(107, 'Ineta', 'Orentaitė', 'ineta.orenta@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000087', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(108, 'Povilas', 'Aleksa', 'povilas.aleksa@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000088', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(109, 'Simona', 'Gumuliauskaitė', 'simona.gumul@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000089', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(110, 'Simonas', 'Kavaliūnas', 'simonas.kavaliunas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000090', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(111, 'Virginija', 'Kanapickaitė', 'virginija.kanap@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000091', NULL, '2026-05-05 12:18:33', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(112, 'Antanas', 'Rakauskas', 'antanas.rakauskas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000092', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(113, 'Violeta', 'Valiulytė', 'violeta.valiulyt@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000093', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(114, 'Teodoras', 'Sasnauskas', 'teodoras.sasnauska@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000094', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(115, 'Živilė', 'Radavičiūtė', 'zivile.radavic@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000095', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(116, 'Henrikas', 'Kubilius', 'henrikas.kubilius@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000096', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(117, 'Ugnė', 'Mačiulaitytė', 'ugne.maciulait@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000097', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(118, 'Kazimieras', 'Šimonis', 'kazimieras.simonis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000098', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(119, 'Rugilė', 'Naujokaitė', 'rugile.naujokaite@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000099', NULL, '2026-05-05 12:18:34', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(120, 'Arvydas', 'Stonys', 'arvydas.stonys@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000100', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(121, 'Gabija', 'Tamulaitytė', 'gabija.tamulait@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000101', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(122, 'Linas', 'Vainauskis', 'linas.vainauskis@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000102', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(123, 'Miglė', 'Griciūtė', 'migle.griciute@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000103', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(124, 'Povilas', 'Čiupys', 'povilas.ciupys@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000104', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(125, 'Emilija', 'Savickaitė', 'emilija.savickaite@demo.lt', '$2a$11$chicaqerf.7TVXeisbFHLOaTeLXSxrR/eY5TfCnfvM3KJFt8YvFem$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000105', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(126, 'Darius', 'Dičiūnas', 'darius.diciunas@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37061000106', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(127, 'Aistė', 'Vilkelytė', 'aiste.vilkelyte@demo.lt', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37062000107', NULL, '2026-05-05 12:18:35', NULL, 'LOCAL', NULL, 0, NULL, NULL),
+(128, 'Ignas', 'Makackas', 'ignasmakackas@gmail.com', '$2a$11$d6OpHmk/PLgBt7WMVX8.euh.HfILtOhsEDibBD760ecb7xznkVHQK', '+37060000000', NULL, '2026-05-05 15:52:09', NULL, 'LOCAL', NULL, 0, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -1822,43 +1430,43 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id_Company` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_Company` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `company_integration`
 --
 ALTER TABLE `company_integration`
-  MODIFY `id_CompanyIntegration` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_CompanyIntegration` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `courier`
 --
 ALTER TABLE `courier`
-  MODIFY `id_Courier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_Courier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id_Invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_Invoice` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `id_Notification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id_Notification` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_Orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_Orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `ordersproduct`
 --
 ALTER TABLE `ordersproduct`
-  MODIFY `id_OrdersProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=282;
+  MODIFY `id_OrdersProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `orderstatus`
@@ -1870,13 +1478,13 @@ ALTER TABLE `orderstatus`
 -- AUTO_INCREMENT for table `package`
 --
 ALTER TABLE `package`
-  MODIFY `id_Package` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id_Package` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_Product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_Product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `productgroup`
@@ -1888,19 +1496,19 @@ ALTER TABLE `productgroup`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id_ProductImage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_ProductImage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `product_returns`
 --
 ALTER TABLE `product_returns`
-  MODIFY `id_Returns` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_Returns` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `return_item`
 --
 ALTER TABLE `return_item`
-  MODIFY `id_ReturnItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_ReturnItem` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `return_reason`
@@ -1918,13 +1526,13 @@ ALTER TABLE `return_status_type`
 -- AUTO_INCREMENT for table `shipment`
 --
 ALTER TABLE `shipment`
-  MODIFY `id_Shipment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id_Shipment` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `shipment_status`
 --
 ALTER TABLE `shipment_status`
-  MODIFY `id_ShipmentStatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id_ShipmentStatus` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `shipment_status_type`
@@ -1936,7 +1544,7 @@ ALTER TABLE `shipment_status_type`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_Users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id_Users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- Constraints for dumped tables

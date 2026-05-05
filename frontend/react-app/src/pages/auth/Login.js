@@ -6,6 +6,13 @@ import { useAuth } from "../../services/AuthContext";
 import Logo from "../../images/Full_track_sync_logo2.png";
 import { authValidation } from "./authValidation";
 
+function getRedirectPath(data) {
+    const role = data?.companyRole ?? data?.activeCompany?.role ?? "";
+    if (role === "CLIENT") return "/client";
+    if (role === "COURIER") return "/courier";
+    return "/";
+}
+
 function Login() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -57,8 +64,8 @@ function Login() {
 
         setLoading(true);
         try {
-            await login(email, password);
-            navigate("/client");
+            const data = await login(email, password);
+            navigate(getRedirectPath(data));
         } catch (err) {
             setServerError(err.message || "Prisijungimas nepavyko.");
         } finally {
@@ -68,8 +75,8 @@ function Login() {
 
     const handleGoogleLogin = async (credentialResponse) => {
         try {
-            await googleLogin(credentialResponse.credential);
-            navigate("/client");
+            const data = await googleLogin(credentialResponse.credential);
+            navigate(getRedirectPath(data));
         } catch (err) {
             setServerError(err.message || "Google prisijungimas nepavyko.");
         }

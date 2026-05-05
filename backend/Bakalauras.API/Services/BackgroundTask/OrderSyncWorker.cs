@@ -17,6 +17,9 @@ public class OrderSyncWorker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        // Wait for ClientSyncWorker and ProductSyncWorker to finish first
+        await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
+
         try { await SyncAllCompanies(stoppingToken); }
         catch (Exception ex) { Console.WriteLine($"[OrderSyncWorker] Startup error: {ex}"); }
 

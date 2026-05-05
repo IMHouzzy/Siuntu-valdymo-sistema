@@ -175,11 +175,14 @@ public class ClientSyncWorker : BackgroundService
                 }
 
                 // ── 3. Add client_company row (skip if already exists via race) ──
-                var ccExists = await db.client_companies.AnyAsync(cc =>
-                    cc.fk_Companyid_Company == companyId &&
-                    cc.externalClientId     == ext.ClientID, ct);
+                // Check both by PK (user+company) AND externalClientId to avoid
+                // duplicate tracking when two external clients map to the same user
+                var existingCc = await db.client_companies
+                    .FirstOrDefaultAsync(cc =>
+                        cc.fk_Companyid_Company == companyId &&
+                        (cc.externalClientId == ext.ClientID || cc.fk_Clientid_Users == existingUser.id_Users), ct);
 
-                if (!ccExists)
+                if (existingCc == null)
                 {
                     db.client_companies.Add(new client_company
                     {
@@ -192,6 +195,11 @@ public class ClientSyncWorker : BackgroundService
                         vat                  = ext.Vat,
                         bankCode             = int.TryParse(ext.BankCode, out var bc) ? bc : null
                     });
+                }
+                else if (existingCc.externalClientId != ext.ClientID)
+                {
+                    // User already linked — just update the externalClientId if missing
+                    existingCc.externalClientId = ext.ClientID;
                 }
 
                 await db.SaveChangesAsync(ct);

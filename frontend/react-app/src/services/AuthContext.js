@@ -58,7 +58,9 @@ export function AuthProvider({ children }) {
             const text = await res.text().catch(() => "");
             throw new Error(text || "Prisijungimas nepavyko.");
         }
-        applySession(await res.json());
+        const data = await res.json();
+        applySession(data);
+        return data;
     };
 
     const register = async (dto) => {
@@ -81,7 +83,9 @@ export function AuthProvider({ children }) {
             body:    JSON.stringify({ idToken }),
         });
         if (!res.ok) throw new Error("Google prisijungimas nepavyko.");
-        applySession(await res.json());
+        const data = await res.json();
+        applySession(data);
+        return data;
     };
 
     const logout = async () => {
