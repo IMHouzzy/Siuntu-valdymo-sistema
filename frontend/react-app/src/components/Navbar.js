@@ -7,7 +7,7 @@ function Navbar() {
   return (
 
     <nav className="nav-container">
-      <Link to="/"><LuLayoutDashboard size={18}/> Dashboard</Link>
+      <Link to="/"><LuLayoutDashboard size={18}/> Suvestinė</Link>
 
       <DropdownMenu
         title="Naudotojai"

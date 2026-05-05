@@ -51,7 +51,7 @@ export default function SidebarLeft({ collapsed, onToggle }) {
 
   const nav = useMemo(() => {
     const base = [
-      { type: "link", id: "Dashboard", label: "Dashboard", icon: <LuLayoutDashboard />, to: "/" },
+      { type: "link", id: "Suvestinė", label: "Suvestinė", icon: <LuLayoutDashboard />, to: "/" },
       {
         type: "group",
         id: "Užsakymai",
