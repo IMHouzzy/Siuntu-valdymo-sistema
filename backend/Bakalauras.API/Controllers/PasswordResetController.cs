@@ -55,7 +55,7 @@ public class PasswordResetController : ControllerBase
 
         await _db.SaveChangesAsync();
 
-        var frontendBase = (_cfg["FrontendBaseUrl"] ?? "http://localhost:3000").TrimEnd('/');
+        var frontendBase = (_cfg["FrontendBaseUrl"] ?? "http://46.101.161.47").TrimEnd('/');
         var resetUrl = $"{frontendBase}/reset-password?token={rawToken}";
 
         await _email.SendAsync(

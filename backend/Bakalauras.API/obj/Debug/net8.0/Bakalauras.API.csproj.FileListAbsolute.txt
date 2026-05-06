@@ -434,3 +434,14 @@ C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siunt�
 C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\obj\Debug\net8.0\Bakalauras.API.pdb
 C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\obj\Debug\net8.0\Bakalauras.API.genruntimeconfig.cache
 C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\obj\Debug\net8.0\ref\Bakalauras.API.dll
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-loongarch64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-musl-arm\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-musl-arm64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-musl-loongarch64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-musl-riscv64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-riscv64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\Ignas\Desktop\KTU\VIII semestras\Bakalauro baigiamasis projektas\Siuntų valdymo posistemė\backend\Bakalauras.API\bin\Debug\net8.0\runtimes\linux-x86\native\libSkiaSharp.so

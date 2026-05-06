@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7TGkmls8y9DXP7n3xqc3W37JuT3B9/sU83JpH4oYDMY=",
+  "Hash": "1btfNGfkweo15btmB9BeEZ3PuC42k8jQpAf8nqBUA+s=",
   "Source": "Bakalauras.API",
   "BasePath": "_content/Bakalauras.API",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\wwwroot\\labels\\1\\label_1.pdf",
+      "SourceId": "Bakalauras.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\wwwroot\\",
+      "BasePath": "_content/Bakalauras.API",
+      "RelativePath": "labels/1/label_1.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\labels\\1\\label_1.pdf"
+    },
     {
       "Identity": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\wwwroot\\uploads\\companies\\1\\logo.png",
       "SourceId": "Bakalauras.API",

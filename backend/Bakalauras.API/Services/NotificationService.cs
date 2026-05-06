@@ -130,7 +130,7 @@ public class NotificationService : INotificationService
                 if (newStatusId == 1)
                 {
                     // Read from config or hardcode your frontend URL
-                    var frontendBase = _cfg["FrontendBaseUrl"] ?? "http://localhost:3000";
+                    var frontendBase = _cfg["FrontendBaseUrl"] ?? "http://46.101.161.47";
                     ctaUrl = $"{frontendBase}/client/profile#orders?order={orderId}";
                     ctaLabel = "Pasirinkti pristatymą";
                 }

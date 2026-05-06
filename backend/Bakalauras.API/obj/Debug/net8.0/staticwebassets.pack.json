@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\wwwroot\\labels\\1\\label_1.pdf",
+      "PackagePath": "staticwebassets\\labels\\1\\label_1.pdf"
+    },
+    {
       "Id": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\wwwroot\\uploads\\companies\\1\\logo.png",
       "PackagePath": "staticwebassets\\uploads\\companies\\1\\logo.png"
     },

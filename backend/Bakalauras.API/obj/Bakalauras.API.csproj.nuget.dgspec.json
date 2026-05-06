@@ -99,6 +99,10 @@
               "target": "Package",
               "version": "[3.119.2, )"
             },
+            "SkiaSharp.NativeAssets.Linux.NoDependencies": {
+              "target": "Package",
+              "version": "[3.119.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
