@@ -209,9 +209,9 @@ public class DpdProvider : ICourierProvider
         Console.WriteLine($"[DpdProvider] parcelNumbers: [{string.Join(", ", parcelNumbers)}]");
 
         // ── Extract the combined multi-page PDF ───────────────────────────────
-        byte[]? combinedPdf = null;
+        byte[]? combinedPdf = TryExtractPdfFromJson(body);
 
-        if (first.TryGetProperty("shipmentLabels", out var sl))
+        if (combinedPdf == null && first.TryGetProperty("shipmentLabels", out var sl))
         {
             JsonElement labelsEl = sl.ValueKind == JsonValueKind.Array
                 ? sl.EnumerateArray().FirstOrDefault()
@@ -359,11 +359,14 @@ public class DpdProvider : ICourierProvider
         }
 
         var contentType = res.Content.Headers.ContentType?.MediaType ?? "";
-        if (contentType.Contains("pdf")) return bytes;
+        if (contentType.Contains("pdf") || LooksLikePdf(bytes)) return bytes;
 
         try
         {
             var json = Encoding.UTF8.GetString(bytes);
+            var extractedPdf = TryExtractPdfFromJson(json);
+            if (extractedPdf != null) return extractedPdf;
+
             using var doc = JsonDocument.Parse(json);
             var root = doc.RootElement;
 
@@ -393,6 +396,74 @@ public class DpdProvider : ICourierProvider
     }
 
     // ── GetTracking (unchanged) ───────────────────────────────────────────────
+
+    private static byte[]? TryExtractPdfFromJson(string json)
+    {
+        try
+        {
+            using var doc = JsonDocument.Parse(json);
+            return TryExtractPdf(doc.RootElement);
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private static byte[]? TryExtractPdf(JsonElement element)
+    {
+        switch (element.ValueKind)
+        {
+            case JsonValueKind.Object:
+                foreach (var property in element.EnumerateObject())
+                {
+                    var fromChild = TryExtractPdf(property.Value);
+                    if (fromChild != null) return fromChild;
+                }
+                break;
+
+            case JsonValueKind.Array:
+                foreach (var item in element.EnumerateArray())
+                {
+                    var fromChild = TryExtractPdf(item);
+                    if (fromChild != null) return fromChild;
+                }
+                break;
+
+            case JsonValueKind.String:
+                return TryDecodePdf(element.GetString());
+        }
+
+        return null;
+    }
+
+    private static byte[]? TryDecodePdf(string? raw)
+    {
+        if (string.IsNullOrWhiteSpace(raw)) return null;
+
+        var b64 = raw.Contains(',') ? raw[(raw.IndexOf(',') + 1)..] : raw;
+        b64 = b64.Replace("\r", "").Replace("\n", "").Replace(" ", "");
+
+        if (b64.Length < 8 || b64.Length % 4 != 0) return null;
+
+        try
+        {
+            var bytes = Convert.FromBase64String(b64);
+            return LooksLikePdf(bytes) ? bytes : null;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private static bool LooksLikePdf(byte[] bytes)
+        => bytes.Length >= 5
+        && bytes[0] == (byte)'%'
+        && bytes[1] == (byte)'P'
+        && bytes[2] == (byte)'D'
+        && bytes[3] == (byte)'F'
+        && bytes[4] == (byte)'-';
 
     public async Task<List<CourierTrackingEvent>> GetTrackingAsync(
         string parcelNumber, CancellationToken ct = default)

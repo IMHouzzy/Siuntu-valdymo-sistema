@@ -37,7 +37,18 @@ const RETURN_STATUS = {
 };
 
 function getOrderStatus(id) { return ORDER_STATUS[id] ?? { label: String(id), color: "var(--color-text-muted)", icon: FiClock }; }
-function getReturnStatus(id) { return RETURN_STATUS[id] ?? { label: String(id), color: "var(--color-text-muted)", icon: FiClock }; }
+function getReturnStatus(id) {
+  const statuses = {
+    1: { label: "Sukurtas", color: "var(--color-secondary)", icon: FiClock },
+    2: { label: "Vertinamas", color: "var(--color-warning)", icon: FiAlertCircle },
+    3: { label: "Gauta", color: "var(--color-secondary)", icon: FiPackage },
+    4: { label: "Užbaigta", color: "var(--color-accent)", icon: FiCheckCircle },
+    5: { label: "Patvirtintas", color: "var(--color-accent)", icon: FiCheckCircle },
+    6: { label: "Atmestas", color: "var(--color-danger)", icon: FiXCircle },
+    7: { label: "Etiketės paruoštos", color: "var(--color-primary)", icon: FiFileText },
+  };
+  return statuses[id] ?? RETURN_STATUS[id] ?? { label: String(id), color: "var(--color-text-muted)", icon: FiClock };
+}
 
 function fmtDate(d) {
   if (!d) return "—";

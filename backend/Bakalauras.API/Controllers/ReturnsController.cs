@@ -377,6 +377,12 @@ public class ReturnsController : ControllerBase
                 var labelDir = Path.Combine(webRoot, "labels", returnShipment.id_Shipment.ToString());
                 Directory.CreateDirectory(labelDir);
 
+                var labelCourierName = courier?.name ?? "—";
+                var shippingDateStr = DateTime.UtcNow.ToString("yyyy-MM-dd");
+                var estimatedStr    = DateTime.UtcNow.AddDays(courier?.deliveryTermDays ?? 3).ToString("yyyy-MM-dd");
+                var senderAddr      = BuildAddressLine(senderStreet, senderCity, senderCountry);
+                var recipientAddr   = BuildAddressLine(recipientStreet, recipientCity, recipientCountry);
+
                 if (isProvider)
                 {
                     // ── Provider path (DPD etc.) ──────────────────────────────
@@ -440,6 +446,25 @@ public class ReturnsController : ControllerBase
                                 await System.IO.File.WriteAllBytesAsync(filePath, labelBytes);
                                 labelUrl = $"/labels/{returnShipment.id_Shipment}/label_{i + 1}.pdf";
                             }
+                            else
+                            {
+                                labelUrl = LabelGenerator.Generate(
+                                    webRootPath:       webRoot,
+                                    shipmentId:        returnShipment.id_Shipment,
+                                    packageIndex:      i + 1,
+                                    totalPackages:     packageCount,
+                                    trackingNumber:    pkgTracking,
+                                    senderName:        senderName,
+                                    senderAddress:     senderAddr,
+                                    senderPhone:       senderPhone,
+                                    recipientName:     company?.name ?? "—",
+                                    recipientAddress:  recipientAddr,
+                                    recipientPhone:    company?.phoneNumber ?? "",
+                                    courierName:       labelCourierName,
+                                    shippingDate:      shippingDateStr,
+                                    estimatedDelivery: estimatedStr
+                                );
+                            }
 
                             _db.packages.Add(new package
                             {
@@ -452,19 +477,60 @@ public class ReturnsController : ControllerBase
                         }
                         labelsCreated = true;
                     }
-                    // If provider call fails, proceed with status 5 (Patvirtinta) — no labels
+                    else
+                    {
+                        var rng = new Random();
+                        string? firstTracking = null;
+
+                        for (int i = 0; i < packageCount; i++)
+                        {
+                            string pkgTracking;
+                            do
+                            {
+                                var ts = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                                var suffix = rng.Next(1000, 9999);
+                                pkgTracking = $"RET-{companyId}-{id}-{ts}-{suffix}";
+                            }
+                            while (await _db.packages.AnyAsync(p => p.trackingNumber == pkgTracking));
+
+                            if (firstTracking == null) firstTracking = pkgTracking;
+
+                            var labelUrl = LabelGenerator.Generate(
+                                webRootPath:       webRoot,
+                                shipmentId:        returnShipment.id_Shipment,
+                                packageIndex:      i + 1,
+                                totalPackages:     packageCount,
+                                trackingNumber:    pkgTracking,
+                                senderName:        senderName,
+                                senderAddress:     senderAddr,
+                                senderPhone:       senderPhone,
+                                recipientName:     company?.name ?? "—",
+                                recipientAddress:  recipientAddr,
+                                recipientPhone:    company?.phoneNumber ?? "",
+                                courierName:       labelCourierName,
+                                shippingDate:      shippingDateStr,
+                                estimatedDelivery: estimatedStr
+                            );
+
+                            _db.packages.Add(new package
+                            {
+                                fk_Shipmentid_Shipment = returnShipment.id_Shipment,
+                                labelFile              = labelUrl,
+                                creationDate           = DateTime.UtcNow,
+                                weight                 = 1.0,
+                                trackingNumber         = pkgTracking,
+                            });
+                        }
+
+                        returnShipment.trackingNumber = firstTracking ?? $"RET-{id}";
+                        labelsCreated = true;
+                    }
                 }
                 else
                 {
                     // ── Custom courier path — professional QuestPDF labels ─────
                     var rng = new Random();
                     var courierName     = courier?.name ?? "—";
-                    var shippingDateStr = DateTime.UtcNow.ToString("yyyy-MM-dd");
-                    var estimatedStr    = DateTime.UtcNow.AddDays(courier?.deliveryTermDays ?? 3).ToString("yyyy-MM-dd");
-
-                    var senderAddr    = BuildAddressLine(senderStreet, senderCity, senderCountry);
-                    var recipientAddr = BuildAddressLine(recipientStreet, recipientCity, recipientCountry);
-
                     string? firstTracking = null;
                     for (int i = 0; i < packageCount; i++)
                     {

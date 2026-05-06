@@ -335,6 +335,7 @@ await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
                 // Show return shipment labels if they exist
                 returnShipment = _db.shipments.AsNoTracking()
                     .Where(s => s.fk_Returnsid_Returns == r.id_Returns)
+                    .OrderByDescending(s => s.id_Shipment)
                     .Select(s => new
                     {
                         s.id_Shipment,
@@ -404,6 +405,7 @@ await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
                 }).ToList(),
                 returnShipment = _db.shipments.AsNoTracking()
                     .Where(s => s.fk_Returnsid_Returns == r.id_Returns)
+                    .OrderByDescending(s => s.id_Shipment)
                     .Select(s => new
                     {
                         s.id_Shipment,

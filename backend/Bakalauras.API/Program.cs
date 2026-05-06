@@ -3,6 +3,7 @@ using System.Text;
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.IdentityModel.Tokens;
 using QuestPDF.Infrastructure;
 using Bakalauras.API.Services;
@@ -14,10 +15,13 @@ builder.Services.AddControllers();
 
 // â”€â”€ DbContext â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
+var dbConnectionString = builder.Configuration.GetConnectionString("Default");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("Default"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("Default"))
+        dbConnectionString,
+        ServerVersion.AutoDetect(dbConnectionString),
+        mySql => mySql.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)
     )
 );
 
