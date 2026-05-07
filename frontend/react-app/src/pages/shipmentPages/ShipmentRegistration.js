@@ -11,6 +11,8 @@ import { useAuth } from "../../services/AuthContext";
 import { shipmentsApi, companiesApi } from "../../services/api";
 import { validateShipment } from "./shipmentValidation";
 
+const getCourierId = (courier) => courier?.id ?? courier?.id_Courier;
+
 export default function ShipmentFormPage() {
   const [patchValues, setPatchValues] = useState({});
   const { orderId } = useParams();
@@ -39,11 +41,14 @@ export default function ShipmentFormPage() {
         setCouriers(Array.isArray(crs) ? crs : []);
 
         // Pre-select courier that was chosen at order creation time
-        if (ord.snapshotCourierId && Array.isArray(crs)) {
+        if (ord.snapshotCourierId != null && Array.isArray(crs)) {
           const preselected = crs.find(
-            (c) => (c.id ?? c.id_Courier) === ord.snapshotCourierId
+            (c) => String(getCourierId(c)) === String(ord.snapshotCourierId)
           );
-          if (preselected) setSelectedCourier(preselected);
+          if (preselected) {
+            setSelectedCourier(preselected);
+            prevCourierIdRef.current = getCourierId(preselected);
+          }
         }
       })
       .catch(e => setError(e.message))
@@ -61,7 +66,7 @@ export default function ShipmentFormPage() {
 
     return {
       courierId: order.snapshotCourierId ?? null,
-      _needsLocker: false, // Will be updated via onValuesChange
+      _needsLocker: isLocker,
 
       deliveryCoords: isLocker && order.snapshotLockerId
         ? {
@@ -70,8 +75,8 @@ export default function ShipmentFormPage() {
           id: order.snapshotLockerId,
           street: order.snapshotLockerAddress ?? "",
           city: "",
-          lat: order.snapshotLat ?? 0,
-          lng: order.snapshotLng ?? 0,
+          lat: Number(order.snapshotLat ?? 0),
+          lng: Number(order.snapshotLng ?? 0),
         }
         : null,
 
@@ -93,10 +98,14 @@ export default function ShipmentFormPage() {
   // ── onValuesChange ─────────────────────────────────────────────────────────
   const handleValuesChange = (vals) => {
     setTimeout(() => {
-      const c = couriers.find((c) => (c.id ?? c.id_Courier) === vals.courierId);
+      const c = couriers.find((c) => String(getCourierId(c)) === String(vals.courierId));
       setSelectedCourier(c ?? null);
 
-      const courierChanged = prevCourierIdRef.current !== vals.courierId;
+      const previousCourierId = prevCourierIdRef.current;
+      const courierChanged =
+        previousCourierId != null &&
+        vals.courierId != null &&
+        String(previousCourierId) !== String(vals.courierId);
       prevCourierIdRef.current = vals.courierId;
 
       const patch = {};

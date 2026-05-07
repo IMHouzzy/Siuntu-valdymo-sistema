@@ -376,12 +376,12 @@ function LockerPickerWidget({ companyId, courierType, value, onChange }) {
       )}
 
       <div className="sf-locker-map-wrap">
-        <LockerMap locker={value} />
+        <LockerMap locker={selected} />
 
-        {value && (
+        {selected && (
           <div className="sf-locker-caption">
-            📍 <strong>{value.name}</strong>{" — "}
-            {[value.street, value.city, value.postalCode].filter(Boolean).join(", ")}
+            📍 <strong>{selected.name}</strong>{" — "}
+            {[selected.street, selected.city, selected.postalCode].filter(Boolean).join(", ")}
           </div>
         )}
       </div>
