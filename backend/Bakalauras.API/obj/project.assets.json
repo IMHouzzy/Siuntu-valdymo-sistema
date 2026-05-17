@@ -5471,11 +5471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\Bakalauras.API.csproj",
+      "projectUniqueName": "C:\\Users\\Ignas\\Desktop\\KTU\\prod\\Siuntu-valdymo-sistema\\backend\\Bakalauras.API\\Bakalauras.API.csproj",
       "projectName": "Bakalauras.API",
-      "projectPath": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\Bakalauras.API.csproj",
+      "projectPath": "C:\\Users\\Ignas\\Desktop\\KTU\\prod\\Siuntu-valdymo-sistema\\backend\\Bakalauras.API\\Bakalauras.API.csproj",
       "packagesPath": "C:\\Users\\Ignas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\obj\\",
+      "outputPath": "C:\\Users\\Ignas\\Desktop\\KTU\\prod\\Siuntu-valdymo-sistema\\backend\\Bakalauras.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ignas\\AppData\\Roaming\\NuGet\\NuGet.Config"

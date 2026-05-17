@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "25+Dt8HKcq8=",
+  "dgSpecHash": "9QlQkF+w8BI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ignas\\Desktop\\KTU\\VIII semestras\\Bakalauro baigiamasis projektas\\Siuntų valdymo posistemė\\backend\\Bakalauras.API\\Bakalauras.API.csproj",
+  "projectFilePath": "C:\\Users\\Ignas\\Desktop\\KTU\\prod\\Siuntu-valdymo-sistema\\backend\\Bakalauras.API\\Bakalauras.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ignas\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Ignas\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
