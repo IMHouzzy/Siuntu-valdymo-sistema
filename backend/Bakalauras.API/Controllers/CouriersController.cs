@@ -1,7 +1,3 @@
-// Controllers/CouriersController.cs
-// REPLACES your current stub CouriersController.
-// Route: GET/POST/PUT/DELETE  /api/companies/{companyId}/couriers
-
 using Bakalauras.API.Models;
 using Bakalauras.API.Dtos;
 using Microsoft.AspNetCore.Authorization;
@@ -13,16 +9,16 @@ using Microsoft.EntityFrameworkCore;
 [Authorize]
 public class CouriersController : ControllerBase
 {
-    private readonly AppDbContext          _db;
+    private readonly AppDbContext _db;
     private readonly CourierProviderFactory _providerFactory;
 
     public CouriersController(AppDbContext db, CourierProviderFactory providerFactory)
     {
-        _db              = db;
+        _db = db;
         _providerFactory = providerFactory;
     }
 
-    // ── Auth helpers ──────────────────────────────────────────────────────────
+    // Auth helpers
 
     private bool CallerIsInCompany(int companyId)
         => User.IsMasterAdmin() || User.GetCompanyId() == companyId;
@@ -39,27 +35,24 @@ public class CouriersController : ControllerBase
         return role is "OWNER" or "ADMIN";
     }
 
-    // ── GET /api/companies/{companyId}/couriers ───────────────────────────────
+    // GET /api/companies/{companyId}/couriers 
     // Returns couriers visible to this company:
-    //   • Company-private CUSTOM couriers  (fk_Company == companyId)
-    //   • Global CUSTOM couriers           (fk_Company == NULL)
-    //   • Provider couriers                (DPD_*, LP_EXPRESS_*, …)
-    //       → ONLY shown when the company has that provider integration enabled
-    //       → Company A with DPD sees DPD couriers; Company B without DPD does NOT
+    //   Company-private CUSTOM couriers (fk_Company == companyId)
+    //   Global CUSTOM couriers (fk_Company == NULL)
+    //   Provider couriers (DPD_*, LP_EXPRESS_*, …)
+    //   ONLY shown when the company has that provider integration enabled
+    //   Company A with DPD sees DPD couriers; Company B without DPD does NOT
 
     [HttpGet]
     public async Task<IActionResult> List(int companyId)
     {
         if (!CallerIsInCompany(companyId)) return Forbid();
 
-        // Which integrations does THIS company have enabled?
         var enabledKeys = await _providerFactory.GetEnabledIntegrationKeysAsync(companyId);
 
-        // Build the set of courier type strings that are unlocked for this company.
-        // We do this in memory BEFORE the EF query so EF only sees a plain string HashSet
-        // (Contains on a HashSet<string> translates to SQL IN(...) without any problem).
         var allowedProviderTypes = CourierProviderFactory.AllProviderCourierTypes
-            .Where(t => {
+            .Where(t =>
+            {
                 var key = CourierProviderFactory.GetIntegrationKey(t);
                 return key != null && enabledKeys.Contains(key);
             })
@@ -68,7 +61,7 @@ public class CouriersController : ControllerBase
         var couriers = await _db.couriers
             .AsNoTracking()
             .Where(c =>
-                // Company's own private CUSTOM couriers
+
                 (c.type == "CUSTOM" && c.fk_Companyid_Company == companyId) ||
                 // Global CUSTOM couriers (NULL company = visible to everyone)
                 (c.type == "CUSTOM" && c.fk_Companyid_Company == null) ||
@@ -80,21 +73,21 @@ public class CouriersController : ControllerBase
             .ThenBy(c => c.name)
             .Select(c => new CourierDto
             {
-                Id               = c.id_Courier,
-                Name             = c.name,
-                Type             = c.type,
-                ContactPhone     = c.contactPhone,
+                Id = c.id_Courier,
+                Name = c.name,
+                Type = c.type,
+                ContactPhone = c.contactPhone,
                 DeliveryTermDays = c.deliveryTermDays,
-                DeliveryPrice    = c.deliveryPrice,
-                IsOwn            = c.fk_Companyid_Company == companyId,
-                SupportsLockers  = c.type.EndsWith("_PARCEL"),
+                DeliveryPrice = c.deliveryPrice,
+                IsOwn = c.fk_Companyid_Company == companyId,
+                SupportsLockers = c.type.EndsWith("_PARCEL"),
             })
             .ToListAsync();
 
         return Ok(couriers);
     }
 
-    // ── POST /api/companies/{companyId}/couriers ──────────────────────────────
+    // POST /api/companies/{companyId}/couriers
     // Creates a new company-private CUSTOM courier.
     // Only OWNER / ADMIN (or master admin) may create.
 
@@ -106,12 +99,12 @@ public class CouriersController : ControllerBase
 
         var c = new courier
         {
-            name                 = dto.Name.Trim(),
-            contactPhone         = dto.ContactPhone?.Trim(),
-            deliveryTermDays     = dto.DeliveryTermDays,
-            deliveryPrice        = dto.DeliveryPrice,
-            type                 = "CUSTOM",       // company-created couriers are always CUSTOM
-            fk_Companyid_Company = companyId,      // always private to this company
+            name = dto.Name.Trim(),
+            contactPhone = dto.ContactPhone?.Trim(),
+            deliveryTermDays = dto.DeliveryTermDays,
+            deliveryPrice = dto.DeliveryPrice,
+            type = "CUSTOM",
+            fk_Companyid_Company = companyId,
         };
 
         _db.couriers.Add(c);
@@ -119,18 +112,18 @@ public class CouriersController : ControllerBase
 
         return Ok(new CourierDto
         {
-            Id               = c.id_Courier,
-            Name             = c.name,
-            Type             = c.type,
-            ContactPhone     = c.contactPhone,
+            Id = c.id_Courier,
+            Name = c.name,
+            Type = c.type,
+            ContactPhone = c.contactPhone,
             DeliveryTermDays = c.deliveryTermDays,
-            DeliveryPrice    = c.deliveryPrice,
-            IsOwn            = true,
-            SupportsLockers  = false,
+            DeliveryPrice = c.deliveryPrice,
+            IsOwn = true,
+            SupportsLockers = false,
         });
     }
 
-    // ── PUT /api/companies/{companyId}/couriers/{courierId} ───────────────────
+    // PUT /api/companies/{companyId}/couriers/{courierId}
     // Updates a company-private CUSTOM courier.
     // Cannot edit global couriers or provider couriers.
 
@@ -147,16 +140,16 @@ public class CouriersController : ControllerBase
         if (c == null)
             return NotFound("Courier not found or cannot be edited by your company.");
 
-        c.name             = dto.Name.Trim();
-        c.contactPhone     = dto.ContactPhone?.Trim();
+        c.name = dto.Name.Trim();
+        c.contactPhone = dto.ContactPhone?.Trim();
         c.deliveryTermDays = dto.DeliveryTermDays;
-        c.deliveryPrice    = dto.DeliveryPrice;
+        c.deliveryPrice = dto.DeliveryPrice;
 
         await _db.SaveChangesAsync();
         return Ok();
     }
 
-    // ── DELETE /api/companies/{companyId}/couriers/{courierId} ────────────────
+    // DELETE /api/companies/{companyId}/couriers/{courierId}
     // Deletes a company-private CUSTOM courier.
 
     [HttpDelete("{courierId:int}")]

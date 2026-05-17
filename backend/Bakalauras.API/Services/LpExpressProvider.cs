@@ -1,6 +1,3 @@
-// Services/Couriers/LpExpressProvider.cs
-// NEW FILE — place in Services/Couriers/ folder
-// Implement the methods when you receive LP Express API credentials.
 using Bakalauras.API.Models;
 public class LpExpressProvider : ICourierProvider
 {

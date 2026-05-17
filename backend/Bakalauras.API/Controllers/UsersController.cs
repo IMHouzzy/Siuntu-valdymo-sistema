@@ -15,7 +15,7 @@ public class UsersController : ControllerBase
         _db = db;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers
 
     private int GetRequiredCompanyId()
     {
@@ -28,9 +28,9 @@ public class UsersController : ControllerBase
     private Task<bool> UserBelongsToCompany(int companyId, int userId)
         => _db.company_users.AnyAsync(cu =>
             cu.fk_Companyid_Company == companyId &&
-            cu.fk_Usersid_Users     == userId);
+            cu.fk_Usersid_Users == userId);
 
-    // ── LIST (staff only) ─────────────────────────────────────────────────────
+    // LIST (staff only)
 
     [HttpGet("allUsers")]
     public async Task<IActionResult> GetAllUsers()
@@ -43,19 +43,25 @@ public class UsersController : ControllerBase
             .AsNoTracking()
             .Where(u => _db.company_users.Any(cu =>
                 cu.fk_Companyid_Company == companyId &&
-                cu.fk_Usersid_Users     == u.id_Users))
+                cu.fk_Usersid_Users == u.id_Users))
             .Select(u => new
             {
-                u.id_Users, u.name, u.surname, u.email,
-                u.phoneNumber, u.creationDate, u.authProvider,
-                u.fk_Companyid_Company, u.isMasterAdmin
+                u.id_Users,
+                u.name,
+                u.surname,
+                u.email,
+                u.phoneNumber,
+                u.creationDate,
+                u.authProvider,
+                u.fk_Companyid_Company,
+                u.isMasterAdmin
             })
             .ToListAsync();
 
         return Ok(users);
     }
 
-    // ── LIST with full client + employee data ─────────────────────────────────
+    // LIST with full client + employee data
 
     [HttpGet("allUsersWithClients")]
     public async Task<IActionResult> GetAllUsersWithClients()
@@ -82,8 +88,13 @@ public class UsersController : ControllerBase
             .Where(u => ids.Contains(u.id_Users))
             .Select(u => new
             {
-                u.id_Users, u.name, u.surname, u.email,
-                u.phoneNumber, u.creationDate, u.authProvider,
+                u.id_Users,
+                u.name,
+                u.surname,
+                u.email,
+                u.phoneNumber,
+                u.creationDate,
+                u.authProvider,
                 u.fk_Companyid_Company,
 
                 // Per-company client data
@@ -92,8 +103,12 @@ public class UsersController : ControllerBase
                     .Where(cc => cc.fk_Companyid_Company == companyId && cc.fk_Clientid_Users == u.id_Users)
                     .Select(cc => new
                     {
-                        cc.deliveryAddress, cc.city, cc.country,
-                        cc.vat, cc.bankCode, cc.externalClientId
+                        cc.deliveryAddress,
+                        cc.city,
+                        cc.country,
+                        cc.vat,
+                        cc.bankCode,
+                        cc.externalClientId
                     })
                     .FirstOrDefault(),
 
@@ -103,7 +118,10 @@ public class UsersController : ControllerBase
                     .Where(cu => cu.fk_Companyid_Company == companyId && cu.fk_Usersid_Users == u.id_Users)
                     .Select(cu => new
                     {
-                        cu.role, cu.position, cu.startDate, cu.active
+                        cu.role,
+                        cu.position,
+                        cu.startDate,
+                        cu.active
                     })
                     .FirstOrDefault()
             })
@@ -112,7 +130,7 @@ public class UsersController : ControllerBase
         return Ok(result);
     }
 
-    // ── CREATE ────────────────────────────────────────────────────────────────
+    // CREATE
 
     [HttpPost("createUser")]
     public async Task<IActionResult> CreateUser([FromBody] CreateUserDto dto)
@@ -133,15 +151,15 @@ public class UsersController : ControllerBase
             // 1) Base user
             var user = new user
             {
-                name                 = dto.Name,
-                surname              = dto.Surname,
-                email                = dto.Email,
-                phoneNumber          = dto.PhoneNumber,
-                password             = null,
-                authProvider         = "LOCAL",
-                creationDate         = DateTime.Now,
+                name = dto.Name,
+                surname = dto.Surname,
+                email = dto.Email,
+                phoneNumber = dto.PhoneNumber,
+                password = null,
+                authProvider = "LOCAL",
+                creationDate = DateTime.Now,
                 fk_Companyid_Company = companyId,
-                isMasterAdmin        = false
+                isMasterAdmin = false
             };
 
             _db.users.Add(user);
@@ -153,8 +171,8 @@ public class UsersController : ControllerBase
                 role = dto.Position switch
                 {
                     "ADMIN" or "OWNER" => dto.Position,
-                    "COURIER"          => "COURIER",
-                    _                  => "STAFF"
+                    "COURIER" => "COURIER",
+                    _ => "STAFF"
                 };
             else if (dto.IsClient)
                 role = "CLIENT";
@@ -164,11 +182,11 @@ public class UsersController : ControllerBase
             _db.company_users.Add(new company_user
             {
                 fk_Companyid_Company = companyId,
-                fk_Usersid_Users     = user.id_Users,
-                role                 = role,
-                position             = dto.IsEmployee ? dto.Position : null,
-                startDate            = dto.IsEmployee ? (dto.StartDate ?? DateTime.Now) : null,
-                active               = dto.IsEmployee ? dto.Active : true
+                fk_Usersid_Users = user.id_Users,
+                role = role,
+                position = dto.IsEmployee ? dto.Position : null,
+                startDate = dto.IsEmployee ? (dto.StartDate ?? DateTime.Now) : null,
+                active = dto.IsEmployee ? dto.Active : true
             });
 
             await _db.SaveChangesAsync();
@@ -178,14 +196,14 @@ public class UsersController : ControllerBase
             {
                 _db.client_companies.Add(new client_company
                 {
-                    fk_Clientid_Users    = user.id_Users,
+                    fk_Clientid_Users = user.id_Users,
                     fk_Companyid_Company = companyId,
-                    externalClientId     = null,
-                    deliveryAddress      = dto.DeliveryAddress,
-                    city                 = dto.City,
-                    country              = dto.Country,
-                    vat                  = dto.Vat,
-                    bankCode             = dto.BankCode
+                    externalClientId = null,
+                    deliveryAddress = dto.DeliveryAddress,
+                    city = dto.City,
+                    country = dto.Country,
+                    vat = dto.Vat,
+                    bankCode = dto.BankCode
                 });
 
                 await _db.SaveChangesAsync();
@@ -201,7 +219,7 @@ public class UsersController : ControllerBase
         }
     }
 
-    // ── READ (SINGLE) ─────────────────────────────────────────────────────────
+    // READ (SINGLE)
 
     [HttpGet("user/{id:int}")]
     public async Task<IActionResult> GetUser(int id)
@@ -224,32 +242,32 @@ public class UsersController : ControllerBase
 
         return Ok(new
         {
-            id          = user.id_Users,
+            id = user.id_Users,
             user.name,
             user.surname,
             user.email,
             user.phoneNumber,
 
             // Client data (per-company)
-            isClient        = cc != null,
+            isClient = cc != null,
             deliveryAddress = cc?.deliveryAddress,
-            city            = cc?.city,
-            country         = cc?.country,
-            vat             = cc?.vat,
-            bankCode        = cc?.bankCode,
+            city = cc?.city,
+            country = cc?.country,
+            vat = cc?.vat,
+            bankCode = cc?.bankCode,
             externalClientId = cc?.externalClientId,
 
             // Staff data (from company_users)
-            role      = cu?.role,
+            role = cu?.role,
             isEmployee = cu != null && (cu.role == "STAFF" || cu.role == "ADMIN" || cu.role == "OWNER" || cu.role == "COURIER"),
-            position  = cu?.position,
+            position = cu?.position,
             startDate = cu?.startDate,
-            active    = cu?.active ?? false,
-            isAdmin   = cu != null && (cu.role == "ADMIN" || cu.role == "OWNER")
+            active = cu?.active ?? false,
+            isAdmin = cu != null && (cu.role == "ADMIN" || cu.role == "OWNER")
         });
     }
 
-    // ── UPDATE ────────────────────────────────────────────────────────────────
+    // UPDATE
 
     [HttpPut("editUser/{id:int}")]
     public async Task<IActionResult> UpdateUser(int id, [FromBody] CreateUserDto dto)
@@ -268,15 +286,15 @@ public class UsersController : ControllerBase
         try
         {
             // Base user fields
-            user.name        = dto.Name;
-            user.surname     = dto.Surname;
-            user.email       = dto.Email;
+            user.name = dto.Name;
+            user.surname = dto.Surname;
+            user.email = dto.Email;
             user.phoneNumber = dto.PhoneNumber;
             user.fk_Companyid_Company = companyId;
 
             await _db.SaveChangesAsync();
 
-            // ── Client data (client_company) ──────────────────────────────────
+            // Client data (client_company)
             var cc = await _db.client_companies.FirstOrDefaultAsync(x =>
                 x.fk_Companyid_Company == companyId && x.fk_Clientid_Users == id);
 
@@ -286,23 +304,23 @@ public class UsersController : ControllerBase
                 {
                     _db.client_companies.Add(new client_company
                     {
-                        fk_Clientid_Users    = id,
+                        fk_Clientid_Users = id,
                         fk_Companyid_Company = companyId,
-                        externalClientId     = null,
-                        deliveryAddress      = dto.DeliveryAddress,
-                        city                 = dto.City,
-                        country              = dto.Country,
-                        vat                  = dto.Vat,
-                        bankCode             = dto.BankCode
+                        externalClientId = null,
+                        deliveryAddress = dto.DeliveryAddress,
+                        city = dto.City,
+                        country = dto.Country,
+                        vat = dto.Vat,
+                        bankCode = dto.BankCode
                     });
                 }
                 else
                 {
                     cc.deliveryAddress = dto.DeliveryAddress;
-                    cc.city            = dto.City;
-                    cc.country         = dto.Country;
-                    cc.vat             = dto.Vat;
-                    cc.bankCode        = dto.BankCode;
+                    cc.city = dto.City;
+                    cc.country = dto.Country;
+                    cc.vat = dto.Vat;
+                    cc.bankCode = dto.BankCode;
                     // externalClientId is managed by sync worker, not by this endpoint
                 }
             }
@@ -312,7 +330,7 @@ public class UsersController : ControllerBase
                 if (cc != null) _db.client_companies.Remove(cc);
             }
 
-            // ── company_users (role / position / startDate / active) ──────────
+            // company_users (role / position / startDate / active)
             var cu = await _db.company_users.FirstOrDefaultAsync(x =>
                 x.fk_Companyid_Company == companyId && x.fk_Usersid_Users == id);
 
@@ -321,8 +339,8 @@ public class UsersController : ControllerBase
                 newRole = dto.Position switch
                 {
                     "ADMIN" or "OWNER" => dto.Position,
-                    "COURIER"          => "COURIER",
-                    _                  => "STAFF"
+                    "COURIER" => "COURIER",
+                    _ => "STAFF"
                 };
             else if (dto.IsClient)
                 newRole = "CLIENT";
@@ -334,21 +352,21 @@ public class UsersController : ControllerBase
                 _db.company_users.Add(new company_user
                 {
                     fk_Companyid_Company = companyId,
-                    fk_Usersid_Users     = id,
-                    role                 = newRole,
-                    position             = dto.IsEmployee ? dto.Position : null,
-                    startDate            = dto.IsEmployee ? (dto.StartDate ?? DateTime.Now) : null,
-                    active               = dto.IsEmployee ? dto.Active : true
+                    fk_Usersid_Users = id,
+                    role = newRole,
+                    position = dto.IsEmployee ? dto.Position : null,
+                    startDate = dto.IsEmployee ? (dto.StartDate ?? DateTime.Now) : null,
+                    active = dto.IsEmployee ? dto.Active : true
                 });
             }
             else
             {
-                cu.role     = newRole;
+                cu.role = newRole;
                 cu.position = dto.IsEmployee ? dto.Position : null;
                 if (dto.IsEmployee)
                 {
                     cu.startDate = dto.StartDate ?? cu.startDate ?? DateTime.Now;
-                    cu.active    = dto.Active;
+                    cu.active = dto.Active;
                 }
                 else
                 {
@@ -367,7 +385,7 @@ public class UsersController : ControllerBase
         }
     }
 
-    // ── DELETE ────────────────────────────────────────────────────────────────
+    // DELETE 
 
     [HttpDelete("deleteUser/{id:int}")]
     public async Task<IActionResult> DeleteUser(int id)

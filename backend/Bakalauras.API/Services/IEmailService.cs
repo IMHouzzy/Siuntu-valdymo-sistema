@@ -85,13 +85,13 @@ public sealed class EmailBackgroundQueue
 public sealed class ResendEmailBackgroundWorker : BackgroundService
 {
     private readonly EmailBackgroundQueue _queue;
-    private readonly IServiceScopeFactory _scopeFactory;  // ← replaces IResend
+    private readonly IServiceScopeFactory _scopeFactory;
     private readonly IConfiguration _cfg;
     private readonly ILogger<ResendEmailBackgroundWorker> _log;
 
     public ResendEmailBackgroundWorker(
         EmailBackgroundQueue queue,
-        IServiceScopeFactory scopeFactory,               // ← inject this instead
+        IServiceScopeFactory scopeFactory,
         IConfiguration cfg,
         ILogger<ResendEmailBackgroundWorker> log)
     {

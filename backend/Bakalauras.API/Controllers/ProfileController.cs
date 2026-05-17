@@ -18,7 +18,7 @@ public class ProfileController : ControllerBase
         _jwtService = jwtService;
     }
 
-    // ── GET own profile (base info + per-company client/employee data) ─────
+    // GET own profile (base info + per-company client/employee data)
 
     [HttpGet]
 public async Task<IActionResult> GetProfile()
@@ -78,7 +78,7 @@ public async Task<IActionResult> GetProfile()
     });
 }
 
-    // ── UPDATE base info (name, surname, phone) ────────────────────────────
+    // UPDATE base info (name, surname, phone)
 
     [HttpPut("info")]
 public async Task<IActionResult> UpdateInfo([FromBody] UpdateProfileInfoDto dto)
@@ -125,7 +125,7 @@ public async Task<IActionResult> UpdateInfo([FromBody] UpdateProfileInfoDto dto)
     return Ok();
 }
 
-    // ── CHANGE PASSWORD ────────────────────────────────────────────────────
+    // CHANGE PASSWORD
 
     [HttpPut("password")]
     public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto)
@@ -149,7 +149,7 @@ public async Task<IActionResult> UpdateInfo([FromBody] UpdateProfileInfoDto dto)
         return Ok();
     }
 
-    // ── DELETE own account ─────────────────────────────────────────────────
+    // DELETE own account
 
     [HttpDelete]
     public async Task<IActionResult> DeleteAccount()

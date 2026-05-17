@@ -1,10 +1,3 @@
-// Controllers/ClientOrdersController.cs
-// FIXES:
-//   1. ListOrders — now correctly filters by BOTH companyId AND userId (was missing userId filter in some paths)
-//   2. CreateReturn — accepts CourierId, LockerId, locker address fields, image URLs
-//   3. Added POST /api/client/returns/upload-images endpoint for product photos
-//   4. ListReturns — scoped to active company only
-
 using Bakalauras.API.Models;
 using Bakalauras.API.DTOs;
 using Microsoft.AspNetCore.Authorization;
@@ -36,9 +29,7 @@ public class ClientOrdersController : ControllerBase
         return id;
     }
 
-    // ── GET /api/client/orders ─────────────────────────────────────────────────
-    // FIX: was showing orders from ANY company because companyId filter was not applied correctly.
-    // Now filters by BOTH the active company AND the logged-in user.
+    // GET /api/client/orders
     [HttpGet("orders")]
     public async Task<IActionResult> ListOrders()
     {
@@ -87,7 +78,7 @@ public class ClientOrdersController : ControllerBase
         return Ok(orders);
     }
 
-    // ── GET /api/client/orders/{id} ────────────────────────────────────────────
+    // GET /api/client/orders/{id}
     [HttpGet("orders/{id:int}")]
     public async Task<IActionResult> GetOrder(int id)
     {
@@ -226,11 +217,11 @@ public class ClientOrdersController : ControllerBase
             order.snapshotCity,
             order.snapshotCountry,
             order.snapshotPhone,
-            order.snapshotDeliveryMethod,   // ✅ add this
-            order.snapshotCourierId,        // ✅ add this
-            order.snapshotLockerId,         // ✅ add this
-            order.snapshotLockerName,       // ✅ add this
-            order.snapshotLockerAddress,    // ✅ add this
+            order.snapshotDeliveryMethod,
+            order.snapshotCourierId,
+            order.snapshotLockerId,
+            order.snapshotLockerName,
+            order.snapshotLockerAddress,
             companyId = order.companyId,
             hasLabels,
             canReturn,
@@ -240,7 +231,7 @@ public class ClientOrdersController : ControllerBase
         });
     }
 
-    // ── PUT /api/client/orders/{id}/delivery ────────────────────────────────────
+    // PUT /api/client/orders/{id}/delivery
     [HttpPut("orders/{id:int}/delivery")]
     public async Task<IActionResult> UpdateDelivery(int id, [FromBody] ClientDeliveryUpdateDto dto)
     {
@@ -269,7 +260,6 @@ public class ClientOrdersController : ControllerBase
 
         if (method == "LOCKER")
         {
-            // Switching to locker — store locker info, clear home address
             order.snapshotDeliveryMethod = "LOCKER";
             order.snapshotCourierId = dto.CourierId ?? order.snapshotCourierId;
             order.snapshotLockerId = dto.LockerId;
@@ -277,20 +267,16 @@ public class ClientOrdersController : ControllerBase
             order.snapshotLockerAddress = dto.LockerAddress;
             order.snapshotLat = dto.DeliveryLat;
             order.snapshotLng = dto.DeliveryLng;
-            // Phone still useful for courier
             order.snapshotPhone = dto.Phone?.Trim() ?? order.snapshotPhone;
         }
         else
         {
-            // HOME delivery — update address snapshot only on THIS order
-            // Never touches client_companies — that's the profile address
             order.snapshotDeliveryMethod = "HOME";
             order.snapshotDeliveryAddress = dto.DeliveryAddress?.Trim();
             order.snapshotCity = dto.City?.Trim();
             order.snapshotCountry = dto.Country?.Trim();
             order.snapshotPhone = dto.Phone?.Trim();
             order.snapshotCourierId = dto.CourierId ?? order.snapshotCourierId;
-            // Clear locker info
             order.snapshotLockerId = null;
             order.snapshotLockerName = null;
             order.snapshotLockerAddress = null;
@@ -302,13 +288,12 @@ public class ClientOrdersController : ControllerBase
         {
             order.status = 4; // Vykdomas
         }
-await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
+        await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
         await _db.SaveChangesAsync();
         return Ok();
     }
 
-    // ── GET /api/client/returns ────────────────────────────────────────────────
-    // FIX: now scoped to the active company (was returning returns from all companies)
+    //  GET /api/client/returns 
     [HttpGet("returns")]
     public async Task<IActionResult> ListReturns()
     {
@@ -353,7 +338,7 @@ await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
         return Ok(returns);
     }
 
-    // ── GET /api/client/returns/{returnId} ─────────────────────────────────────
+    //  GET /api/client/returns/{returnId} 
     [HttpGet("returns/{returnId:int}")]
     public async Task<IActionResult> GetReturn(int returnId)
     {
@@ -424,7 +409,7 @@ await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
         return Ok(ret);
     }
 
-    // ── POST /api/client/returns/upload-images ─────────────────────────────────
+    // POST /api/client/returns/upload-images
     // Accepts multipart files, saves to wwwroot/uploads/returns/temp/{userId}/
     // Returns list of relative URLs to store alongside the return item.
     [HttpPost("returns/upload-images")]
@@ -457,7 +442,7 @@ await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
         return Ok(new { urls });
     }
 
-    // ── POST /api/client/orders/{id}/returns ───────────────────────────────────
+    // POST /api/client/orders/{id}/returns
     // UPDATED: accepts CourierId, LockerId, locker address fields
     // Does NOT create shipment or labels — those are added by employee after confirmation
     [HttpPost("orders/{id:int}/returns")]
@@ -533,7 +518,6 @@ await _notif.NotifyOrderStatusAsync(order.id_Orders, 4, companyId);
                 if (item.Quantity < 1 || item.Quantity > (int)op.quantity)
                     return BadRequest($"Invalid quantity for item {item.OrdersProductId}.");
 
-                // Move temp images to permanent location now that we have the return ID
                 var finalImageUrls = new List<string>();
                 if (item.ImageUrls != null)
                 {

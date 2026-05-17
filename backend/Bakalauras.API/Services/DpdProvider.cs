@@ -1,5 +1,3 @@
-// Services/Couriers/DpdProvider.cs
-
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
@@ -24,7 +22,7 @@ public class DpdProvider : ICourierProvider
         _companyId = companyId;
     }
 
-    // ── Token management (unchanged) ──────────────────────────────────────────
+    // Token management
 
     private async Task EnsureBearerAsync(CancellationToken ct)
     {
@@ -68,7 +66,7 @@ public class DpdProvider : ICourierProvider
             new AuthenticationHeaderValue("Bearer", token);
     }
 
-    // ── GetLockers (unchanged) ────────────────────────────────────────────────
+    // GetLockers
 
     public async Task<List<CourierLocker>> GetLockersAsync(
         string countryCode = "LT", CancellationToken ct = default)
@@ -103,20 +101,20 @@ public class DpdProvider : ICourierProvider
 
             lockers.Add(new CourierLocker
             {
-                Id         = item.GetProperty("id").GetString()!,
-                Name       = GetStr(item, "name"),
+                Id = item.GetProperty("id").GetString()!,
+                Name = GetStr(item, "name"),
                 LockerType = GetStr(item, "lockerType"),
-                Street     = GetStr(addr, "street"),
-                City       = GetStr(addr, "city"),
+                Street = GetStr(addr, "street"),
+                City = GetStr(addr, "city"),
                 PostalCode = GetStr(addr, "postalCode"),
-                Lat        = latLng.Length >= 1 ? latLng[0] : 0,
-                Lng        = latLng.Length >= 2 ? latLng[1] : 0,
+                Lat = latLng.Length >= 1 ? latLng[0] : 0,
+                Lng = latLng.Length >= 2 ? latLng[1] : 0,
             });
         }
         return lockers;
     }
 
-    // ── CreateShipment ────────────────────────────────────────────────────────
+    // CreateShipment
 
     public async Task<CourierShipmentResult> CreateShipmentAsync(
         CourierShipmentRequest req, CancellationToken ct = default)
@@ -139,20 +137,20 @@ public class DpdProvider : ICourierProvider
         object receiverAddress = req.LockerId != null
             ? (object)new
             {
-                name   = Trunc(req.RecipientName, 35),
-                phone  = NormalizePhone(req.RecipientPhone),
-                email  = req.RecipientEmail,
+                name = Trunc(req.RecipientName, 35),
+                phone = NormalizePhone(req.RecipientPhone),
+                email = req.RecipientEmail,
                 pudoId = req.LockerId
             }
             : new
             {
-                name       = Trunc(req.RecipientName, 35),
-                phone      = NormalizePhone(req.RecipientPhone),
-                email      = req.RecipientEmail,
-                street     = Trunc(req.RecipientStreet, 35),
-                city       = Trunc(req.RecipientCity, 35),
+                name = Trunc(req.RecipientName, 35),
+                phone = NormalizePhone(req.RecipientPhone),
+                email = req.RecipientEmail,
+                street = Trunc(req.RecipientStreet, 35),
+                city = Trunc(req.RecipientCity, 35),
                 postalCode = req.RecipientPostalCode.Replace("-", "").Replace(" ", ""),
-                country    = req.RecipientCountry
+                country = req.RecipientCountry
             };
 
         // DPD: one shipment, N parcels each with individual weight.
@@ -163,25 +161,25 @@ public class DpdProvider : ICourierProvider
             {
                 senderAddress = new
                 {
-                    name       = Trunc(req.SenderName, 35),
-                    phone      = NormalizePhone(req.SenderPhone),
-                    street     = Trunc(req.SenderStreet, 35),
-                    city       = Trunc(req.SenderCity, 35),
+                    name = Trunc(req.SenderName, 35),
+                    phone  = NormalizePhone(req.SenderPhone),
+                    street = Trunc(req.SenderStreet, 35),
+                    city  = Trunc(req.SenderCity, 35),
                     postalCode = req.SenderPostalCode.Replace("-", "").Replace(" ", ""),
-                    country    = req.SenderCountry
+                    country = req.SenderCountry
                 },
                 receiverAddress,
-                service            = new { serviceAlias = req.LockerId != null ? "DPD PICKUP" : "B2C" },
-                parcels            = weights.Select(w => new { weight = w }).ToArray(),
+                service = new { serviceAlias = req.LockerId != null ? "DPD PICKUP" : "B2C" },
+                parcels = weights.Select(w => new { weight = w }).ToArray(),
                 shipmentReferences = new[] { req.OrderReference },
-                labelOptions       = new
+                labelOptions = new
                 {
-                    shipmentIds    = Array.Empty<string>(),
+                    shipmentIds = Array.Empty<string>(),
                     offsetPosition = 0,
                     downloadLabel  = true,
-                    emailLabel     = false,
-                    labelFormat    = "application/pdf",
-                    paperSize      = "A6"
+                    emailLabel = false,
+                    labelFormat = "application/pdf",
+                    paperSize = "A6"
                 }
             }
         };
@@ -189,16 +187,16 @@ public class DpdProvider : ICourierProvider
         var content = new StringContent(
             JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
 
-        var res  = await _http.PostAsync("shipments", content, ct);
+        var res = await _http.PostAsync("shipments", content, ct);
         var body = await res.Content.ReadAsStringAsync(ct);
 
         if (!res.IsSuccessStatusCode)
             return new CourierShipmentResult
-                { ErrorMessage = $"DPD error {(int)res.StatusCode}: {body}" };
+            { ErrorMessage = $"DPD error {(int)res.StatusCode}: {body}" };
 
         Console.WriteLine($"[DpdProvider] CreateShipment response (first 800): {body[..Math.Min(800, body.Length)]}");
 
-        var first      = JsonDocument.Parse(body).RootElement.EnumerateArray().First();
+        var first = JsonDocument.Parse(body).RootElement.EnumerateArray().First();
         var shipmentId = first.GetProperty("id").GetString()!;
 
         // parcelNumbers[i] is the tracking number for parcel i (printed on the label)
@@ -208,7 +206,7 @@ public class DpdProvider : ICourierProvider
 
         Console.WriteLine($"[DpdProvider] parcelNumbers: [{string.Join(", ", parcelNumbers)}]");
 
-        // ── Extract the combined multi-page PDF ───────────────────────────────
+        // Extract the combined multi-page PDF
         byte[]? combinedPdf = TryExtractPdfFromJson(body);
 
         if (combinedPdf == null && first.TryGetProperty("shipmentLabels", out var sl))
@@ -257,7 +255,7 @@ public class DpdProvider : ICourierProvider
             catch (Exception ex) { Console.WriteLine($"[DpdProvider] Separate label fetch failed: {ex.Message}"); }
         }
 
-        // ── Split the multi-page PDF into one PDF per parcel ─────────────────
+        // Split the multi-page PDF into one PDF per parcel
         var perParcelLabels = new List<byte[]>();
         if (combinedPdf != null)
         {
@@ -277,14 +275,14 @@ public class DpdProvider : ICourierProvider
 
         return new CourierShipmentResult
         {
-            ProviderShipmentId  = shipmentId,
-            ParcelNumbers       = parcelNumbers,
-            LabelPdfBytes       = combinedPdf,
+            ProviderShipmentId = shipmentId,
+            ParcelNumbers = parcelNumbers,
+            LabelPdfBytes = combinedPdf,
             PerParcelLabelBytes = perParcelLabels,
         };
     }
 
-    // ── PDF helpers ───────────────────────────────────────────────────────────
+    // PDF helpers
 
     /// <summary>
     /// Splits a multi-page PDF into a list of single-page PDFs.
@@ -295,7 +293,7 @@ public class DpdProvider : ICourierProvider
         var result = new List<byte[]>();
 
         using var inputStream = new MemoryStream(pdfBytes);
-        using var inputDoc    = PdfReader.Open(inputStream, PdfDocumentOpenMode.Import);
+        using var inputDoc = PdfReader.Open(inputStream, PdfDocumentOpenMode.Import);
 
         for (int i = 0; i < inputDoc.PageCount; i++)
         {
@@ -313,13 +311,13 @@ public class DpdProvider : ICourierProvider
     /// <summary>Merges two PDFs into one (used when DPD sends pages as separate binaryData entries).</summary>
     private static byte[] MergePdfs(byte[] first, byte[] second)
     {
-        using var firstStream  = new MemoryStream(first);
+        using var firstStream = new MemoryStream(first);
         using var secondStream = new MemoryStream(second);
-        using var firstDoc     = PdfReader.Open(firstStream,  PdfDocumentOpenMode.Import);
-        using var secondDoc    = PdfReader.Open(secondStream, PdfDocumentOpenMode.Import);
-        using var mergedDoc    = new PdfDocument();
+        using var firstDoc = PdfReader.Open(firstStream, PdfDocumentOpenMode.Import);
+        using var secondDoc = PdfReader.Open(secondStream, PdfDocumentOpenMode.Import);
+        using var mergedDoc = new PdfDocument();
 
-        foreach (var page in firstDoc.Pages)  mergedDoc.AddPage(page);
+        foreach (var page in firstDoc.Pages) mergedDoc.AddPage(page);
         foreach (var page in secondDoc.Pages) mergedDoc.AddPage(page);
 
         using var outStream = new MemoryStream();
@@ -327,19 +325,18 @@ public class DpdProvider : ICourierProvider
         return outStream.ToArray();
     }
 
-    // ── FetchLabelAsync (unchanged) ───────────────────────────────────────────
-
+    // FetchLabelAsync
     private async Task<byte[]?> FetchLabelAsync(string shipmentId, CancellationToken ct)
     {
         var reqBody = new
         {
-            shipmentIds   = new[] { shipmentId },
+            shipmentIds = new[] { shipmentId },
             parcelNumbers = Array.Empty<string>(),
             offsetPosition = 0,
-            downloadLabel  = true,
-            emailLabel     = false,
-            labelFormat    = "application/pdf",
-            paperSize      = "A6"
+            downloadLabel = true,
+            emailLabel = false,
+            labelFormat = "application/pdf",
+            paperSize = "A6"
         };
 
         var content = new StringContent(
@@ -349,7 +346,7 @@ public class DpdProvider : ICourierProvider
         req.Content = content;
         req.Headers.Add("Accept", "application/json");
 
-        var res   = await _http.SendAsync(req, ct);
+        var res = await _http.SendAsync(req, ct);
         var bytes = await res.Content.ReadAsByteArrayAsync(ct);
 
         if (!res.IsSuccessStatusCode)
@@ -395,7 +392,7 @@ public class DpdProvider : ICourierProvider
         return null;
     }
 
-    // ── GetTracking (unchanged) ───────────────────────────────────────────────
+    // GetTracking
 
     private static byte[]? TryExtractPdfFromJson(string json)
     {
@@ -482,14 +479,14 @@ public class DpdProvider : ICourierProvider
             foreach (var ev in details.EnumerateArray())
                 events.Add(new CourierTrackingEvent
                 {
-                    Status   = ev.TryGetProperty("status",   out var s) ? s.GetString() ?? "" : "",
+                    Status = ev.TryGetProperty("status", out var s) ? s.GetString() ?? "" : "",
                     DateTime = ev.TryGetProperty("dateTime", out var d) ? d.GetString() ?? "" : "",
                 });
         }
         return events;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers
 
     private static string GetStr(JsonElement el, string prop)
         => el.TryGetProperty(prop, out var v) ? v.GetString() ?? "" : "";

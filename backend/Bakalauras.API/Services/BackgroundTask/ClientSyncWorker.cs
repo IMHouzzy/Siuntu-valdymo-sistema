@@ -3,12 +3,6 @@ using System.Text;
 using Bakalauras.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-/// <summary>
-/// Fixed sync worker: instead of fabricating per-company unique emails like
-/// "butent-c1-client5@local", we now try to match on the client's real VAT/name,
-/// fall back to a stable synthetic email keyed only on the external client ID
-/// (not the company), so one real person stays one user row across companies.
-/// </summary>
 public class ClientSyncWorker : BackgroundService
 {
     private readonly IServiceScopeFactory _scopeFactory;
@@ -85,7 +79,6 @@ public class ClientSyncWorker : BackgroundService
         Console.WriteLine($"[ClientSyncWorker] Company={companyId} external clients: {externalClients.Count}");
         if (externalClients.Count == 0) return;
 
-        // Which externalClientIds already have a client_company row for this company?
         var existingExternalIds = await db.client_companies
             .AsNoTracking()
             .Where(cc => cc.fk_Companyid_Company == companyId && cc.externalClientId.HasValue)
@@ -143,14 +136,14 @@ public class ClientSyncWorker : BackgroundService
                     {
                         existingUser = new user
                         {
-                            email                = syntheticEmail,
-                            password             = BCrypt.Net.BCrypt.HashPassword(Guid.NewGuid().ToString()),
-                            name                 = ext.Name ?? $"Client {ext.ClientID}",
-                            surname              = "Klientas",
-                            authProvider         = "LOCAL",
-                            creationDate         = DateTime.Now,
+                            email = syntheticEmail,
+                            password = BCrypt.Net.BCrypt.HashPassword(Guid.NewGuid().ToString()),
+                            name = ext.Name ?? $"Client {ext.ClientID}",
+                            surname = "Klientas",
+                            authProvider = "LOCAL",
+                            creationDate = DateTime.Now,
                             fk_Companyid_Company = null,
-                            isMasterAdmin        = false
+                            isMasterAdmin = false
                         };
 
                         db.users.Add(existingUser);
@@ -158,23 +151,23 @@ public class ClientSyncWorker : BackgroundService
                     }
                 }
 
-                // ── 2. Add company_users CLIENT link if missing ───────────────
+                // 2. Add company_users CLIENT link if missing
                 var cuExists = await db.company_users.AnyAsync(cu =>
                     cu.fk_Companyid_Company == companyId &&
-                    cu.fk_Usersid_Users     == existingUser.id_Users, ct);
+                    cu.fk_Usersid_Users == existingUser.id_Users, ct);
 
                 if (!cuExists)
                 {
                     db.company_users.Add(new company_user
                     {
                         fk_Companyid_Company = companyId,
-                        fk_Usersid_Users     = existingUser.id_Users,
-                        role                 = "CLIENT",
-                        active               = true
+                        fk_Usersid_Users = existingUser.id_Users,
+                        role = "CLIENT",
+                        active = true
                     });
                 }
 
-                // ── 3. Add client_company row (skip if already exists via race) ──
+                // 3. Add client_company row (skip if already exists via race) 
                 // Check both by PK (user+company) AND externalClientId to avoid
                 // duplicate tracking when two external clients map to the same user
                 var existingCc = await db.client_companies
@@ -186,14 +179,14 @@ public class ClientSyncWorker : BackgroundService
                 {
                     db.client_companies.Add(new client_company
                     {
-                        fk_Clientid_Users    = existingUser.id_Users,
+                        fk_Clientid_Users = existingUser.id_Users,
                         fk_Companyid_Company = companyId,
-                        externalClientId     = ext.ClientID,
-                        deliveryAddress      = ext.Address ?? string.Empty,
-                        city                 = ext.City    ?? string.Empty,
-                        country              = ext.Country ?? string.Empty,
-                        vat                  = ext.Vat,
-                        bankCode             = int.TryParse(ext.BankCode, out var bc) ? bc : null
+                        externalClientId = ext.ClientID,
+                        deliveryAddress = ext.Address ?? string.Empty,
+                        city = ext.City ?? string.Empty,
+                        country = ext.Country ?? string.Empty,
+                        vat = ext.Vat,
+                        bankCode = int.TryParse(ext.BankCode, out var bc) ? bc : null
                     });
                 }
                 else if (existingCc.externalClientId != ext.ClientID)

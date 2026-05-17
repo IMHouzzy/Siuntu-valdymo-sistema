@@ -5,14 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Bakalauras.API.Dtos;
 using System.Security.Cryptography;
 
-// ── ONE-TIME migration SQL — run this in your DB ──────────────────────────────
-//
-//   ALTER TABLE `users`
-//     ADD COLUMN `resetToken`       VARCHAR(128) NULL DEFAULT NULL,
-//     ADD COLUMN `resetTokenExpiry` DATETIME     NULL DEFAULT NULL;
-//
-// That's it — the token lives on the user row.  No new table needed.
-// ─────────────────────────────────────────────────────────────────────────────
 
 [ApiController]
 [Route("api/auth/reset-password")]
@@ -29,7 +21,7 @@ public class PasswordResetController : ControllerBase
         _cfg = cfg;
     }
 
-    // ── STEP 1: user submits email ────────────────────────────────────────────
+    // STEP 1: user submits email
     // POST /api/auth/reset-password/request
     // Always returns 200 — never reveals whether the email exists.
 
@@ -67,7 +59,7 @@ public class PasswordResetController : ControllerBase
         return Ok();
     }
 
-    // ── STEP 2: validate token (frontend calls this on page load) ─────────────
+    // STEP 2: validate token (frontend calls this on page load)
     // GET /api/auth/reset-password/validate?token=xxx
 
     [HttpGet("validate")]
@@ -87,7 +79,7 @@ public class PasswordResetController : ControllerBase
         return Ok();
     }
 
-    // ── STEP 3: set new password ──────────────────────────────────────────────
+    // STEP 3: set new password
     // POST /api/auth/reset-password/confirm
     // Body: { "token": "...", "newPassword": "..." }
 

@@ -1,8 +1,5 @@
-// Dtos/ShipmentDtos.cs
-
 namespace Bakalauras.API.Dtos
 {
-    // Dtos/ShipmentDtos.cs
     using System.Text.Json.Serialization;
 
     public class CreateShipmentDto

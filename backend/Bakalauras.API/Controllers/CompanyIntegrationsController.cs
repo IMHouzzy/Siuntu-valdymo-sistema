@@ -1,8 +1,3 @@
-// Controllers/CompanyIntegrationsController.cs
-// FULL REPLACEMENT of your existing file.
-// Adds DPD integration endpoints (PUT/POST/DELETE /dpd) alongside the existing BUTENT endpoints.
-// The pattern is identical for every future provider — just copy the DPD block and change the type string.
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +13,7 @@ public class CompanyIntegrationsController : ControllerBase
 
     public CompanyIntegrationsController(AppDbContext db) => _db = db;
 
-    // ── Auth helpers ──────────────────────────────────────────────────────────
+    // Auth helpers
 
     private async Task<string?> GetMyRoleInCompany(int companyId, int userId)
         => await _db.company_users.AsNoTracking()
@@ -38,7 +33,7 @@ public class CompanyIntegrationsController : ControllerBase
         return CanManageIntegrations(role);
     }
 
-    // ── GET /api/companies/{companyId}/integrations ───────────────────────────
+    // GET /api/companies/{companyId}/integrations 
     // Lists all integrations for the company (without passwords).
 
     [HttpGet]
@@ -64,9 +59,9 @@ public class CompanyIntegrationsController : ControllerBase
         return Ok(items);
     }
 
-    // ══════════════════════════════════════════════════════════════════════════
-    //  BUTENT
-    // ══════════════════════════════════════════════════════════════════════════
+
+    // BUTENT
+    
 
     [HttpPut("butent")]
     public async Task<IActionResult> UpsertButent(int companyId, [FromBody] CompanyIntegrationUpsertDto dto)
@@ -92,10 +87,8 @@ public class CompanyIntegrationsController : ControllerBase
     public async Task<IActionResult> DeleteButent(int companyId)
         => await DeleteIntegration(companyId, "BUTENT");
 
-    // ══════════════════════════════════════════════════════════════════════════
     //  DPD
     //  Enabling DPD also ensures the global DPD courier rows exist in the DB.
-    // ══════════════════════════════════════════════════════════════════════════
 
     [HttpPut("dpd")]
     public async Task<IActionResult> UpsertDpd(int companyId, [FromBody] CompanyIntegrationUpsertDto dto)
@@ -143,7 +136,7 @@ public class CompanyIntegrationsController : ControllerBase
         return result;
     }
 
-    // ── LP Express (add more providers here with the same pattern) ────────────
+    //LP Express (add more providers here with the same pattern)
 
     [HttpPut("lp-express")]
     public async Task<IActionResult> UpsertLpExpress(int companyId, [FromBody] CompanyIntegrationUpsertDto dto)
@@ -169,9 +162,7 @@ public class CompanyIntegrationsController : ControllerBase
     public async Task<IActionResult> DeleteLpExpress(int companyId)
         => await DeleteIntegration(companyId, "LP_EXPRESS");
 
-    // ══════════════════════════════════════════════════════════════════════════
     //  Shared private helpers — all providers use these
-    // ══════════════════════════════════════════════════════════════════════════
 
     private async Task<IActionResult> UpsertIntegration(
         int companyId, string type,

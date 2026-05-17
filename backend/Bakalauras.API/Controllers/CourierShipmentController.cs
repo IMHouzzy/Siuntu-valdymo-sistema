@@ -1,15 +1,3 @@
-// Controllers/CourierShipmentController.cs
-// NEW FILE
-// Endpoints used exclusively by the COURIER role.
-// A courier can:
-//   GET  /api/courier/shipments          — list shipments assigned to their company
-//   GET  /api/courier/shipments/{id}     — get shipment detail
-//   POST /api/courier/shipments/{id}/status — update status (with optional signature)
-//
-// Status → Order status auto-sync:
-//   Shipment "Vežama"    (id 2)  → Order status "Sent"      (id 5)
-//   Shipment "Pristatyta"(id 3)  → Order status "Completed" (id 3)
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +20,7 @@ public class CourierShipmentController : ControllerBase
         _notif = notif;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers
 
     private int GetRequiredCompanyId()
     {
@@ -53,7 +41,7 @@ public class CourierShipmentController : ControllerBase
         return role is "OWNER" or "ADMIN" or "STAFF" or "COURIER";
     }
 
-    // ── GET /api/courier/shipments ────────────────────────────────────────────
+    // GET /api/courier/shipments
 
     [HttpGet("shipments")]
     public async Task<IActionResult> GetShipments()
@@ -116,7 +104,7 @@ public class CourierShipmentController : ControllerBase
         return Ok(shipments);
     }
 
-    // ── GET /api/courier/shipments/{id} ───────────────────────────────────────
+    // GET /api/courier/shipments/{id} 
 
     [HttpGet("shipments/{id:int}")]
     public async Task<IActionResult> GetShipment(int id)
@@ -187,9 +175,7 @@ public class CourierShipmentController : ControllerBase
         return Ok(s);
     }
 
-    // ── POST /api/courier/shipments/{id}/status ───────────────────────────────
-    // Body: { statusTypeId: int, signatureDataUrl?: string }
-    //
+    // POST /api/courier/shipments/{id}/status 
     // Status mapping (Lithuanian names from shipment_status_type table):
     //   id 2 "Vežama"     → order status 5 "Sent"
     //   id 3 "Pristatyta" → order status 3 "Completed"  (signature required)
@@ -234,22 +220,15 @@ public class CourierShipmentController : ControllerBase
             if (!string.IsNullOrWhiteSpace(dto.SignatureDataUrl))
             {
                 var signatureUrl = await SaveSignatureAsync(dto.SignatureDataUrl, id);
-                // Store on the shipment as a note (using providerShipmentId as fallback storage
-                // — in production you'd add a dedicated signatureFile column)
-                // For now we store it as a file and could extend the model later.
-                // We'll just save the file; the URL is returned in the response.
             }
 
-            // ── Auto-sync order status ────────────────────────────────────────
-            // "Vežama" (id=2)     → Order "Sent"      (id=5)
-            // "Pristatyta" (id=3) → Order "Completed" (id=3)
             var order = shipment.fk_Ordersid_OrdersNavigation;
             if (order != null)
             {
                 int? newOrderStatus = dto.StatusTypeId switch
-                {
-                    2 => 5,  // Vežama → Sent
-                    3 => 3,  // Pristatyta → Completed
+                { 
+                    2 => 5,  // Vežama -> Sent
+                    3 => 3,  // Pristatyta -> Completed
                     _ => null
                 };
 
@@ -279,7 +258,7 @@ public class CourierShipmentController : ControllerBase
         }
     }
 
-    // ── GET /api/courier/status-types ─────────────────────────────────────────
+    //GET /api/courier/status-types
 
     [HttpGet("status-types")]
     public async Task<IActionResult> GetStatusTypes()
@@ -294,7 +273,7 @@ public class CourierShipmentController : ControllerBase
         return Ok(types);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers 
 
     private async Task<string?> SaveSignatureAsync(string dataUrl, int shipmentId)
     {

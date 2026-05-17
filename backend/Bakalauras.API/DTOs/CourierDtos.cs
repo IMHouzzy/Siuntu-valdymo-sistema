@@ -1,6 +1,3 @@
-// Dtos/CourierDtos.cs
-// NEW FILE — place in Dtos/ folder
-
 namespace Bakalauras.API.Dtos
 {
     public class CourierDto

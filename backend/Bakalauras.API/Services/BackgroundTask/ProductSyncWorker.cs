@@ -195,9 +195,9 @@ public class ProductSyncWorker : BackgroundService
         }
     }
     private static double GeneratePrice(int code)
-{
-    // pvz: deterministic (tas pats code -> ta pati kaina)
-    var baseVal = (code % 90) + 10;      // 10..99
-    return Math.Round(baseVal + 0.99, 2);
-}
+    {
+        // pvz: deterministic (tas pats code -> ta pati kaina)
+        var baseVal = (code % 90) + 10;      // 10..99
+        return Math.Round(baseVal + 0.99, 2);
+    }
 }

@@ -1,15 +1,3 @@
-// Controllers/ReturnsController.cs
-//
-// Address logic for return labels:
-//   SENDER  = the client returning the goods.
-//             Uses ret.returnStreet/City/PostalCode (what they filled in on the return form).
-//             Falls back to their current profile address in client_companies only if
-//             they left the return address blank.
-//
-//   RECIPIENT = the COMPANY receiving the returned goods.
-//               Uses company.returnStreet/City/PostalCode (the company's structured return address).
-//               Falls back to company.shippingStreet then company.address — never a random value.
-
 using Bakalauras.API.Models;
 using Bakalauras.API.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -32,10 +20,10 @@ public class ReturnsController : ControllerBase
         CourierProviderFactory providerFactory,
         INotificationService notif)
     {
-        _db              = db;
-        _env             = env;
+        _db = db;
+        _env = env;
         _providerFactory = providerFactory;
-        _notif           = notif;
+        _notif = notif;
     }
 
     // ── Helpers ───────────────────────────────────────────────────────────────
@@ -59,7 +47,7 @@ public class ReturnsController : ControllerBase
         return role is "OWNER" or "ADMIN" or "STAFF";
     }
 
-    // ── GET /api/returns/all ──────────────────────────────────────────────────
+    // GET /api/returns/all
 
     [HttpGet("all")]
     public async Task<IActionResult> ListAll()
@@ -89,13 +77,13 @@ public class ReturnsController : ControllerBase
                 r.returnMethod,
                 r.clientNote,
                 r.employeeNote,
-                orderId             = r.fk_ordersid_orders,
-                itemCount           = r.return_items.Count,
-                totalAmount         = r.return_items.Sum(ri => ri.returnSubTotal),
-                clientName          = r.fk_Clientid_Users > 0
+                orderId = r.fk_ordersid_orders,
+                itemCount = r.return_items.Count,
+                totalAmount = r.return_items.Sum(ri => ri.returnSubTotal),
+                clientName = r.fk_Clientid_Users > 0
                     ? r.fk_Clientid_UsersNavigation.name + " " + r.fk_Clientid_UsersNavigation.surname
                     : null,
-                clientEmail         = r.fk_Clientid_Users > 0
+                clientEmail = r.fk_Clientid_Users > 0
                     ? r.fk_Clientid_UsersNavigation.email
                     : null,
                 evaluationSubmitted = r.fk_Adminid_Users != null,
@@ -105,7 +93,7 @@ public class ReturnsController : ControllerBase
         return Ok(returns);
     }
 
-    // ── GET /api/returns/{id} ─────────────────────────────────────────────────
+    // GET /api/returns/{id}
 
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetReturn(int id)
@@ -147,11 +135,11 @@ public class ReturnsController : ControllerBase
                 r.returnLat,
                 r.returnLng,
                 r.fk_Adminid_Users,
-                orderId     = r.fk_ordersid_orders,
-                clientName  = r.fk_Clientid_UsersNavigation.name + " " + r.fk_Clientid_UsersNavigation.surname,
+                orderId = r.fk_ordersid_orders,
+                clientName = r.fk_Clientid_UsersNavigation.name + " " + r.fk_Clientid_UsersNavigation.surname,
                 clientEmail = r.fk_Clientid_UsersNavigation.email,
                 clientPhone = r.fk_Clientid_UsersNavigation.phoneNumber,
-                clientId    = r.fk_Clientid_Users,
+                clientId = r.fk_Clientid_Users,
                 items = r.return_items.Select(ri => new
                 {
                     ri.id_ReturnItem,
@@ -166,7 +154,7 @@ public class ReturnsController : ControllerBase
                         : ri.reason,
                     product = new
                     {
-                        id   = ri.fk_OrdersProductid_OrdersProductNavigation.fk_Productid_Product,
+                        id = ri.fk_OrdersProductid_OrdersProductNavigation.fk_Productid_Product,
                         name = ri.fk_OrdersProductid_OrdersProductNavigation.fk_Productid_ProductNavigation.name,
                         unit = ri.fk_OrdersProductid_OrdersProductNavigation.fk_Productid_ProductNavigation.unit,
                         imageUrl = ri.fk_OrdersProductid_OrdersProductNavigation
@@ -183,7 +171,7 @@ public class ReturnsController : ControllerBase
         return Ok(ret);
     }
 
-    // ── PUT /api/returns/{id}/evaluate/open ───────────────────────────────────
+    //  PUT /api/returns/{id}/evaluate/open 
 
     [HttpPut("{id:int}/evaluate/open")]
     public async Task<IActionResult> MarkAsBeingEvaluated(int id)
@@ -209,7 +197,7 @@ public class ReturnsController : ControllerBase
         return Ok(new { statusId = ret.fk_ReturnStatusTypeid_ReturnStatusType });
     }
 
-    // ── PUT /api/returns/{id}/evaluate ────────────────────────────────────────
+    // PUT /api/returns/{id}/evaluate 
 
     [HttpPut("{id:int}/evaluate")]
     public async Task<IActionResult> Evaluate(int id, [FromBody] EvaluateReturnDto dto)
@@ -228,7 +216,7 @@ public class ReturnsController : ControllerBase
         await using var tx = await _db.Database.BeginTransactionAsync();
         try
         {
-            // ── 1. Save per-item evaluations ──────────────────────────────────
+            // 1. Save per-item evaluations
             var itemIds = dto.Items?.Select(i => i.ReturnItemId).ToList() ?? new();
             if (itemIds.Count > 0)
             {
@@ -240,9 +228,9 @@ public class ReturnsController : ControllerBase
                 {
                     var item = dbItems.FirstOrDefault(i => i.id_ReturnItem == itemDto.ReturnItemId);
                     if (item == null) continue;
-                    item.evaluation        = itemDto.Evaluation;
+                    item.evaluation = itemDto.Evaluation;
                     item.evaluationComment = itemDto.EvaluationComment?.Trim();
-                    item.evaluationDate    = DateOnly.FromDateTime(DateTime.UtcNow);
+                    item.evaluationDate = DateOnly.FromDateTime(DateTime.UtcNow);
                 }
             }
 
@@ -250,11 +238,11 @@ public class ReturnsController : ControllerBase
                 .Where(ri => ri.fk_Returnsid_Returns == id)
                 .ToListAsync();
 
-            // ── 2. Auto-derive status ─────────────────────────────────────────
+            // 2. Auto-derive status
             bool allDeclined = allItems.Count > 0 && allItems.All(i => i.evaluation == false);
             bool anyApproved = allItems.Any(i => i.evaluation == true);
 
-            ret.employeeNote     = dto.EmployeeNote?.Trim();
+            ret.employeeNote = dto.EmployeeNote?.Trim();
             ret.fk_Adminid_Users = User.GetUserId();
 
             bool labelsCreated = false;
@@ -262,9 +250,9 @@ public class ReturnsController : ControllerBase
             if (anyApproved)
             {
                 var approvedItems = allItems.Where(i => i.evaluation == true).ToList();
-                int packageCount  = approvedItems.Count;
+                int packageCount = approvedItems.Count;
 
-                // ── Sender = the CLIENT who is shipping the return ────────────
+                // Sender = the CLIENT who is shipping the return
                 var clientUser = await _db.users.AsNoTracking()
                     .Where(u => u.id_Users == ret.fk_Clientid_Users)
                     .Select(u => new { u.name, u.surname, u.phoneNumber, u.email })
@@ -277,19 +265,19 @@ public class ReturnsController : ControllerBase
                     .Select(x => new { x.deliveryAddress, x.city, x.country })
                     .FirstOrDefaultAsync();
 
-                var senderName    = $"{clientUser?.name} {clientUser?.surname}".Trim();
-                var senderPhone   = clientUser?.phoneNumber ?? "";
+                var senderName = $"{clientUser?.name} {clientUser?.surname}".Trim();
+                var senderPhone = clientUser?.phoneNumber ?? "";
 
                 // Return form address takes priority — profile address is only a fallback
-                var senderStreet  = !string.IsNullOrWhiteSpace(ret.returnStreet)
+                var senderStreet = !string.IsNullOrWhiteSpace(ret.returnStreet)
                     ? ret.returnStreet
                     : (clientProfileAddress?.deliveryAddress ?? "");
 
-                var senderCity    = !string.IsNullOrWhiteSpace(ret.returnCity)
+                var senderCity = !string.IsNullOrWhiteSpace(ret.returnCity)
                     ? ret.returnCity
                     : (clientProfileAddress?.city ?? "");
 
-                var senderPostal  = (ret.returnPostalCode ?? "")
+                var senderPostal = (ret.returnPostalCode ?? "")
                     .Replace("-", "").Replace(" ", "");
 
                 var senderCountry = MapCountry(
@@ -297,7 +285,7 @@ public class ReturnsController : ControllerBase
                         ? ret.returnCountry
                         : clientProfileAddress?.country);
 
-                // ── Recipient = the COMPANY receiving the return ───────────────
+                // Recipient = the COMPANY receiving the return
                 var company = await _db.companies.AsNoTracking()
                     .Where(c => c.id_Company == companyId)
                     .Select(c => new
@@ -305,8 +293,6 @@ public class ReturnsController : ControllerBase
                         c.name,
                         c.phoneNumber,
                         c.email,
-                        // Use structured return address first, fall back to shipping address,
-                        // then the legacy single-field address — but never use random data
                         c.returnStreet,
                         c.returnCity,
                         c.returnPostalCode,
@@ -345,7 +331,7 @@ public class ReturnsController : ControllerBase
                     : null;
 
                 var courierType = courier?.type ?? "CUSTOM";
-                var integKey    = CourierProviderFactory.GetIntegrationKey(courierType);
+                var integKey = CourierProviderFactory.GetIntegrationKey(courierType);
                 bool isProvider = integKey != null;
 
                 var webRoot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
@@ -353,25 +339,25 @@ public class ReturnsController : ControllerBase
 
                 var returnShipment = new shipment
                 {
-                    trackingNumber        = "",
-                    shippingDate          = DateTime.UtcNow,
+                    trackingNumber = "",
+                    shippingDate = DateTime.UtcNow,
                     estimatedDeliveryDate = DateTime.UtcNow.AddDays(courier?.deliveryTermDays ?? 3),
-                    fk_Courierid_Courier  = ret.fk_Courierid_Courier,
-                    fk_Ordersid_Orders    = orderId,
-                    fk_Returnsid_Returns  = id,
-                    fk_Companyid_Company  = companyId,
-                    providerLockerId      = ret.returnLockerId,
-                    DeliveryLat           = ret.returnLat,
-                    DeliveryLng           = ret.returnLng,
+                    fk_Courierid_Courier = ret.fk_Courierid_Courier,
+                    fk_Ordersid_Orders = orderId,
+                    fk_Returnsid_Returns = id,
+                    fk_Companyid_Company = companyId,
+                    providerLockerId = ret.returnLockerId,
+                    DeliveryLat = ret.returnLat,
+                    DeliveryLng = ret.returnLng,
                 };
                 _db.shipments.Add(returnShipment);
                 await _db.SaveChangesAsync();
 
                 _db.shipment_statuses.Add(new shipment_status
                 {
-                    fk_Shipmentid_Shipment                     = returnShipment.id_Shipment,
+                    fk_Shipmentid_Shipment = returnShipment.id_Shipment,
                     fk_ShipmentStatusTypeid_ShipmentStatusType = 5,
-                    date                                       = DateTime.UtcNow
+                    date = DateTime.UtcNow
                 });
 
                 var labelDir = Path.Combine(webRoot, "labels", returnShipment.id_Shipment.ToString());
@@ -379,9 +365,9 @@ public class ReturnsController : ControllerBase
 
                 var labelCourierName = courier?.name ?? "—";
                 var shippingDateStr = DateTime.UtcNow.ToString("yyyy-MM-dd");
-                var estimatedStr    = DateTime.UtcNow.AddDays(courier?.deliveryTermDays ?? 3).ToString("yyyy-MM-dd");
-                var senderAddr      = BuildAddressLine(senderStreet, senderCity, senderCountry);
-                var recipientAddr   = BuildAddressLine(recipientStreet, recipientCity, recipientCountry);
+                var estimatedStr = DateTime.UtcNow.AddDays(courier?.deliveryTermDays ?? 3).ToString("yyyy-MM-dd");
+                var senderAddr = BuildAddressLine(senderStreet, senderCity, senderCountry);
+                var recipientAddr = BuildAddressLine(recipientStreet, recipientCity, recipientCountry);
 
                 if (isProvider)
                 {
@@ -396,33 +382,33 @@ public class ReturnsController : ControllerBase
 
                     var providerReq = new CourierShipmentRequest
                     {
-                        SenderName          = senderName,
-                        SenderPhone         = senderPhone,
-                        SenderStreet        = senderStreet,
-                        SenderCity          = senderCity,
-                        SenderPostalCode    = senderPostal,
-                        SenderCountry       = senderCountry,
+                        SenderName = senderName,
+                        SenderPhone = senderPhone,
+                        SenderStreet = senderStreet,
+                        SenderCity = senderCity,
+                        SenderPostalCode = senderPostal,
+                        SenderCountry = senderCountry,
 
-                        RecipientName        = company?.name ?? "—",
-                        RecipientEmail       = company?.email ?? "",
-                        RecipientPhone       = company?.phoneNumber ?? "",
-                        RecipientStreet      = recipientStreet,
-                        RecipientCity        = recipientCity,
-                        RecipientPostalCode  = recipientPostalCode,
-                        RecipientCountry     = recipientCountry,
+                        RecipientName = company?.name ?? "—",
+                        RecipientEmail = company?.email ?? "",
+                        RecipientPhone = company?.phoneNumber ?? "",
+                        RecipientStreet = recipientStreet,
+                        RecipientCity = recipientCity,
+                        RecipientPostalCode = recipientPostalCode,
+                        RecipientCountry = recipientCountry,
 
-                        LockerId        = ret.returnLockerId,
-                        PackageCount    = packageCount,
+                        LockerId = ret.returnLockerId,
+                        PackageCount = packageCount,
                         PackageWeightKg = 1.0,
-                        OrderReference  = $"Return-{id}",
+                        OrderReference = $"Return-{id}",
                     };
 
                     var result = await provider.CreateShipmentAsync(providerReq);
 
                     if (result.ErrorMessage == null)
                     {
-                        returnShipment.trackingNumber      = result.ProviderShipmentId;
-                        returnShipment.providerShipmentId  = result.ProviderShipmentId;
+                        returnShipment.trackingNumber = result.ProviderShipmentId;
+                        returnShipment.providerShipmentId = result.ProviderShipmentId;
                         returnShipment.providerParcelNumber = result.ParcelNumbers.Count > 0
                             ? string.Join(",", result.ParcelNumbers)
                             : result.ProviderShipmentId;
@@ -449,19 +435,19 @@ public class ReturnsController : ControllerBase
                             else
                             {
                                 labelUrl = LabelGenerator.Generate(
-                                    webRootPath:       webRoot,
-                                    shipmentId:        returnShipment.id_Shipment,
-                                    packageIndex:      i + 1,
-                                    totalPackages:     packageCount,
-                                    trackingNumber:    pkgTracking,
-                                    senderName:        senderName,
-                                    senderAddress:     senderAddr,
-                                    senderPhone:       senderPhone,
-                                    recipientName:     company?.name ?? "—",
-                                    recipientAddress:  recipientAddr,
-                                    recipientPhone:    company?.phoneNumber ?? "",
-                                    courierName:       labelCourierName,
-                                    shippingDate:      shippingDateStr,
+                                    webRootPath: webRoot,
+                                    shipmentId: returnShipment.id_Shipment,
+                                    packageIndex: i + 1,
+                                    totalPackages: packageCount,
+                                    trackingNumber: pkgTracking,
+                                    senderName: senderName,
+                                    senderAddress: senderAddr,
+                                    senderPhone: senderPhone,
+                                    recipientName: company?.name ?? "—",
+                                    recipientAddress: recipientAddr,
+                                    recipientPhone: company?.phoneNumber ?? "",
+                                    courierName: labelCourierName,
+                                    shippingDate: shippingDateStr,
                                     estimatedDelivery: estimatedStr
                                 );
                             }
@@ -469,10 +455,10 @@ public class ReturnsController : ControllerBase
                             _db.packages.Add(new package
                             {
                                 fk_Shipmentid_Shipment = returnShipment.id_Shipment,
-                                labelFile              = labelUrl,
-                                creationDate           = DateTime.UtcNow,
-                                weight                 = 1.0,
-                                trackingNumber         = pkgTracking,
+                                labelFile = labelUrl,
+                                creationDate = DateTime.UtcNow,
+                                weight = 1.0,
+                                trackingNumber = pkgTracking,
                             });
                         }
                         labelsCreated = true;
@@ -496,29 +482,29 @@ public class ReturnsController : ControllerBase
                             if (firstTracking == null) firstTracking = pkgTracking;
 
                             var labelUrl = LabelGenerator.Generate(
-                                webRootPath:       webRoot,
-                                shipmentId:        returnShipment.id_Shipment,
-                                packageIndex:      i + 1,
-                                totalPackages:     packageCount,
-                                trackingNumber:    pkgTracking,
-                                senderName:        senderName,
-                                senderAddress:     senderAddr,
-                                senderPhone:       senderPhone,
-                                recipientName:     company?.name ?? "—",
-                                recipientAddress:  recipientAddr,
-                                recipientPhone:    company?.phoneNumber ?? "",
-                                courierName:       labelCourierName,
-                                shippingDate:      shippingDateStr,
+                                webRootPath: webRoot,
+                                shipmentId: returnShipment.id_Shipment,
+                                packageIndex: i + 1,
+                                totalPackages: packageCount,
+                                trackingNumber: pkgTracking,
+                                senderName: senderName,
+                                senderAddress: senderAddr,
+                                senderPhone: senderPhone,
+                                recipientName: company?.name ?? "—",
+                                recipientAddress: recipientAddr,
+                                recipientPhone: company?.phoneNumber ?? "",
+                                courierName: labelCourierName,
+                                shippingDate: shippingDateStr,
                                 estimatedDelivery: estimatedStr
                             );
 
                             _db.packages.Add(new package
                             {
                                 fk_Shipmentid_Shipment = returnShipment.id_Shipment,
-                                labelFile              = labelUrl,
-                                creationDate           = DateTime.UtcNow,
-                                weight                 = 1.0,
-                                trackingNumber         = pkgTracking,
+                                labelFile = labelUrl,
+                                creationDate = DateTime.UtcNow,
+                                weight = 1.0,
+                                trackingNumber = pkgTracking,
                             });
                         }
 
@@ -528,16 +514,16 @@ public class ReturnsController : ControllerBase
                 }
                 else
                 {
-                    // ── Custom courier path — professional QuestPDF labels ─────
+                    // Custom courier path — professional QuestPDF labels
                     var rng = new Random();
-                    var courierName     = courier?.name ?? "—";
+                    var courierName = courier?.name ?? "—";
                     string? firstTracking = null;
                     for (int i = 0; i < packageCount; i++)
                     {
                         string pkgTracking;
                         do
                         {
-                            var ts     = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                            var ts = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                             var suffix = rng.Next(1000, 9999);
                             pkgTracking = $"RET-{companyId}-{id}-{ts}-{suffix}";
                         }
@@ -547,29 +533,29 @@ public class ReturnsController : ControllerBase
 
                         // Generate professional label with barcode + QR
                         string labelUrl = LabelGenerator.Generate(
-                            webRootPath:       webRoot,
-                            shipmentId:        returnShipment.id_Shipment,
-                            packageIndex:      i + 1,
-                            totalPackages:     packageCount,
-                            trackingNumber:    pkgTracking,
-                            senderName:        senderName,
-                            senderAddress:     senderAddr,
-                            senderPhone:       senderPhone,
-                            recipientName:     company?.name ?? "—",
-                            recipientAddress:  recipientAddr,
-                            recipientPhone:    company?.phoneNumber ?? "",
-                            courierName:       courierName,
-                            shippingDate:      shippingDateStr,
+                            webRootPath: webRoot,
+                            shipmentId: returnShipment.id_Shipment,
+                            packageIndex: i + 1,
+                            totalPackages: packageCount,
+                            trackingNumber: pkgTracking,
+                            senderName: senderName,
+                            senderAddress: senderAddr,
+                            senderPhone: senderPhone,
+                            recipientName: company?.name ?? "—",
+                            recipientAddress: recipientAddr,
+                            recipientPhone: company?.phoneNumber ?? "",
+                            courierName: courierName,
+                            shippingDate: shippingDateStr,
                             estimatedDelivery: estimatedStr
                         );
 
                         _db.packages.Add(new package
                         {
                             fk_Shipmentid_Shipment = returnShipment.id_Shipment,
-                            labelFile              = labelUrl,
-                            creationDate           = DateTime.UtcNow,
-                            weight                 = 1.0,
-                            trackingNumber         = pkgTracking,
+                            labelFile = labelUrl,
+                            creationDate = DateTime.UtcNow,
+                            weight = 1.0,
+                            trackingNumber = pkgTracking,
                         });
                     }
 
@@ -580,7 +566,7 @@ public class ReturnsController : ControllerBase
                 await _db.SaveChangesAsync();
             }
 
-            // ── 4. Set final status ───────────────────────────────────────────
+            // 4. Set final status
             int finalStatus = allDeclined ? 6
                             : labelsCreated ? 7
                             : 5;
@@ -599,7 +585,7 @@ public class ReturnsController : ControllerBase
         }
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers
 
     /// <summary>Returns the first non-null, non-whitespace string from the candidates.</summary>
     private static string FirstNonEmpty(params string?[] candidates)
@@ -613,14 +599,14 @@ public class ReturnsController : ControllerBase
     {
         "LIETUVA" or "LIETUVOS RESPUBLIKA" or "LT" => "LT",
         "LATVIJA" or "LATVIJOS RESPUBLIKA" or "LV" => "LV",
-        "ESTIJA"  or "ESTIJOS RESPUBLIKA"  or "EE" => "EE",
+        "ESTIJA" or "ESTIJOS RESPUBLIKA" or "EE" => "EE",
         "LENKIJA" or "LENKIJOS RESPUBLIKA" or "PL" => "PL",
         "VOKIETIJA" or "VOKIETIJOS FEDERACINĖ RESPUBLIKA" or "DE" => "DE",
         _ => "LT"
     };
 }
 
-// ── DTOs ──────────────────────────────────────────────────────────────────────
+// DTOs
 
 public class EvaluateReturnDto
 {
@@ -632,7 +618,7 @@ public class EvaluateReturnDto
 
 public class ReturnItemEvalDto
 {
-    public int     ReturnItemId      { get; set; }
-    public bool    Evaluation        { get; set; }
+    public int ReturnItemId { get; set; }
+    public bool Evaluation { get; set; }
     public string? EvaluationComment { get; set; }
 }

@@ -1,4 +1,4 @@
-// layouts/ClientFooter.jsx
+
 import { Link } from "react-router-dom";
 import { FiPackage, FiSearch, FiShoppingBag, FiMail } from "react-icons/fi";
 import "../styles/ClientFooter.css";

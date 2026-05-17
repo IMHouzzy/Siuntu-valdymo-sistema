@@ -305,7 +305,7 @@ public class SyncComparisonService
                 });
             }
 
-            // 6. Compare Category (Type) - THIS WAS MISSING!
+            // 6. Compare Category (Type) 
             var localCategoryId = local.fk_Categoryid_Categories.FirstOrDefault()?.id_Category;
             var extCategoryId = ext.Type?.Id;
 
@@ -323,7 +323,7 @@ public class SyncComparisonService
                 });
             }
 
-            // 7. Compare Product Group - THIS WAS MISSING!
+            // 7. Compare Product Group
             var localGroupId = local.fk_ProductGroupId_ProductGroups.FirstOrDefault()?.id_ProductGroup;
             var extGroupId = ext.Group?.Id;
 
@@ -438,10 +438,8 @@ public class SyncComparisonService
                 });
             }
 
-            // COMPLETE REPLACEMENT for the order items comparison section in CompareOrders
-            // This handles all edge cases: duplicates, product changes, price changes
 
-            // Compare Order Items - HANDLES ALL CASES CORRECTLY
+            // Compare Order Items 
             var localItems = local.ordersproducts?.ToList() ?? new List<ordersproduct>();
             var butentItems = butentOrder.Items;
 
@@ -816,9 +814,6 @@ public class SyncComparisonService
                             updated = true;
                             break;
 
-                        // COMPLETE REPLACEMENT for the "orderItems" case
-                        // This fixes the duplicate product issue by using a List instead of Dictionary
-
                         case "orderItems":
                             var butentItems = await butent.GetDocumentItemsAsync(res.ExternalDocumentId);
 
@@ -828,7 +823,6 @@ public class SyncComparisonService
 
                             const double VatRate = 0.21;
 
-                            // ✅ USE LIST instead of Dictionary to allow duplicate products
                             var expectedItems = new List<(int productId, double quantity, double price, double vat)>();
                             foreach (var item in butentItems)
                             {
@@ -843,8 +837,6 @@ public class SyncComparisonService
                             // Get current items (they are already tracked because we used .Include())
                             var currentItems = local.ordersproducts?.ToList() ?? new List<ordersproduct>();
 
-                            // ✅ Match items by INDEX, not by product ID
-                            // This handles duplicate products correctly
 
                             // First, remove all current items
                             foreach (var currentItem in currentItems)

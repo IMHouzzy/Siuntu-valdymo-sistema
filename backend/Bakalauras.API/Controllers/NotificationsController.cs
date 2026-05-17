@@ -1,5 +1,3 @@
-// Controllers/NotificationsController.cs
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

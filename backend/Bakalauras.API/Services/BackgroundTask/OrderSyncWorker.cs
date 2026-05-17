@@ -11,7 +11,7 @@ public class OrderSyncWorker : BackgroundService
 
     public OrderSyncWorker(IServiceScopeFactory scopeFactory, IHttpClientFactory httpClientFactory)
     {
-        _scopeFactory      = scopeFactory;
+        _scopeFactory = scopeFactory;
         _httpClientFactory = httpClientFactory;
     }
 
@@ -48,7 +48,7 @@ public class OrderSyncWorker : BackgroundService
             ct.ThrowIfCancellationRequested();
 
             var (u, p, b) = IntegrationSecrets.TryUnpack(integ.encryptedSecrets);
-            var baseUrl   = !string.IsNullOrWhiteSpace(integ.baseUrl) ? integ.baseUrl : b;
+            var baseUrl = !string.IsNullOrWhiteSpace(integ.baseUrl) ? integ.baseUrl : b;
 
             if (string.IsNullOrWhiteSpace(baseUrl) ||
                 string.IsNullOrWhiteSpace(u) ||
@@ -121,21 +121,21 @@ public class OrderSyncWorker : BackgroundService
             var order = new order
             {
                 fk_Companyid_Company = companyId,
-                externalDocumentId   = extDocId,
-                OrdersDate           = ParseButentDate(doc.Date)?.Date ?? DateTime.UtcNow.Date,
-                totalAmount          = doc.Total ?? bill.Total ?? 0,
-                paymentMethod        = "butent",
-                deliveryPrice        = 0,
-                status               = 4,
-                fk_Clientid_Users    = clientUserId,
+                externalDocumentId = extDocId,
+                OrdersDate = ParseButentDate(doc.Date)?.Date ?? DateTime.UtcNow.Date,
+                totalAmount = doc.Total ?? bill.Total ?? 0,
+                paymentMethod = "butent",
+                deliveryPrice = 0,
+                status = 4,
+                fk_Clientid_Users = clientUserId,
 
                 // Snapshot the client's address at the time of import.
                 // This is the starting point — staff or client can change it later
                 // via the order's delivery endpoint without touching client_companies.
                 snapshotDeliveryAddress = clientCc?.deliveryAddress,
-                snapshotCity            = clientCc?.city,
-                snapshotCountry         = clientCc?.country,
-                snapshotDeliveryMethod  = "HOME",   // Butent orders default to home delivery
+                snapshotCity = clientCc?.city,
+                snapshotCountry = clientCc?.country,
+                snapshotDeliveryMethod = "HOME",   // Butent orders default to home delivery
                 // snapshotPhone will be null — Butent doesn't provide it;
                 // the user's phoneNumber on the users table is used when creating labels
             };
@@ -153,15 +153,15 @@ public class OrderSyncWorker : BackgroundService
                     continue;
 
                 var unitPrice = it.Price ?? 0;
-                var vatValue  = Math.Round(unitPrice * VatRate, 2);
+                var vatValue = Math.Round(unitPrice * VatRate, 2);
 
                 db.ordersproducts.Add(new ordersproduct
                 {
-                    fk_Ordersid_Orders   = order.id_Orders,
+                    fk_Ordersid_Orders = order.id_Orders,
                     fk_Productid_Product = productId,
-                    quantity             = it.Quantity,
-                    unitPrice            = unitPrice,
-                    vatValue             = vatValue
+                    quantity = it.Quantity,
+                    unitPrice = unitPrice,
+                    vatValue = vatValue
                 });
             }
 

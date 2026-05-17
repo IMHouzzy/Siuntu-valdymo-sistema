@@ -1,13 +1,3 @@
-// ── Services/LabelGenerator.cs ───────────────────────────────────────────────
-// Dependencies:
-//   dotnet add package QuestPDF
-//   dotnet add package ZXing.Net
-//   dotnet add package ZXing.Net.Bindings.SkiaSharp
-//   dotnet add package SkiaSharp
-//
-// QuestPDF community licence is free for revenue < $1M/yr.
-// Add to Program.cs:  QuestPDF.Settings.License = LicenseType.Community;
-
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
@@ -54,7 +44,7 @@ namespace Bakalauras.API.Services
             var fullPath = Path.Combine(dir, fileName);
             var relativeUrl = $"/labels/{shipmentId}/{fileName}";
 
-            // ── Generate barcode and QR images ────────────────────────────────
+            // Generate barcode and QR images 
             var barcodeBytes = GenerateBarcode(trackingNumber);
             var qrBytes = GenerateQrCode($"{TrackingBaseUrl}{trackingNumber}");
 
@@ -68,7 +58,7 @@ namespace Bakalauras.API.Services
 
                     page.Content().Column(col =>
                     {
-                        // ── TOP HEADER BAR ────────────────────────────────────
+                        // TOP HEADER BAR
                         col.Item()
                             .Background("#1e3a5f")
                             .Padding(6)
@@ -88,7 +78,7 @@ namespace Bakalauras.API.Services
 
                         col.Item().PaddingTop(5);
 
-                        // ── TRACKING NUMBER + BARCODE ─────────────────────────
+                        // TRACKING NUMBER + BARCODE
                         col.Item()
                             .Border(1.5f)
                             .BorderColor("#1e3a5f")
@@ -127,7 +117,7 @@ namespace Bakalauras.API.Services
 
                         col.Item().PaddingTop(4);
 
-                        // ── SENDER / RECIPIENT ────────────────────────────────
+                        // SENDER / RECIPIENT
                         col.Item().Row(row =>
                         {
                             // Sender box (left)
@@ -174,7 +164,7 @@ namespace Bakalauras.API.Services
 
                         col.Item().PaddingTop(4);
 
-                        // ── DATES + QR SCAN INFO ──────────────────────────────
+                        // DATES + QR SCAN INFO
                         col.Item()
                             .Background("#f8fafc")
                             .Border(0.5f)
@@ -208,7 +198,7 @@ namespace Bakalauras.API.Services
 
                         col.Item().PaddingTop(5);
 
-                        // ── FOOTER ────────────────────────────────────────────
+                        // FOOTER
                         col.Item()
                             .Background("#1e3a5f")
                             .Padding(3)
@@ -222,7 +212,7 @@ namespace Bakalauras.API.Services
             return relativeUrl;
         }
 
-        // ── Barcode generator (Code 128) ──────────────────────────────────────
+        // Barcode generator (Code 128)
 
         private static byte[]? GenerateBarcode(string content)
         {
@@ -260,7 +250,7 @@ namespace Bakalauras.API.Services
             }
         }
 
-        // ── QR code generator ─────────────────────────────────────────────────
+        // QR code generator
         // Links to the tracking page — scanning it with a phone opens the tracking URL.
         // Couriers or clients can scan it to quickly pull up the shipment status.
 

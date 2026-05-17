@@ -1,7 +1,3 @@
-// Dtos/CompanyDtos.cs
-// REPLACES the CompanyUpsertDto inside your existing Dtos file.
-// Adds structured shipping + return address fields alongside the existing free-text ones.
-
 namespace Bakalauras.API.Dtos
 {
     public class CompanyUpsertDto

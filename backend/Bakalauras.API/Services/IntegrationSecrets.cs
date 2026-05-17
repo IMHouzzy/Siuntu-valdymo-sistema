@@ -33,25 +33,25 @@ public static class IntegrationSecrets
         {
             username = username?.Trim(),
             password = password ?? "",
-            baseUrl  = baseUrl?.Trim()
+            baseUrl = baseUrl?.Trim()
         });
 
         var plainBytes = Encoding.UTF8.GetBytes(payload);
 
         using var aes = new AesGcm(_key, AesGcm.TagByteSizes.MaxSize); // tag = 16 bytes
 
-        var nonce      = new byte[AesGcm.NonceByteSizes.MaxSize]; // 12 bytes
+        var nonce = new byte[AesGcm.NonceByteSizes.MaxSize]; // 12 bytes
         var ciphertext = new byte[plainBytes.Length];
-        var tag        = new byte[AesGcm.TagByteSizes.MaxSize];   // 16 bytes
+        var tag = new byte[AesGcm.TagByteSizes.MaxSize];   // 16 bytes
 
         RandomNumberGenerator.Fill(nonce);
         aes.Encrypt(nonce, plainBytes, ciphertext, tag);
 
         // Concatenate: nonce(12) + ciphertext(n) + tag(16)
         var combined = new byte[nonce.Length + ciphertext.Length + tag.Length];
-        Buffer.BlockCopy(nonce,      0, combined, 0,                             nonce.Length);
-        Buffer.BlockCopy(ciphertext, 0, combined, nonce.Length,                  ciphertext.Length);
-        Buffer.BlockCopy(tag,        0, combined, nonce.Length + ciphertext.Length, tag.Length);
+        Buffer.BlockCopy(nonce, 0, combined, 0, nonce.Length);
+        Buffer.BlockCopy(ciphertext, 0, combined, nonce.Length, ciphertext.Length);
+        Buffer.BlockCopy(tag, 0, combined, nonce.Length + ciphertext.Length, tag.Length);
 
         return Convert.ToBase64String(combined);
     }
@@ -68,27 +68,27 @@ public static class IntegrationSecrets
 
         try
         {
-            var combined   = Convert.FromBase64String(stored);
+            var combined = Convert.FromBase64String(stored);
             const int nonceLen = 12;
-            const int tagLen   = 16;
+            const int tagLen = 16;
 
             if (combined.Length < nonceLen + tagLen)
                 throw new CryptographicException("Payload too short.");
 
-            var nonce      = combined[..nonceLen];
-            var tag        = combined[^tagLen..];
+            var nonce = combined[..nonceLen];
+            var tag = combined[^tagLen..];
             var ciphertext = combined[nonceLen..^tagLen];
-            var plaintext  = new byte[ciphertext.Length];
+            var plaintext = new byte[ciphertext.Length];
 
             using var aes = new AesGcm(_key, AesGcm.TagByteSizes.MaxSize);
             aes.Decrypt(nonce, ciphertext, tag, plaintext);
 
-            using var doc  = JsonDocument.Parse(Encoding.UTF8.GetString(plaintext));
+            using var doc = JsonDocument.Parse(Encoding.UTF8.GetString(plaintext));
             var root = doc.RootElement;
 
             var u = root.TryGetProperty("username", out var uEl) ? uEl.GetString() : null;
             var p = root.TryGetProperty("password", out var pEl) ? pEl.GetString() : null;
-            var b = root.TryGetProperty("baseUrl",  out var bEl) ? bEl.GetString() : null;
+            var b = root.TryGetProperty("baseUrl", out var bEl) ? bEl.GetString() : null;
 
             return (u, p, b);
         }

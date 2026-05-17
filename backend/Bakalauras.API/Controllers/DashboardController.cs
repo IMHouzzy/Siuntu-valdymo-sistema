@@ -1,7 +1,3 @@
-// Controllers/DashboardController.cs
-// GET /api/dashboard/stats?period=year|month|week|day|all
-// Returns aggregated statistics for orders, shipments, returns and revenue.
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +12,7 @@ public class DashboardController : ControllerBase
 
     public DashboardController(AppDbContext db) => _db = db;
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    //  Helpers 
 
     private int GetRequiredCompanyId()
     {
@@ -37,7 +33,7 @@ public class DashboardController : ControllerBase
         return role is "OWNER" or "ADMIN" or "STAFF";
     }
 
-    // ── GET /api/dashboard/stats ──────────────────────────────────────────────
+    //  GET /api/dashboard/stats 
     // period: "year"  — last 12 months, grouped by month
     //         "month" — last 30 days, grouped by day
     //         "week"  — last 7 days, grouped by day
@@ -57,7 +53,7 @@ public class DashboardController : ControllerBase
         var now = DateTime.UtcNow;
         var p = period.ToLowerInvariant();
 
-        // ── Orders ────────────────────────────────────────────────────────────
+        //  Orders 
 
         var allOrders = await _db.orders
             .AsNoTracking()
@@ -207,7 +203,7 @@ public class DashboardController : ControllerBase
             new { statusId = 5, name = "Sent",                  count = orderStatusCounts.GetValueOrDefault(5, 0) },
         };
 
-        // ── Shipments ─────────────────────────────────────────────────────────
+        // Shipments
 
         var allShipments = await _db.shipments
             .AsNoTracking()
@@ -352,7 +348,7 @@ public class DashboardController : ControllerBase
             .OrderByDescending(x => x.count)
             .ToListAsync();
 
-        // ── Returns ───────────────────────────────────────────────────────────
+        // Returns
 
         var allReturns = await _db.product_returns
             .AsNoTracking()
@@ -457,7 +453,7 @@ public class DashboardController : ControllerBase
             }).ToList();
         }
 
-        // ── Assemble response ─────────────────────────────────────────────────
+        //  Assemble response
 
         return Ok(new
         {

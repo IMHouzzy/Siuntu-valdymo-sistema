@@ -55,7 +55,7 @@ export default function RightDrawer({
 
         {/* ── Hero slot (avatar, image strip, map preview…) ── */}
 
-          <div className="rd-hero">{hero}</div>
+        <div className="rd-hero">{hero}</div>
 
 
         {/* ── Body ── */}
@@ -84,7 +84,7 @@ export default function RightDrawer({
               )}
             </section>
           ))}
-    
+
         </div>
 
       </aside>

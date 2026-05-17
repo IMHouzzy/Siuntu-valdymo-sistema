@@ -15,6 +15,7 @@ import {
   FiShoppingCart,
   FiCheck,
   FiTrash2,
+  FiGrid,
 } from "react-icons/fi";
 import "../styles/SignInButtons.css";
 import { notificationsApi } from "../services/api";
@@ -26,7 +27,14 @@ function getInitials(name = "") {
   if (parts.length === 1) return parts[0][0].toUpperCase();
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
-
+function getDashboardPath(user) {
+  const role = user?.companyRole ?? user?.activeCompany?.role ?? "";
+    console.log("user object:", user, "resolved role:", role);
+  if (role === "CLIENT") return "/client";
+  if (role === "COURIER") return "/courier";
+  return "/"; // admin, staff, or anything else
+    
+}
 function formatRelativeTime(dateStr) {
   const date = new Date(dateStr);
   const now = new Date();
@@ -67,7 +75,7 @@ function notifAccentClass(type) {
 // ── Main component ────────────────────────────────────────────────────────────
 
 export default function SignInButtons() {
-  const { logout, user } = useAuth();
+  const { logout, user, companyRole} = useAuth();
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -304,7 +312,15 @@ export default function SignInButtons() {
                   <div className="sb-dropdown-email">{user?.email || ""}</div>
                 </div>
               </div>
-
+              {companyRole !== "CLIENT" && (
+                <button
+                  className="sb-dropdown-item"
+                  onClick={() => { setOpen(false); navigate(getDashboardPath(user)); }}
+                >
+                  <FiGrid size={14} />
+                  Darbo aplinka
+                </button>
+              )}
               <div className="sb-dropdown-divider" />
 
               <button
@@ -335,7 +351,8 @@ export default function SignInButtons() {
                 <FiShoppingCart size={14} />
                 Mano užsakymai
               </button>
-              
+
+
 
               <div className="sb-dropdown-divider" />
 

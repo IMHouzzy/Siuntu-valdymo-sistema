@@ -1,4 +1,3 @@
-// JwtService.cs
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -22,8 +21,8 @@ public class JwtService
     {
         if (user == null) throw new ArgumentNullException(nameof(user));
 
-        var jwtKey   = _config["Jwt:Key"]      ?? throw new InvalidOperationException("Jwt:Key missing");
-        var issuer   = _config["Jwt:Issuer"];
+        var jwtKey = _config["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key missing");
+        var issuer = _config["Jwt:Issuer"];
         var audience = _config["Jwt:Audience"];
 
         var companies = await _db.company_users
@@ -32,10 +31,10 @@ public class JwtService
             .Select(cu => new
             {
                 id_Company = cu.fk_Companyid_Company,
-                name       = cu.fk_Companyid_CompanyNavigation.name,
-                code       = cu.fk_Companyid_CompanyNavigation.companyCode,
-                role       = cu.role,
-                image      = cu.fk_Companyid_CompanyNavigation.image
+                name = cu.fk_Companyid_CompanyNavigation.name,
+                code = cu.fk_Companyid_CompanyNavigation.companyCode,
+                role = cu.role,
+                image = cu.fk_Companyid_CompanyNavigation.image
             })
             .ToListAsync();
 
@@ -65,7 +64,7 @@ public class JwtService
             // All memberships (for company switcher)
             new("companies", JsonSerializer.Serialize(companies)),
 
-            // ── Password-change sentinel ─────────────────────────────────────
+            // Password-change sentinel
             // We store a SHORT hash fingerprint (first 8 chars of the bcrypt hash).
             // This lets us invalidate old tokens when the user changes their
             // password WITHOUT embedding the full hash in the token.
@@ -75,20 +74,20 @@ public class JwtService
                             : ""),
         };
 
-        var key   = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
-            issuer:             issuer,
-            audience:           audience,
-            claims:             claims,
-            expires:            DateTime.UtcNow.AddDays(1),
+            issuer: issuer,
+            audience: audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddDays(1),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    // ── Cookie helpers ────────────────────────────────────────────────────────
+    // Cookie helpers
 
     /// <summary>
     /// Writes the JWT as a secure httpOnly SameSite=Strict cookie.
@@ -96,7 +95,7 @@ public class JwtService
     /// </summary>
     public static void SetAuthCookie(HttpResponse response, string jwtToken, IConfiguration config)
     {
-        var days   = int.TryParse(config["Jwt:CookieDays"],   out var d) ? d : 1;
+        var days = int.TryParse(config["Jwt:CookieDays"], out var d) ? d : 1;
 
         // CookieSecure defaults to true (production).
         // Set "Jwt:CookieSecure": "false" in appsettings.Development.json
@@ -106,11 +105,11 @@ public class JwtService
 
         response.Cookies.Append("auth_token", jwtToken, new CookieOptions
         {
-            HttpOnly = true,                // JS cannot read this
-            Secure   = secure,              // false in dev, true in prod
-            SameSite = SameSiteMode.Lax,   // Strict blocks cookie on first navigation; Lax is safe + works
-            Expires  = DateTimeOffset.UtcNow.AddDays(days),
-            Path     = "/",
+            HttpOnly = true,// JS cannot read this
+            Secure = secure,// false in dev, true in prod
+            SameSite = SameSiteMode.Lax,// Strict blocks cookie on first navigation; Lax is safe + works
+            Expires = DateTimeOffset.UtcNow.AddDays(days),
+            Path = "/",
         });
     }
 
@@ -119,13 +118,13 @@ public class JwtService
         response.Cookies.Delete("auth_token", new CookieOptions
         {
             HttpOnly = true,
-            Secure   = false,              // must match how it was set — browser won't clear otherwise
+            Secure = false,// must match how it was set — browser won't clear otherwise
             SameSite = SameSiteMode.Lax,
-            Path     = "/",
+            Path = "/",
         });
     }
 
-    // ── Password-reset token (JWT-based, short-lived) ─────────────────────────
+    // Password-reset token (JWT-based, short-lived)
 
     public string GeneratePasswordResetToken(int userId)
     {
@@ -137,12 +136,12 @@ public class JwtService
             new("type", "reset"),
         };
 
-        var key   = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
-            claims:             claims,
-            expires:            DateTime.UtcNow.AddHours(1),
+            claims: claims,
+            expires: DateTime.UtcNow.AddHours(1),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
@@ -158,10 +157,10 @@ public class JwtService
                 new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey        = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
-                    ValidateIssuer          = false,
-                    ValidateAudience        = false,
-                    ClockSkew               = TimeSpan.Zero,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero,
                 }, out _);
 
             return principal.FindFirst("type")?.Value == "reset" ? principal : null;

@@ -1,10 +1,4 @@
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System;
-using System.Linq;
 using Bakalauras.API.Dtos;
 public class ButentApiService
 {

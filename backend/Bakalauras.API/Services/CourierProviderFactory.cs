@@ -1,31 +1,27 @@
-// Services/Couriers/CourierProviderFactory.cs
-// NEW FILE — place in Services/Couriers/ folder
-// Register in Program.cs:  builder.Services.AddScoped<CourierProviderFactory>();
-
 using Bakalauras.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 public class CourierProviderFactory
 {
     private readonly IHttpClientFactory _httpFactory;
-    private readonly AppDbContext        _db;
+    private readonly AppDbContext _db;
 
     // Default base URLs per integration key.
     // The stored baseUrl in company_integration overrides these when present.
     private static readonly Dictionary<string, string> DefaultBaseUrls = new()
     {
-        ["DPD"]        = "https://sandbox-esiunta.dpd.lt/api/v1/",
+        ["DPD"] = "https://sandbox-esiunta.dpd.lt/api/v1/",
         ["LP_EXPRESS"] = "https://api.lpexpress.lt/v2/",   // update when you have real URL
-        ["OMNIVA"]     = "https://api.omniva.eu/v1/",      // update when you have real URL
+        ["OMNIVA"] = "https://api.omniva.eu/v1/",      // update when you have real URL
     };
 
     public CourierProviderFactory(IHttpClientFactory httpFactory, AppDbContext db)
     {
         _httpFactory = httpFactory;
-        _db          = db;
+        _db = db;
     }
 
-    // ── Public API ────────────────────────────────────────────────────────────
+    // Public API
 
     /// <summary>
     /// Resolves the correct ICourierProvider for the given courier type and company.
@@ -59,9 +55,9 @@ public class CourierProviderFactory
 
         return integrationKey switch
         {
-            "DPD"        => new DpdProvider(http, _db, companyId),
+            "DPD" => new DpdProvider(http, _db, companyId),
             "LP_EXPRESS" => new LpExpressProvider(http, _db, companyId),
-            _            => throw new NotSupportedException(
+            _ => throw new NotSupportedException(
                                 $"Provider '{integrationKey}' is not yet implemented.")
         };
     }
@@ -105,13 +101,13 @@ public class CourierProviderFactory
     /// </summary>
     public static string? GetIntegrationKey(string? courierType) => courierType switch
     {
-        "DPD_PARCEL"        => "DPD",
-        "DPD_HOME"          => "DPD",
+        "DPD_PARCEL" => "DPD",
+        "DPD_HOME" => "DPD",
         "LP_EXPRESS_PARCEL" => "LP_EXPRESS",
-        "LP_EXPRESS_HOME"   => "LP_EXPRESS",
-        "OMNIVA_PARCEL"     => "OMNIVA",
-        "OMNIVA_HOME"       => "OMNIVA",
-        _                   => null   // CUSTOM or null = no provider
+        "LP_EXPRESS_HOME" => "LP_EXPRESS",
+        "OMNIVA_PARCEL" => "OMNIVA",
+        "OMNIVA_HOME" => "OMNIVA",
+        _ => null   // CUSTOM or null = no provider
     };
 
     /// <summary>

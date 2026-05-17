@@ -1,13 +1,3 @@
-// ── Controllers/ShipmentLabelsController.cs ─────────────────────────────────
-// Two dedicated endpoints for bulk label operations:
-//
-//   GET /api/shipments/{id}/labels/zip      → ZIP of all label PDFs
-//   GET /api/shipments/{id}/labels/merged   → single merged PDF of all labels
-//
-// Dependencies (add via dotnet add package):
-//   dotnet add package PdfSharpCore          ← PDF merging
-//   (ZIP uses System.IO.Compression which is built-in)
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +20,7 @@ public class ShipmentLabelsController : ControllerBase
         _env = env;
     }
 
-    // ── Helper ────────────────────────────────────────────────────────────────
+    //  Helper 
 
     private int GetRequiredCompanyId()
     {
@@ -56,7 +46,7 @@ public class ShipmentLabelsController : ControllerBase
         return System.IO.File.Exists(full) ? full : null;
     }
 
-    // ── GET /api/shipments/{id}/labels/zip ───────────────────────────────────
+    // GET /api/shipments/{id}/labels/zip
     /// <summary>
     /// Returns a ZIP archive containing all label PDFs for the shipment.
     /// </summary>
@@ -111,7 +101,7 @@ public class ShipmentLabelsController : ControllerBase
         return File(memStream, "application/zip", fileName);
     }
 
-    // ── GET /api/shipments/{id}/labels/merged ─────────────────────────────────
+    // GET /api/shipments/{id}/labels/merged
     /// <summary>
     /// Merges all label PDFs into a single PDF and returns it.
     /// The user can open it, see all pages, and print in one go.

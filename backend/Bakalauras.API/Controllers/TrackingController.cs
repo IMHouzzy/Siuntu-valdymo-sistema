@@ -1,7 +1,3 @@
-// Controllers/TrackingController.cs
-// Public endpoint — no [Authorize] so clients can track without logging in.
-// Also works for logged-in clients hitting /api/tracking/{number}
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,8 +15,8 @@ public class TrackingController : ControllerBase
 
     // GET /api/tracking/{trackingNumber}
     // Returns:
-    //   { type: "dpd",    dpdUrl: "https://..." }                    — redirect client to DPD
-    //   { type: "custom", shipment: { ... }, statuses: [...] }       — show internal timeline
+    //   { type: "dpd",dpdUrl: "https://..." } — redirect client to DPD
+    //   { type: "custom", shipment: { ... }, statuses: [...] } — show internal timeline
     //   404 if not found
     [HttpGet("{identifier}")]
     public async Task<IActionResult> Track(string identifier)

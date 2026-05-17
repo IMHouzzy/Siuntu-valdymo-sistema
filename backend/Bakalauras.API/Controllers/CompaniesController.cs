@@ -1,9 +1,3 @@
-// Controllers/CompaniesController.cs
-// FULL REPLACEMENT.
-// Changes from your existing version:
-//   • List / Get now return the new structured address fields
-//   • Create / Update now read and save them from the DTO
-
 using Bakalauras.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,18 +9,18 @@ using Bakalauras.API.Dtos;
 [Authorize]
 public class CompaniesController : ControllerBase
 {
-    private readonly AppDbContext        _db;
-    private readonly JwtService          _jwt;
+    private readonly AppDbContext _db;
+    private readonly JwtService _jwt;
     private readonly IWebHostEnvironment _env;
 
     public CompaniesController(AppDbContext db, JwtService jwt, IWebHostEnvironment env)
     {
-        _db  = db;
+        _db = db;
         _jwt = jwt;
         _env = env;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers
 
     private async Task<string?> GetMyRoleInCompany(int companyId, int userId)
         => await _db.company_users.AsNoTracking()
@@ -51,7 +45,7 @@ public class CompaniesController : ControllerBase
         return CanManageMembers(role);
     }
 
-    // ── Shared select projection (avoids repeating the same anonymous type) ──
+    // Shared select projection (avoids repeating the same anonymous type)
 
     private static object MapCompany(company c) => new
     {
@@ -80,7 +74,7 @@ public class CompaniesController : ControllerBase
         c.returnCountry,
     };
 
-    // ── LIST ──────────────────────────────────────────────────────────────────
+    // LIST 
 
     [HttpGet]
     public async Task<IActionResult> List()
@@ -101,7 +95,7 @@ public class CompaniesController : ControllerBase
         return Ok(items.Select(MapCompany));
     }
 
-    // ── GET ───────────────────────────────────────────────────────────────────
+    // GET 
 
     [HttpGet("{id:int}")]
     public async Task<IActionResult> Get(int id)
@@ -123,7 +117,7 @@ public class CompaniesController : ControllerBase
         return Ok(MapCompany(c));
     }
 
-    // ── CREATE (master only) ──────────────────────────────────────────────────
+    // CREATE (master only)
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CompanyUpsertDto dto)
@@ -152,11 +146,10 @@ public class CompaniesController : ControllerBase
                 email = dto.Email ?? "",
                 image = dto.Image ?? "",
 
-                // Legacy free-text
                 shippingAddress = dto.ShippingAddress,
                 returnAddress = dto.ReturnAddress,
 
-                // Structured shipping
+
                 shippingStreet = dto.ShippingStreet?.Trim(),
                 shippingCity = dto.ShippingCity?.Trim(),
                 shippingPostalCode = dto.ShippingPostalCode?.Trim(),
@@ -201,7 +194,7 @@ public class CompaniesController : ControllerBase
         }
     }
 
-    // ── UPDATE ────────────────────────────────────────────────────────────────
+    // UPDATE 
 
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, [FromBody] CompanyUpsertDto dto)
@@ -237,17 +230,15 @@ public class CompaniesController : ControllerBase
         c.email = dto.Email ?? "";
         c.image = dto.Image ?? "";
 
-        // Legacy free-text
+
         c.shippingAddress = dto.ShippingAddress;
         c.returnAddress = dto.ReturnAddress;
 
-        // Structured shipping
         c.shippingStreet = dto.ShippingStreet?.Trim();
         c.shippingCity = dto.ShippingCity?.Trim();
         c.shippingPostalCode = dto.ShippingPostalCode?.Trim();
         c.shippingCountry = string.IsNullOrWhiteSpace(dto.ShippingCountry) ? "LT" : dto.ShippingCountry.Trim().ToUpper();
 
-        // Structured return
         c.returnStreet = dto.ReturnStreet?.Trim();
         c.returnCity = dto.ReturnCity?.Trim();
         c.returnPostalCode = dto.ReturnPostalCode?.Trim();
@@ -267,7 +258,7 @@ public class CompaniesController : ControllerBase
         return Ok();
     }
 
-    // ── DELETE (master only) ──────────────────────────────────────────────────
+    // DELETE (master only) 
 
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
@@ -282,7 +273,7 @@ public class CompaniesController : ControllerBase
         return NoContent();
     }
 
-    // ── MEMBERS LIST ──────────────────────────────────────────────────────────
+    // MEMBERS LIST
 
     [HttpGet("{id:int}/members")]
     public async Task<IActionResult> Members(int id)
@@ -292,7 +283,7 @@ public class CompaniesController : ControllerBase
 
         var members = await _db.company_users.AsNoTracking()
             .Where(cu => cu.fk_Companyid_Company == id)
-            .Where(cu => cu.role == "OWNER" || cu.role == "ADMIN" || cu.role == "STAFF"|| cu.role == "COURIER")
+            .Where(cu => cu.role == "OWNER" || cu.role == "ADMIN" || cu.role == "STAFF" || cu.role == "COURIER")
             .Select(cu => new
             {
                 userId = cu.fk_Usersid_Users,
@@ -310,7 +301,7 @@ public class CompaniesController : ControllerBase
         return Ok(members);
     }
 
-    // ── ADD MEMBER ────────────────────────────────────────────────────────────
+    // ADD MEMBER
 
     [HttpPost("{id:int}/members")]
     public async Task<IActionResult> AddMember(int id, [FromBody] MemberUpsertDto dto)
@@ -335,7 +326,7 @@ public class CompaniesController : ControllerBase
                 .AnyAsync(cu =>
                     cu.fk_Usersid_Users == dto.UserId &&
                     cu.fk_Companyid_Company != id &&
-                    (cu.role == "OWNER" || cu.role == "ADMIN" || cu.role == "STAFF" ||cu.role == "COURIER"));
+                    (cu.role == "OWNER" || cu.role == "ADMIN" || cu.role == "STAFF" || cu.role == "COURIER"));
             if (hasStaffElsewhere)
                 return Conflict("This user already has STAFF/ADMIN/OWNER role in another company.");
         }
@@ -376,7 +367,7 @@ public class CompaniesController : ControllerBase
         }
     }
 
-    // ── UPDATE MEMBER ROLE ────────────────────────────────────────────────────
+    // UPDATE MEMBER ROLE
 
     [HttpPut("{id:int}/members/{userId:int}")]
     public async Task<IActionResult> UpdateMemberRole(int id, int userId, [FromBody] MemberUpsertDto dto)
@@ -400,7 +391,7 @@ public class CompaniesController : ControllerBase
         }
 
         var nextRole = (dto.Role ?? "STAFF").Trim().ToUpperInvariant();
-        if (nextRole is not ("OWNER" or "ADMIN" or "STAFF" or "CLIENT"or "CLIENT" or "COURIER"))
+        if (nextRole is not ("OWNER" or "ADMIN" or "STAFF" or "CLIENT" or "CLIENT" or "COURIER"))
             return BadRequest("Invalid role.");
 
         if (nextRole is "OWNER" or "ADMIN" or "STAFF" or "COURIER")
@@ -409,7 +400,7 @@ public class CompaniesController : ControllerBase
                 .AnyAsync(cu =>
                     cu.fk_Usersid_Users == userId &&
                     cu.fk_Companyid_Company != id &&
-                    (cu.role == "OWNER" || cu.role == "ADMIN" || cu.role == "STAFF" || cu.role=="COURIER"));
+                    (cu.role == "OWNER" || cu.role == "ADMIN" || cu.role == "STAFF" || cu.role == "COURIER"));
             if (hasStaffElsewhere)
                 return Conflict("This user already has STAFF/ADMIN/OWNER role in another company.");
         }
@@ -436,7 +427,7 @@ public class CompaniesController : ControllerBase
         }
     }
 
-    // ── REMOVE MEMBER ─────────────────────────────────────────────────────────
+    // REMOVE MEMBER
 
     [HttpDelete("{id:int}/members/{userId:int}")]
     public async Task<IActionResult> RemoveMember(int id, int userId)
@@ -491,7 +482,7 @@ public class CompaniesController : ControllerBase
         }
     }
 
-    // ── ASSIGNABLE USERS ──────────────────────────────────────────────────────
+    // ASSIGNABLE USERS
 
     [HttpGet("{id:int}/assignable-users")]
     public async Task<IActionResult> AssignableUsers(int id)
@@ -517,13 +508,13 @@ public class CompaniesController : ControllerBase
 
         return Ok(users);
     }
-    // ── LOGO UPLOAD ───────────────────────────────────────────────────────────────
+    // LOGO UPLOAD
     // POST /api/companies/{id}/logo
     // Saves file to wwwroot/uploads/companies/{id}/logo.{ext}
     // Returns { imageUrl: "/uploads/companies/{id}/logo.jpg" }
 
- [HttpPost("{id:int}/logo")]
-public async Task<IActionResult> UploadLogo(int id, IFormFile file)
+    [HttpPost("{id:int}/logo")]
+    public async Task<IActionResult> UploadLogo(int id, IFormFile file)
     {
         var userId = User.GetUserId();
         var isMaster = User.IsMasterAdmin();

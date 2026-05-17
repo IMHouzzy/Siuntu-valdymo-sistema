@@ -19,7 +19,7 @@ public class OrderController : ControllerBase
         _notif = notif;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // Helpers
 
     private int GetRequiredCompanyId()
     {
@@ -29,7 +29,7 @@ public class OrderController : ControllerBase
         return companyId;
     }
 
-    // ── READ (LIST) ───────────────────────────────────────────────────────────
+    // READ (LIST) 
 
     [HttpGet("allOrders")]
     public async Task<IActionResult> GetAllOrders()
@@ -99,7 +99,7 @@ public class OrderController : ControllerBase
                     name = o.fk_Clientid_UsersNavigation.name,
                     surname = o.fk_Clientid_UsersNavigation.surname,
                     email = o.fk_Clientid_UsersNavigation.email,
-                    // client_companies only used for billing/VAT — NOT for delivery address
+
                     companyData = _db.client_companies
                         .AsNoTracking()
                         .Where(cc =>
@@ -134,10 +134,8 @@ public class OrderController : ControllerBase
         return Ok(orders);
     }
 
-    // ── READ (FULL DETAIL) ────────────────────────────────────────────────────
+    // READ (FULL DETAIL)
     // GET /api/orders/order/{id}/full
-
-    // OrdersController.cs - Updated GetOrderFull endpoint
 
     [HttpGet("order/{id:int}/full")]
     public async Task<IActionResult> GetOrderFull(int id)
@@ -180,7 +178,6 @@ public class OrderController : ControllerBase
                     surname = o.fk_Clientid_UsersNavigation.surname,
                     email = o.fk_Clientid_UsersNavigation.email,
                     phone = o.fk_Clientid_UsersNavigation.phoneNumber,
-                    // client_companies used for billing/VAT only — delivery is in snapshot fields
                     companyData = _db.client_companies
                         .AsNoTracking()
                         .Where(cc =>
@@ -342,7 +339,7 @@ public class OrderController : ControllerBase
         return Ok(order);
     }
 
-    // ── LOOKUPS ───────────────────────────────────────────────────────────────
+    // LOOKUPS
 
     [AllowAnonymous]
     [HttpGet("order-statuses")]
@@ -404,7 +401,7 @@ public class OrderController : ControllerBase
         return Ok(products);
     }
 
-    // ── CREATE ────────────────────────────────────────────────────────────────
+    // CREATE
 
     [HttpPost("createOrder")]
     public async Task<IActionResult> CreateOrder([FromBody] OrderUpsertDto dto)
@@ -485,9 +482,6 @@ public class OrderController : ControllerBase
                 snapshotLng = dto.DeliveryLng,
             };
 
-            // NOTE: We intentionally do NOT write back to client_companies here.
-            // The client's profile address is managed via ProfileController only.
-
             _db.orders.Add(order);
             await _db.SaveChangesAsync();
 
@@ -515,7 +509,7 @@ public class OrderController : ControllerBase
         }
     }
 
-    // ── READ (SINGLE) ─────────────────────────────────────────────────────────
+    // READ (SINGLE)
 
     [HttpGet("order/{id:int}")]
     public async Task<IActionResult> GetOrder(int id)
@@ -568,7 +562,7 @@ public class OrderController : ControllerBase
         });
     }
 
-    // ── UPDATE ────────────────────────────────────────────────────────────────
+    // UPDATE
 
     [HttpPut("editOrder/{id:int}")]
     public async Task<IActionResult> UpdateOrder(int id, [FromBody] OrderUpsertDto dto)
@@ -679,7 +673,7 @@ public class OrderController : ControllerBase
         }
     }
 
-    // ── DELETE ────────────────────────────────────────────────────────────────
+    // DELETE
 
     [HttpDelete("deleteOrder/{id:int}")]
     public async Task<IActionResult> DeleteOrder(int id)

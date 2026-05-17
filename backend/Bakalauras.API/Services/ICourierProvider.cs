@@ -1,9 +1,5 @@
-// Services/Couriers/ICourierProvider.cs
-// NEW FILE — place in Services/Couriers/ folder
-
 public interface ICourierProvider
 {
-    /// <summary>Human-readable name shown in logs, e.g. "DPD", "LP Express"</summary>
     string ProviderName { get; }
 
     /// <summary>
@@ -34,13 +30,13 @@ public interface ICourierProvider
         string parcelNumber, CancellationToken ct = default);
 }
 
-// ── Shared request / response DTOs used by ALL providers ─────────────────────
+// Shared request / response DTOs used by ALL providers
 
 public class CourierLocker
 {
     public string Id { get; set; } = "";
     public string Name { get; set; } = "";
-    public string LockerType { get; set; } = "";   // "PickupStation" | "ParcelShop"
+    public string LockerType { get; set; } = "";
     public string Street { get; set; } = "";
     public string City { get; set; } = "";
     public string PostalCode { get; set; } = "";

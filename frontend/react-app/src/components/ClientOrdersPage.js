@@ -1,4 +1,4 @@
-// pages/client/ClientOrdersPage.jsx
+
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
@@ -10,7 +10,7 @@ import {
 } from "react-icons/fi";
 import { createPortal } from "react-dom";
 import React from "react";
-// FIXED: correct path — ReturnFormModal lives in components/, not in pages/client/
+
 import ReturnFormModal from "./ReturnFormModal";
 import "../styles/ClientOrdersPage.css";
 import '../styles/validation-styles.css';
@@ -18,7 +18,7 @@ import { lockerApi, clientApi, companiesApi } from "../services/api";
 
 const API = (process.env.REACT_APP_API_URL || "/api").replace(/\/api\/?$/, "");
 
-// ── Status helpers ────────────────────────────────────────────────────────────
+//  Status helpers 
 const ORDER_STATUS = {
   1: { label: "Laukia patvirtinimo", color: "var(--color-warning)", icon: FiClock },
   2: { label: "Atšauktas", color: "var(--color-danger)", icon: FiXCircle },
@@ -64,7 +64,7 @@ function fmtDateTime(d) {
 }
 function fmtEur(v) { return `€${Number(v ?? 0).toFixed(2)}`; }
 
-// ── Status badge ──────────────────────────────────────────────────────────────
+//  Status badge 
 function StatusBadge({ statusId, type = "order" }) {
   const cfg = type === "return" ? getReturnStatus(statusId) : getOrderStatus(statusId);
   const Icon = cfg.icon;
@@ -86,7 +86,7 @@ function InfoRow({ icon: Icon, label, value }) {
   );
 }
 
-// ── Edit Contact Modal ────────────────────────────────────────────────────────
+//  Edit Contact Modal 
 function CourierCard({ courier, selected, onSelect }) {
   const id = courier.id_Courier;
   const isLocker = courier.supportsLockers;
@@ -206,7 +206,7 @@ function EditContactModal({ order, onClose, onSaved }) {
   const [deliveryType, setDeliveryType] = useState(initDeliveryType);
   const [couriers, setCouriers] = useState([]);
   const [loadingCouriers, setLoadingCouriers] = useState(true);
-  const [selectedCourierId, setSelectedCourierId] = useState(null); // ← store ID only, not object
+  const [selectedCourierId, setSelectedCourierId] = useState(null);
   const [selectedLocker, setSelectedLocker] = useState(
     order.snapshotLockerId
       ? {
@@ -239,7 +239,7 @@ function EditContactModal({ order, onClose, onSaved }) {
       .then(data => {
         const list = Array.isArray(data) ? data : [];
         
-        // ── DEBUG: log what we get to find the correct ID field ───────────
+        //  DEBUG: log what we get to find the correct ID field 
         console.log("Couriers from API:", list);
         console.log("Order snapshotCourierId:", order.snapshotCourierId);
 

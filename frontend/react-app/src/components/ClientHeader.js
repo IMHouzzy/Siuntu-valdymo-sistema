@@ -1,4 +1,4 @@
-// layouts/ClientHeader.jsx
+
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../services/AuthContext";
@@ -38,12 +38,12 @@ export default function ClientHeader() {
     <header className="ch-header">
       <div className="ch-inner">
 
-        {/* ── Logo ─────────────────────────────────────── */}
+        {/*  Logo  */}
         <Link to="/client" className="ch-logo">
-          <img src={Logo}/>
+          <img src={Logo} />
         </Link>
 
-        {/* ── Nav ──────────────────────────────────────── */}
+        {/*  Nav  */}
         <nav className={`ch-nav ${mobileOpen ? "ch-nav--open" : ""}`}>
           <Link
             to="/client"
@@ -63,9 +63,9 @@ export default function ClientHeader() {
           </Link>
         </nav>
 
-        {/* ── Right ─────────────────────────────────────── */}
+        {/*  Right  */}
         <div className="ch-right">
-<SignInProfile />
+          <SignInProfile />
 
           {/* Mobile hamburger */}
           <button className="ch-mobile-toggle" onClick={() => setMobileOpen((v) => !v)}>

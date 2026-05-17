@@ -15,27 +15,27 @@ public class NotificationService : INotificationService
     private readonly AppDbContext _db;
     private readonly IEmailService _email;
     private readonly IInvoiceService _invoiceService;
-    private readonly IWebHostEnvironment _env;           // ← ADD
-        private readonly IConfiguration _cfg;    
+    private readonly IWebHostEnvironment _env;
+    private readonly IConfiguration _cfg;
     private readonly ILogger<NotificationService> _log;
 
     public NotificationService(
         AppDbContext db,
         IEmailService email,
         IInvoiceService invoiceService,
-        IWebHostEnvironment env,                         // ← ADD
-        IConfiguration cfg,                                 // ← ADD
+        IWebHostEnvironment env,
+        IConfiguration cfg,
         ILogger<NotificationService> log)
     {
         _db = db;
         _email = email;
         _invoiceService = invoiceService;
-        _env = env;                                      // ← ADD
-        _cfg = cfg;                                       // ← ADD
+        _env = env;
+        _cfg = cfg;
         _log = log;
     }
 
-    // ── ORDER ─────────────────────────────────────────────
+    // ORDER
     public async Task NotifyOrderStatusAsync(int orderId, int newStatusId, int companyId)
     {
         var order = await _db.orders
@@ -158,7 +158,7 @@ public class NotificationService : INotificationService
         }
     }
 
-    // ── SHIPMENT ─────────────────────────────────────────
+    // SHIPMENT
     public async Task NotifyShipmentStatusAsync(int shipmentId, int statusId, int companyId)
     {
         var shipment = await _db.shipments
@@ -206,7 +206,6 @@ public class NotificationService : INotificationService
                 sendEmail = true;
                 break;
 
-            // 🔥 RETURN SHIPPING (ONLY COMPANY)
             case 5:
             case 6:
             case 7:
@@ -255,7 +254,7 @@ public class NotificationService : INotificationService
         }
     }
 
-    // ── RETURN ───────────────────────────────────────────
+    // RETURN
     public async Task NotifyReturnStatusAsync(int returnId, int statusId, int companyId)
     {
         var ret = await _db.product_returns

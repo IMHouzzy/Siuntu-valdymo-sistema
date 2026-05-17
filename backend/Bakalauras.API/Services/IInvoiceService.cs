@@ -1,7 +1,3 @@
-// Services/IInvoiceService.cs + InvoiceService.cs
-// Generates an invoice record in the DB and a PDF file,
-// returning the physical file path for email attachment.
-
 using Bakalauras.API.Models;
 using Microsoft.EntityFrameworkCore;
 using QuestPDF.Fluent;
@@ -28,7 +24,7 @@ public class InvoiceService : IInvoiceService
 
     public InvoiceService(AppDbContext db, IWebHostEnvironment env, ILogger<InvoiceService> log)
     {
-        _db  = db;
+        _db = db;
         _env = env;
         _log = log;
         QuestPDF.Settings.License = LicenseType.Community;
@@ -55,12 +51,12 @@ public class InvoiceService : IInvoiceService
                 o.deliveryPrice,
                 o.paymentMethod,
 
-                clientName  = o.fk_Clientid_UsersNavigation.name + " " + o.fk_Clientid_UsersNavigation.surname,
+                clientName = o.fk_Clientid_UsersNavigation.name + " " + o.fk_Clientid_UsersNavigation.surname,
                 clientEmail = o.fk_Clientid_UsersNavigation.email,
                 clientPhone = o.fk_Clientid_UsersNavigation.phoneNumber,
 
-                companyName  = o.fk_Companyid_CompanyNavigation.name,
-                companyCode  = o.fk_Companyid_CompanyNavigation.companyCode,
+                companyName = o.fk_Companyid_CompanyNavigation.name,
+                companyCode = o.fk_Companyid_CompanyNavigation.companyCode,
                 companyEmail = o.fk_Companyid_CompanyNavigation.email,
                 companyPhone = o.fk_Companyid_CompanyNavigation.phoneNumber,
 
@@ -84,17 +80,17 @@ public class InvoiceService : IInvoiceService
 
                 items = o.ordersproducts.Select(op => new
                 {
-                    name      = op.fk_Productid_ProductNavigation.name,
-                    quantity  = op.quantity,
+                    name = op.fk_Productid_ProductNavigation.name,
+                    quantity = op.quantity,
                     unitPrice = op.unitPrice,
-                    vatValue  = op.vatValue,
+                    vatValue = op.vatValue,
                 }).ToList()
             })
             .FirstOrDefaultAsync();
 
         if (order == null) return null;
 
-        // ── Build display address from snapshot fields ─────────────────────────
+        // Build display address from snapshot fields
         // For locker delivery show the locker name/address instead of a home address.
         var displayAddress = order.snapshotDeliveryMethod?.ToUpperInvariant() == "LOCKER"
             ? string.Join(", ", new[]
@@ -114,18 +110,18 @@ public class InvoiceService : IInvoiceService
         if (string.IsNullOrWhiteSpace(displayAddress))
             displayAddress = "—";
 
-        // ── Invoice metadata ──────────────────────────────────────────────────
+        // Invoice metadata
         var invoiceNumber = $"INV-{companyId}-{orderId}-{DateTime.UtcNow:yyyyMMdd}";
-        var vatTotal      = order.items.Sum(i => i.vatValue  * i.quantity);
-        var subtotal      = order.items.Sum(i => i.unitPrice * i.quantity);
+        var vatTotal = order.items.Sum(i => i.vatValue * i.quantity);
+        var subtotal = order.items.Sum(i => i.unitPrice * i.quantity);
 
-        // ── Persist invoice record ────────────────────────────────────────────
+        // Persist invoice record
         var inv = existing ?? new invoice();
-        inv.invoiceNumber      = invoiceNumber;
-        inv.date               = DateTime.UtcNow;
-        inv.dueDate            = DateTime.UtcNow.AddDays(30);
-        inv.total              = order.totalAmount;
-        inv.vatTotal           = vatTotal;
+        inv.invoiceNumber = invoiceNumber;
+        inv.date = DateTime.UtcNow;
+        inv.dueDate = DateTime.UtcNow.AddDays(30);
+        inv.total = order.totalAmount;
+        inv.vatTotal = vatTotal;
         inv.fk_Ordersid_Orders = orderId;
 
         if (existing == null)
@@ -133,15 +129,15 @@ public class InvoiceService : IInvoiceService
 
         await _db.SaveChangesAsync();
 
-        // ── Generate PDF ──────────────────────────────────────────────────────
+        // Generate PDF
         try
         {
-            var webRoot  = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            var dir      = Path.Combine(webRoot, "invoices", orderId.ToString());
+            var webRoot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            var dir = Path.Combine(webRoot, "invoices", orderId.ToString());
             Directory.CreateDirectory(dir);
 
             var filePath = Path.Combine(dir, $"invoice_{orderId}.pdf");
-            var fileUrl  = $"/invoices/{orderId}/invoice_{orderId}.pdf";
+            var fileUrl = $"/invoices/{orderId}/invoice_{orderId}.pdf";
 
             Document.Create(container =>
             {
@@ -151,7 +147,7 @@ public class InvoiceService : IInvoiceService
                     page.Margin(40);
                     page.DefaultTextStyle(x => x.FontSize(11));
 
-                    // ── Header ────────────────────────────────────────────────
+                    // Header 
                     page.Header().Column(col =>
                     {
                         col.Item().Row(row =>
@@ -169,7 +165,7 @@ public class InvoiceService : IInvoiceService
                         col.Item().PaddingTop(4).LineHorizontal(1);
                     });
 
-                    // ── Content ───────────────────────────────────────────────
+                    // Content
                     page.Content().PaddingTop(16).Column(col =>
                     {
                         // Seller / Buyer block
@@ -223,8 +219,8 @@ public class InvoiceService : IInvoiceService
                             bool shade = false;
                             foreach (var item in order.items)
                             {
-                                var bg        = shade ? "#f1f5f9" : "#ffffff";
-                                shade         = !shade;
+                                var bg = shade ? "#f1f5f9" : "#ffffff";
+                                shade = !shade;
                                 var lineTotal = item.unitPrice * item.quantity;
 
                                 static IContainer BodyCell(IContainer c, string bg) =>
@@ -250,7 +246,7 @@ public class InvoiceService : IInvoiceService
                         col.Item().Text($"Apmokėti iki: {inv.dueDate:yyyy-MM-dd}");
                     });
 
-                    // ── Footer ────────────────────────────────────────────────
+                    // Footer
                     page.Footer().AlignCenter().Text(
                         $"Sąskaita sugeneruota automatiškai • {DateTime.UtcNow:yyyy-MM-dd HH:mm} UTC");
                 });

@@ -20,7 +20,7 @@ public class AuthController : ControllerBase
         _config = config;
     }
 
-    // ── Shared: build token + set cookie + return safe user info ─────────────
+    //Shared: build token + set cookie + return safe user info 
 
     private async Task<IActionResult> IssueTokenAsync(user user)
     {
@@ -59,7 +59,7 @@ public class AuthController : ControllerBase
         });
     }
 
-    // ── REGISTER ──────────────────────────────────────────────────────────────
+    //REGISTER
 
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterDto dto)
@@ -88,7 +88,7 @@ public class AuthController : ControllerBase
         return await IssueTokenAsync(user);
     }
 
-    // ── LOGIN ─────────────────────────────────────────────────────────────────
+    //LOGIN
 
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginDto dto)
@@ -103,7 +103,7 @@ public class AuthController : ControllerBase
         return await IssueTokenAsync(user);
     }
 
-    // ── GOOGLE LOGIN ──────────────────────────────────────────────────────────
+    // GOOGLE LOGIN
 
     [HttpPost("google")]
     public async Task<IActionResult> GoogleLogin(GoogleLoginDto dto)
@@ -143,7 +143,7 @@ public class AuthController : ControllerBase
         return await IssueTokenAsync(user);
     }
 
-    // ── LOGOUT ────────────────────────────────────────────────────────────────
+    //LOGOUT
 
     [HttpPost("logout")]
     public IActionResult Logout()
@@ -152,7 +152,7 @@ public class AuthController : ControllerBase
         return Ok();
     }
 
-    // ── ME ────────────────────────────────────────────────────────────────────
+    //ME 
 
     [Authorize]
     [HttpGet("me")]
@@ -165,7 +165,7 @@ public class AuthController : ControllerBase
         return await IssueTokenAsync(user); // refreshes cookie too
     }
 
-    // ── SWITCH COMPANY ────────────────────────────────────────────────────────
+    // SWITCH COMPANY
 
     [Authorize]
     [HttpPost("switch-company/{companyId:int}")]

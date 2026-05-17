@@ -1,7 +1,3 @@
-// Controllers/GenericCourierController.cs
-// NEW FILE — provider-agnostic endpoints for locker picker + tracking.
-// Works for DPD today, LP Express tomorrow, Omniva the day after — no changes needed here.
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

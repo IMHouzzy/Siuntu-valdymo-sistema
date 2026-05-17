@@ -108,7 +108,6 @@ public class ProductController : ControllerBase
     }
 
     // -------- LOOKUPS --------
-    // (palikau be Authorize kaip pas tave; jei nori tenant-only, uždėk [Authorize] ir filtravimą)
 
     [AllowAnonymous]
     [HttpGet("categories")]
@@ -165,8 +164,7 @@ public class ProductController : ControllerBase
         p.fk_ProductGroupId_ProductGroups.Add(grp);
 
         _db.products.Add(p);
-        await _db.SaveChangesAsync(); // gaunam p.id_Product
-
+        await _db.SaveChangesAsync();
         // save images
         if (dto.images != null && dto.images.Count > 0)
         {
@@ -229,7 +227,7 @@ public class ProductController : ControllerBase
 
         var p = await _db.products
             .AsNoTracking()
-            .Where(x => x.id_Product == id && x.fk_Companyid_Company == companyId) // ✅ tenant isolation
+            .Where(x => x.id_Product == id && x.fk_Companyid_Company == companyId)
             .Select(x => new
             {
                 x.id_Product,
@@ -279,7 +277,6 @@ public class ProductController : ControllerBase
 
         if (p == null) return NotFound();
 
-        // ✅ tenant isolation for everyone
         if (p.fk_Companyid_Company != companyId)
             return StatusCode(403, "Product not in your company.");
 
@@ -468,7 +465,6 @@ public class ProductController : ControllerBase
 
         if (p == null) return NotFound();
 
-        // ✅ tenant isolation for everyone
         if (p.fk_Companyid_Company != companyId)
             return StatusCode(403, "Product not in your company.");
 
